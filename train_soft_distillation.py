@@ -144,12 +144,13 @@ def configuration(args, dataset, split, panel, mechanics_train, mechanics_valida
               'deterministic_algorithms': True,
               'cublas_workspace_config': os.environ.get('CUBLAS_WORKSPACE_CONFIG', ':4096:8'),
               'candidate_probability': 'softmax over raw-vocabulary five-letter sequence log probabilities',
-              'checkpoint_selection': ['maximum constrained wins', 'minimum constrained average attempts',
+              'decode_mode': 'word-argmax',
+              'checkpoint_selection': ['maximum word-argmax wins', 'minimum word-argmax average attempts',
                   'minimum average guesses among wins', 'lower exhaustive expected-survivor regret',
                   'lower teacher-to-student KL'],
               'held_out_caveat': 'Source-secret splits are strict; possible answers use the full dictionary, as in original expert SFT.',
               'early_C_evaluations': list(EARLY_C_EVALUATIONS),
-              'rapid_drift_rule': 'At step250, at least five fewer constrained wins than initialization; retry that temperature from original SFT at LR3e-6.',
+              'rapid_drift_rule': 'At step250, at least five fewer word-argmax wins than initialization; retry that temperature from original SFT at LR3e-6.',
               'test_gameplay_evaluated': False}
     # The serialized representation is the compatibility contract (including tuple/list normalization).
     return json.loads(json.dumps(config)), expanded, policy_steps, counts
@@ -466,6 +467,7 @@ def _run(args, stop):
     baseline_hash = file_hash(args.hard_checkpoint)
     baseline_path = args.output_dir / 'hard-sft.json'
     baseline_identity = {
+        'decode_mode': 'word-argmax',
         'teacher_manifest_sha256': file_hash(Path(args.teacher_dir) / 'manifest.json'),
         'split': split, 'panel_indices': panel.tolist(),
         'mechanics_sha256': mechanics_identity(mechanics_validation),
@@ -514,7 +516,7 @@ def _run(args, stop):
 def parser():
     p = argparse.ArgumentParser(description='Soft classical-policy distillation without rollout training.')
     p.add_argument('--teacher-dir', type=Path, default=Path('data/soft-teacher-1m'))
-    p.add_argument('--output-dir', type=Path, default=Path('runs/soft-distillation-dev'))
+    p.add_argument('--output-dir', type=Path, default=Path('runs/soft-distillation-dev-word-argmax'))
     p.add_argument('--mode', type=Path, default=Path('data/wordle-development.json'))
     p.add_argument('--fold', type=int, default=1)
     p.add_argument('--mechanics-data', type=Path, default=Path('data/wordle-dev-1m/fold-1/mechanics'))

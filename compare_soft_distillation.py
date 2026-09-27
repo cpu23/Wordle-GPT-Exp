@@ -97,5 +97,5 @@ def compare(root):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('root', type=Path, nargs='?', default=Path('runs/soft-distillation-dev'))
+    parser.add_argument('root', type=Path, nargs='?', default=Path('runs/soft-distillation-dev-word-argmax'))
     compare(parser.parse_args().root)

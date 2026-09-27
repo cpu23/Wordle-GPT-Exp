@@ -1,0 +1,5526 @@
+{
+  "decoder_disagreement": {
+    "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+    "disagreements": 9,
+    "rate": 0.047619047619047616,
+    "states": 189,
+    "visitation_weighted_rates": {
+      "constrained": 0.031914893617021274,
+      "word-argmax": 0.03180212014134275
+    }
+  },
+  "family": "state-conditioned-grpo",
+  "games": {
+    "constrained": {
+      "average_attempts": 3.9166666666666665,
+      "average_guesses": 3.457627118644068,
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-100.pt",
+      "decode": "constrained",
+      "games": 72,
+      "invalid_guesses": 0,
+      "results": [
+        {
+          "guesses": [
+            "irate",
+            "album",
+            "adopt"
+          ],
+          "invalid_guesses": 0,
+          "secret": "adopt",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "album",
+              "prompt": "<P><G>irate<F>00110<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "adopt",
+              "prompt": "<P><G>irate<F>00110<G>album<F>20000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "agree"
+          ],
+          "invalid_guesses": 0,
+          "secret": "agree",
+          "turns": [
+            {
+              "feedback": "01102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "agree",
+              "prompt": "<P><G>irate<F>01102<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "alike",
+            "agile",
+            "aisle"
+          ],
+          "invalid_guesses": 0,
+          "secret": "aisle",
+          "turns": [
+            {
+              "feedback": "10102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21102",
+              "guess": "alike",
+              "prompt": "<P><G>irate<F>10102<G>"
+            },
+            {
+              "feedback": "20122",
+              "guess": "agile",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>21102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "aisle",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>21102<G>agile<F>20122<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "camel",
+            "alert"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alert",
+          "turns": [
+            {
+              "feedback": "01111",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01011",
+              "guess": "camel",
+              "prompt": "<P><G>irate<F>01111<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "alert",
+              "prompt": "<P><G>irate<F>01111<G>camel<F>01011<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blind",
+            "alibi"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alibi",
+          "turns": [
+            {
+              "feedback": "10100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "12200",
+              "guess": "blind",
+              "prompt": "<P><G>irate<F>10100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "alibi",
+              "prompt": "<P><G>irate<F>10100<G>blind<F>12200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "alike",
+            "alike",
+            "align",
+            "alive"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alive",
+          "turns": [
+            {
+              "feedback": "10102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22202",
+              "guess": "alike",
+              "prompt": "<P><G>irate<F>10102<G>"
+            },
+            {
+              "feedback": "22202",
+              "guess": "alike",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>22202<G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "align",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>22202<G>alike<F>22202<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "alive",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>22202<G>alike<F>22202<G>align<F>22200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "amend"
+          ],
+          "invalid_guesses": 0,
+          "secret": "amend",
+          "turns": [
+            {
+              "feedback": "00101",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "amend",
+              "prompt": "<P><G>irate<F>00101<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bloom",
+            "major",
+            "armor"
+          ],
+          "invalid_guesses": 0,
+          "secret": "armor",
+          "turns": [
+            {
+              "feedback": "02100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00021",
+              "guess": "bloom",
+              "prompt": "<P><G>irate<F>02100<G>"
+            },
+            {
+              "feedback": "11022",
+              "guess": "major",
+              "prompt": "<P><G>irate<F>02100<G>bloom<F>00021<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "armor",
+              "prompt": "<P><G>irate<F>02100<G>bloom<F>00021<G>major<F>11022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "cheat",
+            "asset"
+          ],
+          "invalid_guesses": 0,
+          "secret": "asset",
+          "turns": [
+            {
+              "feedback": "00111",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "cheat",
+              "prompt": "<P><G>irate<F>00111<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "asset",
+              "prompt": "<P><G>irate<F>00111<G>cheat<F>00112<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "chalk",
+            "aback",
+            "award"
+          ],
+          "invalid_guesses": 0,
+          "secret": "award",
+          "turns": [
+            {
+              "feedback": "01200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00200",
+              "guess": "chalk",
+              "prompt": "<P><G>irate<F>01200<G>"
+            },
+            {
+              "feedback": "20200",
+              "guess": "aback",
+              "prompt": "<P><G>irate<F>01200<G>chalk<F>00200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "award",
+              "prompt": "<P><G>irate<F>01200<G>chalk<F>00200<G>aback<F>20200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "clash",
+            "aware"
+          ],
+          "invalid_guesses": 0,
+          "secret": "aware",
+          "turns": [
+            {
+              "feedback": "01202",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00200",
+              "guess": "clash",
+              "prompt": "<P><G>irate<F>01202<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "aware",
+              "prompt": "<P><G>irate<F>01202<G>clash<F>00200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "cloud",
+            "badly"
+          ],
+          "invalid_guesses": 0,
+          "secret": "badly",
+          "turns": [
+            {
+              "feedback": "00100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "cloud",
+              "prompt": "<P><G>irate<F>00100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "badly",
+              "prompt": "<P><G>irate<F>00100<G>cloud<F>01001<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blind",
+            "basin"
+          ],
+          "invalid_guesses": 0,
+          "secret": "basin",
+          "turns": [
+            {
+              "feedback": "10100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20110",
+              "guess": "blind",
+              "prompt": "<P><G>irate<F>10100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "basin",
+              "prompt": "<P><G>irate<F>10100<G>blind<F>20110<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blast",
+            "beast"
+          ],
+          "invalid_guesses": 0,
+          "secret": "beast",
+          "turns": [
+            {
+              "feedback": "00211",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20222",
+              "guess": "blast",
+              "prompt": "<P><G>irate<F>00211<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "beast",
+              "prompt": "<P><G>irate<F>00211<G>blast<F>20222<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "every",
+            "query",
+            "query",
+            "query"
+          ],
+          "invalid_guesses": 0,
+          "secret": "berry",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "every",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "query",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>every<F>10022<G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "query",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>every<F>10022<G>query<F>00122<G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "query",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>every<F>10022<G>query<F>00122<G>query<F>00122<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "shock",
+            "bland"
+          ],
+          "invalid_guesses": 0,
+          "secret": "bland",
+          "turns": [
+            {
+              "feedback": "00200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "shock",
+              "prompt": "<P><G>irate<F>00200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "bland",
+              "prompt": "<P><G>irate<F>00200<G>shock<F>00000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "wheel",
+            "blend",
+            "bless"
+          ],
+          "invalid_guesses": 0,
+          "secret": "bless",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00201",
+              "guess": "wheel",
+              "prompt": "<P><G>irate<F>00001<G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "blend",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>00201<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "bless",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>00201<G>blend<F>22200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bonus",
+            "blood",
+            "block"
+          ],
+          "invalid_guesses": 0,
+          "secret": "block",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21000",
+              "guess": "bonus",
+              "prompt": "<P><G>irate<F>00000<G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "blood",
+              "prompt": "<P><G>irate<F>00000<G>bonus<F>21000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "block",
+              "prompt": "<P><G>irate<F>00000<G>bonus<F>21000<G>blood<F>22200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "adobe",
+            "brain"
+          ],
+          "invalid_guesses": 0,
+          "secret": "brain",
+          "turns": [
+            {
+              "feedback": "12200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "adobe",
+              "prompt": "<P><G>irate<F>12200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "brain",
+              "prompt": "<P><G>irate<F>12200<G>adobe<F>10010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "along",
+            "canoe"
+          ],
+          "invalid_guesses": 0,
+          "secret": "canoe",
+          "turns": [
+            {
+              "feedback": "00102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10110",
+              "guess": "along",
+              "prompt": "<P><G>irate<F>00102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "canoe",
+              "prompt": "<P><G>irate<F>00102<G>along<F>10110<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "close",
+            "chose"
+          ],
+          "invalid_guesses": 0,
+          "secret": "chose",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20222",
+              "guess": "close",
+              "prompt": "<P><G>irate<F>00002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "chose",
+              "prompt": "<P><G>irate<F>00002<G>close<F>20222<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bonus",
+            "couch"
+          ],
+          "invalid_guesses": 0,
+          "secret": "couch",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02010",
+              "guess": "bonus",
+              "prompt": "<P><G>irate<F>00000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "couch",
+              "prompt": "<P><G>irate<F>00000<G>bonus<F>02010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "apron",
+            "owner",
+            "cover"
+          ],
+          "invalid_guesses": 0,
+          "secret": "cover",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "apron",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "owner",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>00110<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "cover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>00110<G>owner<F>10022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bench",
+            "crash",
+            "crawl"
+          ],
+          "invalid_guesses": 0,
+          "secret": "crawl",
+          "turns": [
+            {
+              "feedback": "02200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "bench",
+              "prompt": "<P><G>irate<F>02200<G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "crash",
+              "prompt": "<P><G>irate<F>02200<G>bench<F>00010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "crawl",
+              "prompt": "<P><G>irate<F>02200<G>bench<F>00010<G>crash<F>22200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "along",
+            "dance"
+          ],
+          "invalid_guesses": 0,
+          "secret": "dance",
+          "turns": [
+            {
+              "feedback": "00102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "along",
+              "prompt": "<P><G>irate<F>00102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "dance",
+              "prompt": "<P><G>irate<F>00102<G>along<F>10010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "click",
+            "disco"
+          ],
+          "invalid_guesses": 0,
+          "secret": "disco",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00120",
+              "guess": "click",
+              "prompt": "<P><G>irate<F>10000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "disco",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00120<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "click",
+            "bonus",
+            "might",
+            "visit",
+            "fiery"
+          ],
+          "invalid_guesses": 0,
+          "secret": "dizzy",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "click",
+              "prompt": "<P><G>irate<F>10000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "bonus",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00100<G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "might",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00100<G>bonus<F>00000<G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "visit",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00100<G>bonus<F>00000<G>might<F>02000<G>"
+            },
+            {
+              "feedback": "02002",
+              "guess": "fiery",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00100<G>bonus<F>00000<G>might<F>02000<G>visit<F>02000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "wheel",
+            "below",
+            "elbow"
+          ],
+          "invalid_guesses": 0,
+          "secret": "elbow",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10101",
+              "guess": "wheel",
+              "prompt": "<P><G>irate<F>00001<G>"
+            },
+            {
+              "feedback": "11122",
+              "guess": "below",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>10101<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "elbow",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>10101<G>below<F>11122<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "linen",
+            "equip"
+          ],
+          "invalid_guesses": 0,
+          "secret": "equip",
+          "turns": [
+            {
+              "feedback": "10001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "linen",
+              "prompt": "<P><G>irate<F>10001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "equip",
+              "prompt": "<P><G>irate<F>10001<G>linen<F>01010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "faith"
+          ],
+          "invalid_guesses": 0,
+          "secret": "faith",
+          "turns": [
+            {
+              "feedback": "10120",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "faith",
+              "prompt": "<P><G>irate<F>10120<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "ferry"
+          ],
+          "invalid_guesses": 0,
+          "secret": "ferry",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20100",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "ferry",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>20100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fifth",
+            "fifty"
+          ],
+          "invalid_guesses": 0,
+          "secret": "fifty",
+          "turns": [
+            {
+              "feedback": "10020",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22220",
+              "guess": "fifth",
+              "prompt": "<P><G>irate<F>10020<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "fifty",
+              "prompt": "<P><G>irate<F>10020<G>fifth<F>22220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "album",
+            "plant",
+            "fleet",
+            "fault",
+            "float"
+          ],
+          "invalid_guesses": 0,
+          "secret": "float",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "12000",
+              "guess": "album",
+              "prompt": "<P><G>irate<F>00110<G>"
+            },
+            {
+              "feedback": "02102",
+              "guess": "plant",
+              "prompt": "<P><G>irate<F>00110<G>album<F>12000<G>"
+            },
+            {
+              "feedback": "22002",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>00110<G>album<F>12000<G>plant<F>02102<G>"
+            },
+            {
+              "feedback": "21012",
+              "guess": "fault",
+              "prompt": "<P><G>irate<F>00110<G>album<F>12000<G>plant<F>02102<G>fleet<F>22002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "float",
+              "prompt": "<P><G>irate<F>00110<G>album<F>12000<G>plant<F>02102<G>fleet<F>22002<G>fault<F>21012<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bound",
+            "crown",
+            "brown",
+            "brown",
+            "brown"
+          ],
+          "invalid_guesses": 0,
+          "secret": "grown",
+          "turns": [
+            {
+              "feedback": "02000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "bound",
+              "prompt": "<P><G>irate<F>02000<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "crown",
+              "prompt": "<P><G>irate<F>02000<G>bound<F>01010<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "brown",
+              "prompt": "<P><G>irate<F>02000<G>bound<F>01010<G>crown<F>02222<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "brown",
+              "prompt": "<P><G>irate<F>02000<G>bound<F>01010<G>crown<F>02222<G>brown<F>02222<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "brown",
+              "prompt": "<P><G>irate<F>02000<G>bound<F>01010<G>crown<F>02222<G>brown<F>02222<G>brown<F>02222<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "close",
+            "house"
+          ],
+          "invalid_guesses": 0,
+          "secret": "house",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "close",
+              "prompt": "<P><G>irate<F>00002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "house",
+              "prompt": "<P><G>irate<F>00002<G>close<F>00122<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "amend",
+            "equal",
+            "camel",
+            "panel",
+            "label"
+          ],
+          "invalid_guesses": 0,
+          "secret": "label",
+          "turns": [
+            {
+              "feedback": "00101",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "amend",
+              "prompt": "<P><G>irate<F>00101<G>"
+            },
+            {
+              "feedback": "10012",
+              "guess": "equal",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>10100<G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "camel",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>10100<G>equal<F>10012<G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "panel",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>10100<G>equal<F>10012<G>camel<F>02022<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "label",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>10100<G>equal<F>10012<G>camel<F>02022<G>panel<F>02022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "lover",
+            "lover",
+            "lover",
+            "lover"
+          ],
+          "invalid_guesses": 0,
+          "secret": "lower",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01020",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "22022",
+              "guess": "lover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>01020<G>"
+            },
+            {
+              "feedback": "22022",
+              "guess": "lover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>01020<G>lover<F>22022<G>"
+            },
+            {
+              "feedback": "22022",
+              "guess": "lover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>01020<G>lover<F>22022<G>lover<F>22022<G>"
+            },
+            {
+              "feedback": "22022",
+              "guess": "lover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>01020<G>lover<F>22022<G>lover<F>22022<G>lover<F>22022<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "amend",
+            "medal"
+          ],
+          "invalid_guesses": 0,
+          "secret": "medal",
+          "turns": [
+            {
+              "feedback": "00101",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11101",
+              "guess": "amend",
+              "prompt": "<P><G>irate<F>00101<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "medal",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>11101<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "every",
+            "mercy"
+          ],
+          "invalid_guesses": 0,
+          "secret": "mercy",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "10012",
+              "guess": "every",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "mercy",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>every<F>10012<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "slick",
+            "glide",
+            "elite",
+            "elite",
+            "elite"
+          ],
+          "invalid_guesses": 0,
+          "secret": "olive",
+          "turns": [
+            {
+              "feedback": "10002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "slick",
+              "prompt": "<P><G>irate<F>10002<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "glide",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>02200<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "elite",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>02200<G>glide<F>02202<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "elite",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>02200<G>glide<F>02202<G>elite<F>02202<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "elite",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>02200<G>glide<F>02202<G>elite<F>02202<G>elite<F>02202<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "orbit"
+          ],
+          "invalid_guesses": 0,
+          "secret": "orbit",
+          "turns": [
+            {
+              "feedback": "12010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "orbit",
+              "prompt": "<P><G>irate<F>12010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "carry",
+            "harsh",
+            "marry",
+            "apron",
+            "parka"
+          ],
+          "invalid_guesses": 0,
+          "secret": "parka",
+          "turns": [
+            {
+              "feedback": "01100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "carry",
+              "prompt": "<P><G>irate<F>01100<G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "harsh",
+              "prompt": "<P><G>irate<F>01100<G>carry<F>02200<G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "marry",
+              "prompt": "<P><G>irate<F>01100<G>carry<F>02200<G>harsh<F>02200<G>"
+            },
+            {
+              "feedback": "11200",
+              "guess": "apron",
+              "prompt": "<P><G>irate<F>01100<G>carry<F>02200<G>harsh<F>02200<G>marry<F>02200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "parka",
+              "prompt": "<P><G>irate<F>01100<G>carry<F>02200<G>harsh<F>02200<G>marry<F>02200<G>apron<F>11200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "nasty",
+            "party"
+          ],
+          "invalid_guesses": 0,
+          "secret": "party",
+          "turns": [
+            {
+              "feedback": "01120",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "nasty",
+              "prompt": "<P><G>irate<F>01120<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "party",
+              "prompt": "<P><G>irate<F>01120<G>nasty<F>02022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "slick",
+            "piece"
+          ],
+          "invalid_guesses": 0,
+          "secret": "piece",
+          "turns": [
+            {
+              "feedback": "10002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00120",
+              "guess": "slick",
+              "prompt": "<P><G>irate<F>10002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "piece",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>00120<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "light",
+            "limit",
+            "linen",
+            "limit",
+            "limit"
+          ],
+          "invalid_guesses": 0,
+          "secret": "pilot",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "light",
+              "prompt": "<P><G>irate<F>10010<G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>12002<G>"
+            },
+            {
+              "feedback": "12000",
+              "guess": "linen",
+              "prompt": "<P><G>irate<F>10010<G>light<F>12002<G>limit<F>12002<G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>12002<G>limit<F>12002<G>linen<F>12000<G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>12002<G>limit<F>12002<G>linen<F>12000<G>limit<F>12002<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "apron",
+            "super",
+            "opera",
+            "opera"
+          ],
+          "invalid_guesses": 0,
+          "secret": "power",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "01110",
+              "guess": "apron",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "super",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>01110<G>"
+            },
+            {
+              "feedback": "11110",
+              "guess": "opera",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>01110<G>super<F>00122<G>"
+            },
+            {
+              "feedback": "11110",
+              "guess": "opera",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>01110<G>super<F>00122<G>opera<F>11110<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "dance",
+            "fresh",
+            "greet",
+            "dress",
+            "dress"
+          ],
+          "invalid_guesses": 0,
+          "secret": "press",
+          "turns": [
+            {
+              "feedback": "02001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "dance",
+              "prompt": "<P><G>irate<F>02001<G>"
+            },
+            {
+              "feedback": "02220",
+              "guess": "fresh",
+              "prompt": "<P><G>irate<F>02001<G>dance<F>00001<G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "greet",
+              "prompt": "<P><G>irate<F>02001<G>dance<F>00001<G>fresh<F>02220<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "dress",
+              "prompt": "<P><G>irate<F>02001<G>dance<F>00001<G>fresh<F>02220<G>greet<F>02200<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "dress",
+              "prompt": "<P><G>irate<F>02001<G>dance<F>00001<G>fresh<F>02220<G>greet<F>02200<G>dress<F>02222<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "candy",
+            "movie",
+            "smile",
+            "write",
+            "prime"
+          ],
+          "invalid_guesses": 0,
+          "secret": "prime",
+          "turns": [
+            {
+              "feedback": "12002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "candy",
+              "prompt": "<P><G>irate<F>12002<G>"
+            },
+            {
+              "feedback": "10012",
+              "guess": "movie",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>"
+            },
+            {
+              "feedback": "01202",
+              "guess": "smile",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>10012<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "write",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>10012<G>smile<F>01202<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "prime",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>10012<G>smile<F>01202<G>write<F>02202<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "candy",
+            "movie",
+            "write",
+            "write",
+            "write"
+          ],
+          "invalid_guesses": 0,
+          "secret": "prize",
+          "turns": [
+            {
+              "feedback": "12002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "candy",
+              "prompt": "<P><G>irate<F>12002<G>"
+            },
+            {
+              "feedback": "00012",
+              "guess": "movie",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "write",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>00012<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "write",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>00012<G>write<F>02202<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "write",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>00012<G>write<F>02202<G>write<F>02202<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "adapt",
+            "raise"
+          ],
+          "invalid_guesses": 0,
+          "secret": "raise",
+          "turns": [
+            {
+              "feedback": "11102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "adapt",
+              "prompt": "<P><G>irate<F>11102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "raise",
+              "prompt": "<P><G>irate<F>11102<G>adapt<F>10000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "agree",
+            "large",
+            "carve",
+            "range"
+          ],
+          "invalid_guesses": 0,
+          "secret": "range",
+          "turns": [
+            {
+              "feedback": "01102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11102",
+              "guess": "agree",
+              "prompt": "<P><G>irate<F>01102<G>"
+            },
+            {
+              "feedback": "02122",
+              "guess": "large",
+              "prompt": "<P><G>irate<F>01102<G>agree<F>11102<G>"
+            },
+            {
+              "feedback": "02102",
+              "guess": "carve",
+              "prompt": "<P><G>irate<F>01102<G>agree<F>11102<G>large<F>02122<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "range",
+              "prompt": "<P><G>irate<F>01102<G>agree<F>11102<G>large<F>02122<G>carve<F>02102<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "couch",
+            "round"
+          ],
+          "invalid_guesses": 0,
+          "secret": "round",
+          "turns": [
+            {
+              "feedback": "01000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "couch",
+              "prompt": "<P><G>irate<F>01000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "round",
+              "prompt": "<P><G>irate<F>01000<G>couch<F>02200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "chalk",
+            "scarf"
+          ],
+          "invalid_guesses": 0,
+          "secret": "scarf",
+          "turns": [
+            {
+              "feedback": "01200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10200",
+              "guess": "chalk",
+              "prompt": "<P><G>irate<F>01200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "scarf",
+              "prompt": "<P><G>irate<F>01200<G>chalk<F>10200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "stuck",
+            "scout"
+          ],
+          "invalid_guesses": 0,
+          "secret": "scout",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21110",
+              "guess": "stuck",
+              "prompt": "<P><G>irate<F>00010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "scout",
+              "prompt": "<P><G>irate<F>00010<G>stuck<F>21110<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "wheel",
+            "enemy",
+            "seven"
+          ],
+          "invalid_guesses": 0,
+          "secret": "seven",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00120",
+              "guess": "wheel",
+              "prompt": "<P><G>irate<F>00001<G>"
+            },
+            {
+              "feedback": "11100",
+              "guess": "enemy",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>00120<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "seven",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>00120<G>enemy<F>11100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blush",
+            "adapt",
+            "shape"
+          ],
+          "invalid_guesses": 0,
+          "secret": "shape",
+          "turns": [
+            {
+              "feedback": "00202",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00011",
+              "guess": "blush",
+              "prompt": "<P><G>irate<F>00202<G>"
+            },
+            {
+              "feedback": "00220",
+              "guess": "adapt",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00011<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "shape",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00011<G>adapt<F>00220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "wheel",
+            "cheek",
+            "sheep"
+          ],
+          "invalid_guesses": 0,
+          "secret": "sheep",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02220",
+              "guess": "wheel",
+              "prompt": "<P><G>irate<F>00001<G>"
+            },
+            {
+              "feedback": "02220",
+              "guess": "cheek",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>02220<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "sheep",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>02220<G>cheek<F>02220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "stuck",
+            "south",
+            "shout"
+          ],
+          "invalid_guesses": 0,
+          "secret": "shout",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21100",
+              "guess": "stuck",
+              "prompt": "<P><G>irate<F>00010<G>"
+            },
+            {
+              "feedback": "21111",
+              "guess": "south",
+              "prompt": "<P><G>irate<F>00010<G>stuck<F>21100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "shout",
+              "prompt": "<P><G>irate<F>00010<G>stuck<F>21100<G>south<F>21111<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blush",
+            "snake",
+            "scare",
+            "scale",
+            "scare"
+          ],
+          "invalid_guesses": 0,
+          "secret": "space",
+          "turns": [
+            {
+              "feedback": "00202",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "blush",
+              "prompt": "<P><G>irate<F>00202<G>"
+            },
+            {
+              "feedback": "20202",
+              "guess": "snake",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00010<G>"
+            },
+            {
+              "feedback": "21202",
+              "guess": "scare",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00010<G>snake<F>20202<G>"
+            },
+            {
+              "feedback": "21202",
+              "guess": "scale",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00010<G>snake<F>20202<G>scare<F>21202<G>"
+            },
+            {
+              "feedback": "21202",
+              "guess": "scare",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00010<G>snake<F>20202<G>scare<F>21202<G>scale<F>21202<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "light",
+            "built",
+            "limit",
+            "limit",
+            "limit"
+          ],
+          "invalid_guesses": 0,
+          "secret": "split",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11002",
+              "guess": "light",
+              "prompt": "<P><G>irate<F>10010<G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "built",
+              "prompt": "<P><G>irate<F>10010<G>light<F>11002<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>11002<G>built<F>00112<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>11002<G>built<F>00112<G>limit<F>10022<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>11002<G>built<F>00112<G>limit<F>10022<G>limit<F>10022<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "clash",
+            "stack"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stack",
+          "turns": [
+            {
+              "feedback": "00210",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10210",
+              "guess": "clash",
+              "prompt": "<P><G>irate<F>00210<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stack",
+              "prompt": "<P><G>irate<F>00210<G>clash<F>10210<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blast",
+            "stale"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stale",
+          "turns": [
+            {
+              "feedback": "00212",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01211",
+              "guess": "blast",
+              "prompt": "<P><G>irate<F>00212<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stale",
+              "prompt": "<P><G>irate<F>00212<G>blast<F>01211<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "stare"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stare",
+          "turns": [
+            {
+              "feedback": "01212",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stare",
+              "prompt": "<P><G>irate<F>01212<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "light",
+            "stick"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stick",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "light",
+              "prompt": "<P><G>irate<F>10010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stick",
+              "prompt": "<P><G>irate<F>10010<G>light<F>01001<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "strap",
+            "strap",
+            "straw"
+          ],
+          "invalid_guesses": 0,
+          "secret": "straw",
+          "turns": [
+            {
+              "feedback": "01110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22220",
+              "guess": "strap",
+              "prompt": "<P><G>irate<F>01110<G>"
+            },
+            {
+              "feedback": "22220",
+              "guess": "strap",
+              "prompt": "<P><G>irate<F>01110<G>strap<F>22220<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "straw",
+              "prompt": "<P><G>irate<F>01110<G>strap<F>22220<G>strap<F>22220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "stuck"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stuck",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stuck",
+              "prompt": "<P><G>irate<F>00010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bonus",
+            "sunny"
+          ],
+          "invalid_guesses": 0,
+          "secret": "sunny",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00211",
+              "guess": "bonus",
+              "prompt": "<P><G>irate<F>00000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "sunny",
+              "prompt": "<P><G>irate<F>00000<G>bonus<F>00211<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "apron",
+            "super"
+          ],
+          "invalid_guesses": 0,
+          "secret": "super",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "apron",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "super",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>01100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "album",
+            "champ",
+            "staff",
+            "today"
+          ],
+          "invalid_guesses": 0,
+          "secret": "today",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "album",
+              "prompt": "<P><G>irate<F>00110<G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "champ",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "staff",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>00100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "today",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>00100<G>staff<F>01100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "other",
+            "outer",
+            "outer",
+            "outer",
+            "other"
+          ],
+          "invalid_guesses": 0,
+          "secret": "tower",
+          "turns": [
+            {
+              "feedback": "01011",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11022",
+              "guess": "other",
+              "prompt": "<P><G>irate<F>01011<G>"
+            },
+            {
+              "feedback": "10122",
+              "guess": "outer",
+              "prompt": "<P><G>irate<F>01011<G>other<F>11022<G>"
+            },
+            {
+              "feedback": "10122",
+              "guess": "outer",
+              "prompt": "<P><G>irate<F>01011<G>other<F>11022<G>outer<F>10122<G>"
+            },
+            {
+              "feedback": "10122",
+              "guess": "outer",
+              "prompt": "<P><G>irate<F>01011<G>other<F>11022<G>outer<F>10122<G>outer<F>10122<G>"
+            },
+            {
+              "feedback": "11022",
+              "guess": "other",
+              "prompt": "<P><G>irate<F>01011<G>other<F>11022<G>outer<F>10122<G>outer<F>10122<G>outer<F>10122<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "trail"
+          ],
+          "invalid_guesses": 0,
+          "secret": "trail",
+          "turns": [
+            {
+              "feedback": "12210",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "trail",
+              "prompt": "<P><G>irate<F>12210<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "album",
+            "champ",
+            "ranch",
+            "ranch",
+            "ratio"
+          ],
+          "invalid_guesses": 0,
+          "secret": "watch",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "album",
+              "prompt": "<P><G>irate<F>00110<G>"
+            },
+            {
+              "feedback": "11100",
+              "guess": "champ",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "ranch",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>11100<G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "ranch",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>11100<G>ranch<F>02022<G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "ratio",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>11100<G>ranch<F>02022<G>ranch<F>02022<G>"
+            }
+          ],
+          "won": false
+        }
+      ],
+      "win_rate": 0.8194444444444444,
+      "wins": 59
+    },
+    "word-argmax": {
+      "average_attempts": 3.9305555555555554,
+      "average_guesses": 3.4745762711864407,
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-100.pt",
+      "decode": "word-argmax",
+      "games": 72,
+      "invalid_guesses": 0,
+      "results": [
+        {
+          "guesses": [
+            "irate",
+            "album",
+            "adopt"
+          ],
+          "invalid_guesses": 0,
+          "secret": "adopt",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "album",
+              "prompt": "<P><G>irate<F>00110<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "adopt",
+              "prompt": "<P><G>irate<F>00110<G>album<F>20000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "agree"
+          ],
+          "invalid_guesses": 0,
+          "secret": "agree",
+          "turns": [
+            {
+              "feedback": "01102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "agree",
+              "prompt": "<P><G>irate<F>01102<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "alike",
+            "agile",
+            "aisle"
+          ],
+          "invalid_guesses": 0,
+          "secret": "aisle",
+          "turns": [
+            {
+              "feedback": "10102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21102",
+              "guess": "alike",
+              "prompt": "<P><G>irate<F>10102<G>"
+            },
+            {
+              "feedback": "20122",
+              "guess": "agile",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>21102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "aisle",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>21102<G>agile<F>20122<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "camel",
+            "alert"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alert",
+          "turns": [
+            {
+              "feedback": "01111",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01011",
+              "guess": "camel",
+              "prompt": "<P><G>irate<F>01111<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "alert",
+              "prompt": "<P><G>irate<F>01111<G>camel<F>01011<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blind",
+            "alibi"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alibi",
+          "turns": [
+            {
+              "feedback": "10100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "12200",
+              "guess": "blind",
+              "prompt": "<P><G>irate<F>10100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "alibi",
+              "prompt": "<P><G>irate<F>10100<G>blind<F>12200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "alike",
+            "alike",
+            "align",
+            "alive"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alive",
+          "turns": [
+            {
+              "feedback": "10102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22202",
+              "guess": "alike",
+              "prompt": "<P><G>irate<F>10102<G>"
+            },
+            {
+              "feedback": "22202",
+              "guess": "alike",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>22202<G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "align",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>22202<G>alike<F>22202<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "alive",
+              "prompt": "<P><G>irate<F>10102<G>alike<F>22202<G>alike<F>22202<G>align<F>22200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "amend"
+          ],
+          "invalid_guesses": 0,
+          "secret": "amend",
+          "turns": [
+            {
+              "feedback": "00101",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "amend",
+              "prompt": "<P><G>irate<F>00101<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bloom",
+            "major",
+            "armor"
+          ],
+          "invalid_guesses": 0,
+          "secret": "armor",
+          "turns": [
+            {
+              "feedback": "02100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00021",
+              "guess": "bloom",
+              "prompt": "<P><G>irate<F>02100<G>"
+            },
+            {
+              "feedback": "11022",
+              "guess": "major",
+              "prompt": "<P><G>irate<F>02100<G>bloom<F>00021<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "armor",
+              "prompt": "<P><G>irate<F>02100<G>bloom<F>00021<G>major<F>11022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "cheat",
+            "asset"
+          ],
+          "invalid_guesses": 0,
+          "secret": "asset",
+          "turns": [
+            {
+              "feedback": "00111",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "cheat",
+              "prompt": "<P><G>irate<F>00111<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "asset",
+              "prompt": "<P><G>irate<F>00111<G>cheat<F>00112<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "adopt",
+            "again",
+            "avoid",
+            "award"
+          ],
+          "invalid_guesses": 0,
+          "secret": "award",
+          "turns": [
+            {
+              "feedback": "01200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21000",
+              "guess": "adopt",
+              "prompt": "<P><G>irate<F>01200<G>"
+            },
+            {
+              "feedback": "20200",
+              "guess": "again",
+              "prompt": "<P><G>irate<F>01200<G>adopt<F>21000<G>"
+            },
+            {
+              "feedback": "20002",
+              "guess": "avoid",
+              "prompt": "<P><G>irate<F>01200<G>adopt<F>21000<G>again<F>20200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "award",
+              "prompt": "<P><G>irate<F>01200<G>adopt<F>21000<G>again<F>20200<G>avoid<F>20002<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "clash",
+            "aware"
+          ],
+          "invalid_guesses": 0,
+          "secret": "aware",
+          "turns": [
+            {
+              "feedback": "01202",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00200",
+              "guess": "clash",
+              "prompt": "<P><G>irate<F>01202<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "aware",
+              "prompt": "<P><G>irate<F>01202<G>clash<F>00200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bonus",
+            "badly"
+          ],
+          "invalid_guesses": 0,
+          "secret": "badly",
+          "turns": [
+            {
+              "feedback": "00100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "bonus",
+              "prompt": "<P><G>irate<F>00100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "badly",
+              "prompt": "<P><G>irate<F>00100<G>bonus<F>20000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blind",
+            "basin"
+          ],
+          "invalid_guesses": 0,
+          "secret": "basin",
+          "turns": [
+            {
+              "feedback": "10100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20110",
+              "guess": "blind",
+              "prompt": "<P><G>irate<F>10100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "basin",
+              "prompt": "<P><G>irate<F>10100<G>blind<F>20110<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blast",
+            "beast"
+          ],
+          "invalid_guesses": 0,
+          "secret": "beast",
+          "turns": [
+            {
+              "feedback": "00211",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20222",
+              "guess": "blast",
+              "prompt": "<P><G>irate<F>00211<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "beast",
+              "prompt": "<P><G>irate<F>00211<G>blast<F>20222<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "every",
+            "query",
+            "query",
+            "query"
+          ],
+          "invalid_guesses": 0,
+          "secret": "berry",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "every",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "query",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>every<F>10022<G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "query",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>every<F>10022<G>query<F>00122<G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "query",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>every<F>10022<G>query<F>00122<G>query<F>00122<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "shock",
+            "bland"
+          ],
+          "invalid_guesses": 0,
+          "secret": "bland",
+          "turns": [
+            {
+              "feedback": "00200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "shock",
+              "prompt": "<P><G>irate<F>00200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "bland",
+              "prompt": "<P><G>irate<F>00200<G>shock<F>00000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "wheel",
+            "blend",
+            "bless"
+          ],
+          "invalid_guesses": 0,
+          "secret": "bless",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00201",
+              "guess": "wheel",
+              "prompt": "<P><G>irate<F>00001<G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "blend",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>00201<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "bless",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>00201<G>blend<F>22200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bonus",
+            "blood",
+            "block"
+          ],
+          "invalid_guesses": 0,
+          "secret": "block",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21000",
+              "guess": "bonus",
+              "prompt": "<P><G>irate<F>00000<G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "blood",
+              "prompt": "<P><G>irate<F>00000<G>bonus<F>21000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "block",
+              "prompt": "<P><G>irate<F>00000<G>bonus<F>21000<G>blood<F>22200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "adobe",
+            "brain"
+          ],
+          "invalid_guesses": 0,
+          "secret": "brain",
+          "turns": [
+            {
+              "feedback": "12200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "adobe",
+              "prompt": "<P><G>irate<F>12200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "brain",
+              "prompt": "<P><G>irate<F>12200<G>adobe<F>10010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "along",
+            "canoe"
+          ],
+          "invalid_guesses": 0,
+          "secret": "canoe",
+          "turns": [
+            {
+              "feedback": "00102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10110",
+              "guess": "along",
+              "prompt": "<P><G>irate<F>00102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "canoe",
+              "prompt": "<P><G>irate<F>00102<G>along<F>10110<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "close",
+            "chose"
+          ],
+          "invalid_guesses": 0,
+          "secret": "chose",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20222",
+              "guess": "close",
+              "prompt": "<P><G>irate<F>00002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "chose",
+              "prompt": "<P><G>irate<F>00002<G>close<F>20222<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bonus",
+            "couch"
+          ],
+          "invalid_guesses": 0,
+          "secret": "couch",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02010",
+              "guess": "bonus",
+              "prompt": "<P><G>irate<F>00000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "couch",
+              "prompt": "<P><G>irate<F>00000<G>bonus<F>02010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "apron",
+            "owner",
+            "cover"
+          ],
+          "invalid_guesses": 0,
+          "secret": "cover",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "apron",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "owner",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>00110<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "cover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>00110<G>owner<F>10022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bench",
+            "crash",
+            "crawl"
+          ],
+          "invalid_guesses": 0,
+          "secret": "crawl",
+          "turns": [
+            {
+              "feedback": "02200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "bench",
+              "prompt": "<P><G>irate<F>02200<G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "crash",
+              "prompt": "<P><G>irate<F>02200<G>bench<F>00010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "crawl",
+              "prompt": "<P><G>irate<F>02200<G>bench<F>00010<G>crash<F>22200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "along",
+            "dance"
+          ],
+          "invalid_guesses": 0,
+          "secret": "dance",
+          "turns": [
+            {
+              "feedback": "00102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "along",
+              "prompt": "<P><G>irate<F>00102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "dance",
+              "prompt": "<P><G>irate<F>00102<G>along<F>10010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "click",
+            "disco"
+          ],
+          "invalid_guesses": 0,
+          "secret": "disco",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00120",
+              "guess": "click",
+              "prompt": "<P><G>irate<F>10000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "disco",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00120<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "click",
+            "bonus",
+            "might",
+            "pixel",
+            "video"
+          ],
+          "invalid_guesses": 0,
+          "secret": "dizzy",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "click",
+              "prompt": "<P><G>irate<F>10000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "bonus",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00100<G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "might",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00100<G>bonus<F>00000<G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "pixel",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00100<G>bonus<F>00000<G>might<F>02000<G>"
+            },
+            {
+              "feedback": "02100",
+              "guess": "video",
+              "prompt": "<P><G>irate<F>10000<G>click<F>00100<G>bonus<F>00000<G>might<F>02000<G>pixel<F>02000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "wheel",
+            "below",
+            "elbow"
+          ],
+          "invalid_guesses": 0,
+          "secret": "elbow",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10101",
+              "guess": "wheel",
+              "prompt": "<P><G>irate<F>00001<G>"
+            },
+            {
+              "feedback": "11122",
+              "guess": "below",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>10101<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "elbow",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>10101<G>below<F>11122<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "linen",
+            "equip"
+          ],
+          "invalid_guesses": 0,
+          "secret": "equip",
+          "turns": [
+            {
+              "feedback": "10001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "linen",
+              "prompt": "<P><G>irate<F>10001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "equip",
+              "prompt": "<P><G>irate<F>10001<G>linen<F>01010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "faith"
+          ],
+          "invalid_guesses": 0,
+          "secret": "faith",
+          "turns": [
+            {
+              "feedback": "10120",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "faith",
+              "prompt": "<P><G>irate<F>10120<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "ferry"
+          ],
+          "invalid_guesses": 0,
+          "secret": "ferry",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20100",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "ferry",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>20100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fifth",
+            "fifty"
+          ],
+          "invalid_guesses": 0,
+          "secret": "fifty",
+          "turns": [
+            {
+              "feedback": "10020",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22220",
+              "guess": "fifth",
+              "prompt": "<P><G>irate<F>10020<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "fifty",
+              "prompt": "<P><G>irate<F>10020<G>fifth<F>22220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "album",
+            "plant",
+            "float"
+          ],
+          "invalid_guesses": 0,
+          "secret": "float",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "12000",
+              "guess": "album",
+              "prompt": "<P><G>irate<F>00110<G>"
+            },
+            {
+              "feedback": "02102",
+              "guess": "plant",
+              "prompt": "<P><G>irate<F>00110<G>album<F>12000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "float",
+              "prompt": "<P><G>irate<F>00110<G>album<F>12000<G>plant<F>02102<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bound",
+            "crown",
+            "brown",
+            "brown",
+            "brown"
+          ],
+          "invalid_guesses": 0,
+          "secret": "grown",
+          "turns": [
+            {
+              "feedback": "02000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "bound",
+              "prompt": "<P><G>irate<F>02000<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "crown",
+              "prompt": "<P><G>irate<F>02000<G>bound<F>01010<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "brown",
+              "prompt": "<P><G>irate<F>02000<G>bound<F>01010<G>crown<F>02222<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "brown",
+              "prompt": "<P><G>irate<F>02000<G>bound<F>01010<G>crown<F>02222<G>brown<F>02222<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "brown",
+              "prompt": "<P><G>irate<F>02000<G>bound<F>01010<G>crown<F>02222<G>brown<F>02222<G>brown<F>02222<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "close",
+            "house"
+          ],
+          "invalid_guesses": 0,
+          "secret": "house",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "close",
+              "prompt": "<P><G>irate<F>00002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "house",
+              "prompt": "<P><G>irate<F>00002<G>close<F>00122<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "amend",
+            "equal",
+            "camel",
+            "panel",
+            "label"
+          ],
+          "invalid_guesses": 0,
+          "secret": "label",
+          "turns": [
+            {
+              "feedback": "00101",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "amend",
+              "prompt": "<P><G>irate<F>00101<G>"
+            },
+            {
+              "feedback": "10012",
+              "guess": "equal",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>10100<G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "camel",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>10100<G>equal<F>10012<G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "panel",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>10100<G>equal<F>10012<G>camel<F>02022<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "label",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>10100<G>equal<F>10012<G>camel<F>02022<G>panel<F>02022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "lover",
+            "lover",
+            "lover",
+            "lover"
+          ],
+          "invalid_guesses": 0,
+          "secret": "lower",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01020",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "22022",
+              "guess": "lover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>01020<G>"
+            },
+            {
+              "feedback": "22022",
+              "guess": "lover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>01020<G>lover<F>22022<G>"
+            },
+            {
+              "feedback": "22022",
+              "guess": "lover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>01020<G>lover<F>22022<G>lover<F>22022<G>"
+            },
+            {
+              "feedback": "22022",
+              "guess": "lover",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>01020<G>lover<F>22022<G>lover<F>22022<G>lover<F>22022<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "amend",
+            "medal"
+          ],
+          "invalid_guesses": 0,
+          "secret": "medal",
+          "turns": [
+            {
+              "feedback": "00101",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11101",
+              "guess": "amend",
+              "prompt": "<P><G>irate<F>00101<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "medal",
+              "prompt": "<P><G>irate<F>00101<G>amend<F>11101<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "every",
+            "mercy"
+          ],
+          "invalid_guesses": 0,
+          "secret": "mercy",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "10012",
+              "guess": "every",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "mercy",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00100<G>every<F>10012<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "slick",
+            "glide",
+            "elite",
+            "elite",
+            "elite"
+          ],
+          "invalid_guesses": 0,
+          "secret": "olive",
+          "turns": [
+            {
+              "feedback": "10002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "slick",
+              "prompt": "<P><G>irate<F>10002<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "glide",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>02200<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "elite",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>02200<G>glide<F>02202<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "elite",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>02200<G>glide<F>02202<G>elite<F>02202<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "elite",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>02200<G>glide<F>02202<G>elite<F>02202<G>elite<F>02202<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "orbit"
+          ],
+          "invalid_guesses": 0,
+          "secret": "orbit",
+          "turns": [
+            {
+              "feedback": "12010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "orbit",
+              "prompt": "<P><G>irate<F>12010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "carry",
+            "harsh",
+            "major",
+            "range",
+            "parka"
+          ],
+          "invalid_guesses": 0,
+          "secret": "parka",
+          "turns": [
+            {
+              "feedback": "01100",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "carry",
+              "prompt": "<P><G>irate<F>01100<G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "harsh",
+              "prompt": "<P><G>irate<F>01100<G>carry<F>02200<G>"
+            },
+            {
+              "feedback": "02001",
+              "guess": "major",
+              "prompt": "<P><G>irate<F>01100<G>carry<F>02200<G>harsh<F>02200<G>"
+            },
+            {
+              "feedback": "12000",
+              "guess": "range",
+              "prompt": "<P><G>irate<F>01100<G>carry<F>02200<G>harsh<F>02200<G>major<F>02001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "parka",
+              "prompt": "<P><G>irate<F>01100<G>carry<F>02200<G>harsh<F>02200<G>major<F>02001<G>range<F>12000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "nasty",
+            "party"
+          ],
+          "invalid_guesses": 0,
+          "secret": "party",
+          "turns": [
+            {
+              "feedback": "01120",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "nasty",
+              "prompt": "<P><G>irate<F>01120<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "party",
+              "prompt": "<P><G>irate<F>01120<G>nasty<F>02022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "slick",
+            "piece"
+          ],
+          "invalid_guesses": 0,
+          "secret": "piece",
+          "turns": [
+            {
+              "feedback": "10002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00120",
+              "guess": "slick",
+              "prompt": "<P><G>irate<F>10002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "piece",
+              "prompt": "<P><G>irate<F>10002<G>slick<F>00120<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "light",
+            "limit",
+            "linen",
+            "limit",
+            "limit"
+          ],
+          "invalid_guesses": 0,
+          "secret": "pilot",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "light",
+              "prompt": "<P><G>irate<F>10010<G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>12002<G>"
+            },
+            {
+              "feedback": "12000",
+              "guess": "linen",
+              "prompt": "<P><G>irate<F>10010<G>light<F>12002<G>limit<F>12002<G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>12002<G>limit<F>12002<G>linen<F>12000<G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>12002<G>limit<F>12002<G>linen<F>12000<G>limit<F>12002<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "apron",
+            "super",
+            "opera",
+            "opera"
+          ],
+          "invalid_guesses": 0,
+          "secret": "power",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "01110",
+              "guess": "apron",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "super",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>01110<G>"
+            },
+            {
+              "feedback": "11110",
+              "guess": "opera",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>01110<G>super<F>00122<G>"
+            },
+            {
+              "feedback": "11110",
+              "guess": "opera",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>01110<G>super<F>00122<G>opera<F>11110<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "dance",
+            "fresh",
+            "fresh",
+            "guess",
+            "dress"
+          ],
+          "invalid_guesses": 0,
+          "secret": "press",
+          "turns": [
+            {
+              "feedback": "02001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "dance",
+              "prompt": "<P><G>irate<F>02001<G>"
+            },
+            {
+              "feedback": "02220",
+              "guess": "fresh",
+              "prompt": "<P><G>irate<F>02001<G>dance<F>00001<G>"
+            },
+            {
+              "feedback": "02220",
+              "guess": "fresh",
+              "prompt": "<P><G>irate<F>02001<G>dance<F>00001<G>fresh<F>02220<G>"
+            },
+            {
+              "feedback": "00222",
+              "guess": "guess",
+              "prompt": "<P><G>irate<F>02001<G>dance<F>00001<G>fresh<F>02220<G>fresh<F>02220<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "dress",
+              "prompt": "<P><G>irate<F>02001<G>dance<F>00001<G>fresh<F>02220<G>fresh<F>02220<G>guess<F>00222<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "candy",
+            "movie",
+            "smile",
+            "write",
+            "prime"
+          ],
+          "invalid_guesses": 0,
+          "secret": "prime",
+          "turns": [
+            {
+              "feedback": "12002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "candy",
+              "prompt": "<P><G>irate<F>12002<G>"
+            },
+            {
+              "feedback": "10012",
+              "guess": "movie",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>"
+            },
+            {
+              "feedback": "01202",
+              "guess": "smile",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>10012<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "write",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>10012<G>smile<F>01202<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "prime",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>10012<G>smile<F>01202<G>write<F>02202<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "candy",
+            "movie",
+            "write",
+            "write",
+            "write"
+          ],
+          "invalid_guesses": 0,
+          "secret": "prize",
+          "turns": [
+            {
+              "feedback": "12002",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "candy",
+              "prompt": "<P><G>irate<F>12002<G>"
+            },
+            {
+              "feedback": "00012",
+              "guess": "movie",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "write",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>00012<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "write",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>00012<G>write<F>02202<G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "write",
+              "prompt": "<P><G>irate<F>12002<G>candy<F>00000<G>movie<F>00012<G>write<F>02202<G>write<F>02202<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "raise"
+          ],
+          "invalid_guesses": 0,
+          "secret": "raise",
+          "turns": [
+            {
+              "feedback": "11102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "raise",
+              "prompt": "<P><G>irate<F>11102<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "agree",
+            "large",
+            "carve",
+            "range"
+          ],
+          "invalid_guesses": 0,
+          "secret": "range",
+          "turns": [
+            {
+              "feedback": "01102",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11102",
+              "guess": "agree",
+              "prompt": "<P><G>irate<F>01102<G>"
+            },
+            {
+              "feedback": "02122",
+              "guess": "large",
+              "prompt": "<P><G>irate<F>01102<G>agree<F>11102<G>"
+            },
+            {
+              "feedback": "02102",
+              "guess": "carve",
+              "prompt": "<P><G>irate<F>01102<G>agree<F>11102<G>large<F>02122<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "range",
+              "prompt": "<P><G>irate<F>01102<G>agree<F>11102<G>large<F>02122<G>carve<F>02102<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "couch",
+            "round"
+          ],
+          "invalid_guesses": 0,
+          "secret": "round",
+          "turns": [
+            {
+              "feedback": "01000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "couch",
+              "prompt": "<P><G>irate<F>01000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "round",
+              "prompt": "<P><G>irate<F>01000<G>couch<F>02200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "adopt",
+            "shark",
+            "smart",
+            "scare",
+            "scarf"
+          ],
+          "invalid_guesses": 0,
+          "secret": "scarf",
+          "turns": [
+            {
+              "feedback": "01200",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "adopt",
+              "prompt": "<P><G>irate<F>01200<G>"
+            },
+            {
+              "feedback": "20220",
+              "guess": "shark",
+              "prompt": "<P><G>irate<F>01200<G>adopt<F>10000<G>"
+            },
+            {
+              "feedback": "20220",
+              "guess": "smart",
+              "prompt": "<P><G>irate<F>01200<G>adopt<F>10000<G>shark<F>20220<G>"
+            },
+            {
+              "feedback": "22220",
+              "guess": "scare",
+              "prompt": "<P><G>irate<F>01200<G>adopt<F>10000<G>shark<F>20220<G>smart<F>20220<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "scarf",
+              "prompt": "<P><G>irate<F>01200<G>adopt<F>10000<G>shark<F>20220<G>smart<F>20220<G>scare<F>22220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "stuck",
+            "scout"
+          ],
+          "invalid_guesses": 0,
+          "secret": "scout",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21110",
+              "guess": "stuck",
+              "prompt": "<P><G>irate<F>00010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "scout",
+              "prompt": "<P><G>irate<F>00010<G>stuck<F>21110<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "wheel",
+            "enemy",
+            "seven"
+          ],
+          "invalid_guesses": 0,
+          "secret": "seven",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00120",
+              "guess": "wheel",
+              "prompt": "<P><G>irate<F>00001<G>"
+            },
+            {
+              "feedback": "11100",
+              "guess": "enemy",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>00120<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "seven",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>00120<G>enemy<F>11100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blush",
+            "adapt",
+            "shape"
+          ],
+          "invalid_guesses": 0,
+          "secret": "shape",
+          "turns": [
+            {
+              "feedback": "00202",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00011",
+              "guess": "blush",
+              "prompt": "<P><G>irate<F>00202<G>"
+            },
+            {
+              "feedback": "00220",
+              "guess": "adapt",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00011<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "shape",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00011<G>adapt<F>00220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "wheel",
+            "cheek",
+            "sheep"
+          ],
+          "invalid_guesses": 0,
+          "secret": "sheep",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02220",
+              "guess": "wheel",
+              "prompt": "<P><G>irate<F>00001<G>"
+            },
+            {
+              "feedback": "02220",
+              "guess": "cheek",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>02220<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "sheep",
+              "prompt": "<P><G>irate<F>00001<G>wheel<F>02220<G>cheek<F>02220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "stuck",
+            "south",
+            "shout"
+          ],
+          "invalid_guesses": 0,
+          "secret": "shout",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21100",
+              "guess": "stuck",
+              "prompt": "<P><G>irate<F>00010<G>"
+            },
+            {
+              "feedback": "21111",
+              "guess": "south",
+              "prompt": "<P><G>irate<F>00010<G>stuck<F>21100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "shout",
+              "prompt": "<P><G>irate<F>00010<G>stuck<F>21100<G>south<F>21111<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blush",
+            "snake",
+            "scare",
+            "scale",
+            "scare"
+          ],
+          "invalid_guesses": 0,
+          "secret": "space",
+          "turns": [
+            {
+              "feedback": "00202",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "blush",
+              "prompt": "<P><G>irate<F>00202<G>"
+            },
+            {
+              "feedback": "20202",
+              "guess": "snake",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00010<G>"
+            },
+            {
+              "feedback": "21202",
+              "guess": "scare",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00010<G>snake<F>20202<G>"
+            },
+            {
+              "feedback": "21202",
+              "guess": "scale",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00010<G>snake<F>20202<G>scare<F>21202<G>"
+            },
+            {
+              "feedback": "21202",
+              "guess": "scare",
+              "prompt": "<P><G>irate<F>00202<G>blush<F>00010<G>snake<F>20202<G>scare<F>21202<G>scale<F>21202<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "light",
+            "built",
+            "limit",
+            "limit",
+            "limit"
+          ],
+          "invalid_guesses": 0,
+          "secret": "split",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11002",
+              "guess": "light",
+              "prompt": "<P><G>irate<F>10010<G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "built",
+              "prompt": "<P><G>irate<F>10010<G>light<F>11002<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>11002<G>built<F>00112<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>11002<G>built<F>00112<G>limit<F>10022<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "limit",
+              "prompt": "<P><G>irate<F>10010<G>light<F>11002<G>built<F>00112<G>limit<F>10022<G>limit<F>10022<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "clash",
+            "stack"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stack",
+          "turns": [
+            {
+              "feedback": "00210",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10210",
+              "guess": "clash",
+              "prompt": "<P><G>irate<F>00210<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stack",
+              "prompt": "<P><G>irate<F>00210<G>clash<F>10210<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "blast",
+            "stale"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stale",
+          "turns": [
+            {
+              "feedback": "00212",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01211",
+              "guess": "blast",
+              "prompt": "<P><G>irate<F>00212<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stale",
+              "prompt": "<P><G>irate<F>00212<G>blast<F>01211<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "stare"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stare",
+          "turns": [
+            {
+              "feedback": "01212",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stare",
+              "prompt": "<P><G>irate<F>01212<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "light",
+            "stick"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stick",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "light",
+              "prompt": "<P><G>irate<F>10010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stick",
+              "prompt": "<P><G>irate<F>10010<G>light<F>01001<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "strap",
+            "strap",
+            "straw"
+          ],
+          "invalid_guesses": 0,
+          "secret": "straw",
+          "turns": [
+            {
+              "feedback": "01110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22220",
+              "guess": "strap",
+              "prompt": "<P><G>irate<F>01110<G>"
+            },
+            {
+              "feedback": "22220",
+              "guess": "strap",
+              "prompt": "<P><G>irate<F>01110<G>strap<F>22220<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "straw",
+              "prompt": "<P><G>irate<F>01110<G>strap<F>22220<G>strap<F>22220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "stuck"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stuck",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stuck",
+              "prompt": "<P><G>irate<F>00010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "bonus",
+            "sunny"
+          ],
+          "invalid_guesses": 0,
+          "secret": "sunny",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00211",
+              "guess": "bonus",
+              "prompt": "<P><G>irate<F>00000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "sunny",
+              "prompt": "<P><G>irate<F>00000<G>bonus<F>00211<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "fleet",
+            "apron",
+            "super"
+          ],
+          "invalid_guesses": 0,
+          "secret": "super",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "fleet",
+              "prompt": "<P><G>irate<F>01001<G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "apron",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "super",
+              "prompt": "<P><G>irate<F>01001<G>fleet<F>00020<G>apron<F>01100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "album",
+            "champ",
+            "staff",
+            "today"
+          ],
+          "invalid_guesses": 0,
+          "secret": "today",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "album",
+              "prompt": "<P><G>irate<F>00110<G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "champ",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "staff",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>00100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "today",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>00100<G>staff<F>01100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "other",
+            "outer",
+            "outer",
+            "outer",
+            "other"
+          ],
+          "invalid_guesses": 0,
+          "secret": "tower",
+          "turns": [
+            {
+              "feedback": "01011",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11022",
+              "guess": "other",
+              "prompt": "<P><G>irate<F>01011<G>"
+            },
+            {
+              "feedback": "10122",
+              "guess": "outer",
+              "prompt": "<P><G>irate<F>01011<G>other<F>11022<G>"
+            },
+            {
+              "feedback": "10122",
+              "guess": "outer",
+              "prompt": "<P><G>irate<F>01011<G>other<F>11022<G>outer<F>10122<G>"
+            },
+            {
+              "feedback": "10122",
+              "guess": "outer",
+              "prompt": "<P><G>irate<F>01011<G>other<F>11022<G>outer<F>10122<G>outer<F>10122<G>"
+            },
+            {
+              "feedback": "11022",
+              "guess": "other",
+              "prompt": "<P><G>irate<F>01011<G>other<F>11022<G>outer<F>10122<G>outer<F>10122<G>outer<F>10122<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "irate",
+            "trail"
+          ],
+          "invalid_guesses": 0,
+          "secret": "trail",
+          "turns": [
+            {
+              "feedback": "12210",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "trail",
+              "prompt": "<P><G>irate<F>12210<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "irate",
+            "album",
+            "champ",
+            "ranch",
+            "ranch",
+            "ratio"
+          ],
+          "invalid_guesses": 0,
+          "secret": "watch",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "irate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "album",
+              "prompt": "<P><G>irate<F>00110<G>"
+            },
+            {
+              "feedback": "11100",
+              "guess": "champ",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "ranch",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>11100<G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "ranch",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>11100<G>ranch<F>02022<G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "ratio",
+              "prompt": "<P><G>irate<F>00110<G>album<F>10000<G>champ<F>11100<G>ranch<F>02022<G>ranch<F>02022<G>"
+            }
+          ],
+          "won": false
+        }
+      ],
+      "win_rate": 0.8194444444444444,
+      "wins": 59
+    }
+  },
+  "identity": {
+    "audit_version": 1,
+    "checkpoint": "runs/grpo-dev-dense/checkpoints/update-100.pt",
+    "secrets": [
+      "adopt",
+      "agree",
+      "aisle",
+      "alert",
+      "alibi",
+      "alive",
+      "amend",
+      "armor",
+      "asset",
+      "award",
+      "aware",
+      "badly",
+      "basin",
+      "beast",
+      "berry",
+      "bland",
+      "bless",
+      "block",
+      "brain",
+      "canoe",
+      "chose",
+      "couch",
+      "cover",
+      "crawl",
+      "dance",
+      "disco",
+      "dizzy",
+      "elbow",
+      "equip",
+      "faith",
+      "ferry",
+      "fifty",
+      "float",
+      "grown",
+      "house",
+      "label",
+      "lower",
+      "medal",
+      "mercy",
+      "olive",
+      "orbit",
+      "parka",
+      "party",
+      "piece",
+      "pilot",
+      "power",
+      "press",
+      "prime",
+      "prize",
+      "raise",
+      "range",
+      "round",
+      "scarf",
+      "scout",
+      "seven",
+      "shape",
+      "sheep",
+      "shout",
+      "space",
+      "split",
+      "stack",
+      "stale",
+      "stare",
+      "stick",
+      "straw",
+      "stuck",
+      "sunny",
+      "super",
+      "today",
+      "tower",
+      "trail",
+      "watch"
+    ],
+    "sha256": "594a68747ebeadb4a936db88e881d29faa29c5a73168f9c33b46d14609e405a0",
+    "words": [
+      "aback",
+      "abase",
+      "abate",
+      "abbey",
+      "abyss",
+      "acute",
+      "adapt",
+      "admit",
+      "adobe",
+      "adopt",
+      "adore",
+      "adult",
+      "after",
+      "again",
+      "agent",
+      "agile",
+      "aging",
+      "agree",
+      "ahead",
+      "aisle",
+      "alarm",
+      "album",
+      "alert",
+      "algae",
+      "alias",
+      "alibi",
+      "alien",
+      "align",
+      "alike",
+      "alive",
+      "allow",
+      "alone",
+      "along",
+      "alter",
+      "amber",
+      "amend",
+      "ample",
+      "angel",
+      "anger",
+      "angle",
+      "angry",
+      "ankle",
+      "apple",
+      "apply",
+      "apron",
+      "arena",
+      "argue",
+      "arise",
+      "armor",
+      "aroma",
+      "array",
+      "arrow",
+      "aside",
+      "asset",
+      "atlas",
+      "audio",
+      "audit",
+      "avoid",
+      "awake",
+      "award",
+      "aware",
+      "awful",
+      "bacon",
+      "badge",
+      "badly",
+      "baker",
+      "baler",
+      "basic",
+      "basil",
+      "basin",
+      "basis",
+      "batch",
+      "beach",
+      "beard",
+      "beast",
+      "began",
+      "begin",
+      "being",
+      "belly",
+      "below",
+      "bench",
+      "berry",
+      "birth",
+      "black",
+      "blame",
+      "bland",
+      "blank",
+      "blast",
+      "blaze",
+      "bleed",
+      "blend",
+      "bless",
+      "blind",
+      "blink",
+      "block",
+      "blood",
+      "bloom",
+      "blown",
+      "blues",
+      "blunt",
+      "blush",
+      "board",
+      "boast",
+      "bonus",
+      "boost",
+      "booth",
+      "bound",
+      "bowel",
+      "brain",
+      "brake",
+      "brand",
+      "brass",
+      "brave",
+      "bread",
+      "break",
+      "breed",
+      "brick",
+      "bride",
+      "brief",
+      "bring",
+      "broad",
+      "broke",
+      "brown",
+      "brush",
+      "build",
+      "built",
+      "buyer",
+      "cabin",
+      "cable",
+      "cacao",
+      "cache",
+      "camel",
+      "candy",
+      "canoe",
+      "cargo",
+      "carry",
+      "carve",
+      "catch",
+      "cater",
+      "cause",
+      "chain",
+      "chair",
+      "chalk",
+      "champ",
+      "chant",
+      "chaos",
+      "charm",
+      "chart",
+      "chase",
+      "cheap",
+      "cheat",
+      "check",
+      "cheek",
+      "cheer",
+      "chess",
+      "chest",
+      "chief",
+      "child",
+      "chili",
+      "chill",
+      "china",
+      "chirp",
+      "choir",
+      "chose",
+      "civic",
+      "civil",
+      "claim",
+      "clamp",
+      "clash",
+      "class",
+      "clean",
+      "clear",
+      "clerk",
+      "click",
+      "cliff",
+      "climb",
+      "cling",
+      "clock",
+      "clone",
+      "close",
+      "cloth",
+      "cloud",
+      "clown",
+      "coach",
+      "coast",
+      "colon",
+      "color",
+      "comet",
+      "coral",
+      "couch",
+      "could",
+      "count",
+      "court",
+      "cover",
+      "crack",
+      "craft",
+      "crane",
+      "crash",
+      "crate",
+      "crave",
+      "crawl",
+      "craze",
+      "cream",
+      "creek",
+      "crime",
+      "crisp",
+      "croak",
+      "crown",
+      "crude",
+      "crush",
+      "curly",
+      "curve",
+      "cycle",
+      "daily",
+      "dairy",
+      "daisy",
+      "dance",
+      "datum",
+      "dealt",
+      "death",
+      "decor",
+      "delay",
+      "delta",
+      "depth",
+      "digit",
+      "diner",
+      "dirty",
+      "disco",
+      "ditch",
+      "diver",
+      "dizzy",
+      "dodge",
+      "doing",
+      "donor",
+      "doubt",
+      "dozen",
+      "draft",
+      "drain",
+      "drama",
+      "drank",
+      "dream",
+      "dress",
+      "dried",
+      "drill",
+      "drink",
+      "drive",
+      "drove",
+      "drown",
+      "eager",
+      "early",
+      "earth",
+      "eight",
+      "elbow",
+      "elder",
+      "elect",
+      "elite",
+      "empty",
+      "enact",
+      "enemy",
+      "enjoy",
+      "entry",
+      "equal",
+      "equip",
+      "erase",
+      "error",
+      "essay",
+      "event",
+      "every",
+      "exact",
+      "extra",
+      "faith",
+      "false",
+      "fancy",
+      "fault",
+      "favor",
+      "feast",
+      "ferry",
+      "fewer",
+      "fiber",
+      "field",
+      "fiery",
+      "fifth",
+      "fifty",
+      "fight",
+      "final",
+      "first",
+      "flame",
+      "flank",
+      "flare",
+      "flash",
+      "fleet",
+      "flesh",
+      "flick",
+      "fling",
+      "float",
+      "flock",
+      "flood",
+      "floor",
+      "flour",
+      "fluid",
+      "flute",
+      "focus",
+      "force",
+      "forge",
+      "forth",
+      "forty",
+      "forum",
+      "found",
+      "frame",
+      "fresh",
+      "front",
+      "frost",
+      "fruit",
+      "funny",
+      "giant",
+      "given",
+      "glass",
+      "gleam",
+      "glide",
+      "globe",
+      "glory",
+      "glove",
+      "grace",
+      "grade",
+      "grain",
+      "grand",
+      "grant",
+      "grape",
+      "graph",
+      "grasp",
+      "grass",
+      "grave",
+      "great",
+      "green",
+      "greet",
+      "grief",
+      "grill",
+      "groan",
+      "group",
+      "grove",
+      "grown",
+      "guard",
+      "guess",
+      "guest",
+      "guide",
+      "guilt",
+      "habit",
+      "hairy",
+      "happy",
+      "harsh",
+      "haste",
+      "haunt",
+      "heart",
+      "heavy",
+      "hello",
+      "hence",
+      "honey",
+      "honor",
+      "horse",
+      "hotel",
+      "house",
+      "human",
+      "humor",
+      "ideal",
+      "image",
+      "imply",
+      "index",
+      "inner",
+      "input",
+      "irate",
+      "issue",
+      "ivory",
+      "jelly",
+      "jewel",
+      "joint",
+      "judge",
+      "juice",
+      "kneel",
+      "knife",
+      "knock",
+      "known",
+      "label",
+      "labor",
+      "lance",
+      "large",
+      "laser",
+      "later",
+      "laugh",
+      "layer",
+      "learn",
+      "least",
+      "leave",
+      "lemon",
+      "light",
+      "limit",
+      "linen",
+      "liver",
+      "local",
+      "lodge",
+      "logic",
+      "loose",
+      "lover",
+      "lower",
+      "lucky",
+      "lunch",
+      "magic",
+      "major",
+      "maker",
+      "maple",
+      "march",
+      "marry",
+      "match",
+      "maybe",
+      "mayor",
+      "medal",
+      "media",
+      "mercy",
+      "metal",
+      "meter",
+      "might",
+      "minor",
+      "model",
+      "money",
+      "month",
+      "moral",
+      "motor",
+      "mount",
+      "mouse",
+      "mouth",
+      "movie",
+      "music",
+      "naive",
+      "nasty",
+      "naval",
+      "nerve",
+      "never",
+      "night",
+      "noble",
+      "noise",
+      "north",
+      "novel",
+      "nurse",
+      "ocean",
+      "offer",
+      "often",
+      "olive",
+      "opera",
+      "orbit",
+      "order",
+      "organ",
+      "other",
+      "ought",
+      "ounce",
+      "outer",
+      "owner",
+      "paint",
+      "panel",
+      "panic",
+      "paper",
+      "parka",
+      "party",
+      "paste",
+      "patch",
+      "pause",
+      "peace",
+      "peach",
+      "pearl",
+      "pedal",
+      "phase",
+      "phone",
+      "piano",
+      "piece",
+      "pilot",
+      "pinch",
+      "pitch",
+      "pixel",
+      "place",
+      "plain",
+      "plane",
+      "plant",
+      "plate",
+      "plead",
+      "point",
+      "pound",
+      "power",
+      "press",
+      "price",
+      "pride",
+      "prime",
+      "print",
+      "prize",
+      "probe",
+      "prone",
+      "proof",
+      "proud",
+      "queen",
+      "query",
+      "quick",
+      "quiet",
+      "quilt",
+      "quite",
+      "radio",
+      "raise",
+      "rally",
+      "ranch",
+      "range",
+      "rapid",
+      "ratio",
+      "reach",
+      "react",
+      "ready",
+      "realm",
+      "refer",
+      "reign",
+      "relax",
+      "reply",
+      "rider",
+      "ridge",
+      "rifle",
+      "right",
+      "rigid",
+      "rival",
+      "river",
+      "roast",
+      "robot",
+      "rocky",
+      "rogue",
+      "rough",
+      "round",
+      "route",
+      "royal",
+      "rural",
+      "saint",
+      "salad",
+      "sauce",
+      "scale",
+      "scare",
+      "scarf",
+      "scene",
+      "scent",
+      "scope",
+      "score",
+      "scout",
+      "sense",
+      "serve",
+      "seven",
+      "shade",
+      "shake",
+      "shall",
+      "shame",
+      "shape",
+      "share",
+      "shark",
+      "sharp",
+      "sheep",
+      "sheer",
+      "shelf",
+      "shell",
+      "shift",
+      "shine",
+      "shirt",
+      "shock",
+      "shore",
+      "short",
+      "shout",
+      "sight",
+      "silly",
+      "since",
+      "skill",
+      "skirt",
+      "slate",
+      "sleep",
+      "slice",
+      "slick",
+      "slide",
+      "slope",
+      "small",
+      "smart",
+      "smell",
+      "smile",
+      "smoke",
+      "snack",
+      "snake",
+      "solar",
+      "solid",
+      "solve",
+      "sorry",
+      "sound",
+      "south",
+      "space",
+      "spare",
+      "speak",
+      "spear",
+      "speed",
+      "spice",
+      "spike",
+      "spill",
+      "spine",
+      "spite",
+      "split",
+      "sport",
+      "spray",
+      "stack",
+      "staff",
+      "stage",
+      "stain",
+      "stair",
+      "stake",
+      "stale",
+      "stand",
+      "stare",
+      "start",
+      "state",
+      "steam",
+      "steel",
+      "steep",
+      "stick",
+      "still",
+      "stock",
+      "stone",
+      "stood",
+      "store",
+      "storm",
+      "story",
+      "stove",
+      "strap",
+      "straw",
+      "strip",
+      "stuck",
+      "study",
+      "style",
+      "sugar",
+      "suite",
+      "sunny",
+      "super",
+      "sweet",
+      "sweep",
+      "sword",
+      "table",
+      "taken",
+      "taste",
+      "teach",
+      "tears",
+      "their",
+      "theme",
+      "there",
+      "thick",
+      "thief",
+      "thing",
+      "think",
+      "those",
+      "three",
+      "tiger",
+      "tight",
+      "timer",
+      "tired",
+      "title",
+      "today",
+      "token",
+      "topic",
+      "total",
+      "tower",
+      "trace",
+      "track",
+      "trade",
+      "trail",
+      "train",
+      "treat",
+      "trend",
+      "trial",
+      "tribe",
+      "trick",
+      "truck",
+      "truly",
+      "trust",
+      "truth",
+      "twice",
+      "uncle",
+      "under",
+      "union",
+      "unity",
+      "until",
+      "upper",
+      "upset",
+      "urban",
+      "usage",
+      "usual",
+      "valid",
+      "value",
+      "video",
+      "virus",
+      "visit",
+      "vital",
+      "voice",
+      "waste",
+      "watch",
+      "water",
+      "weary",
+      "weird",
+      "whale",
+      "wheat",
+      "wheel",
+      "where",
+      "which",
+      "while",
+      "white",
+      "whole",
+      "woman",
+      "world",
+      "worry",
+      "worst",
+      "worth",
+      "would",
+      "wound",
+      "write",
+      "wrong",
+      "young",
+      "youth",
+      "zebra"
+    ]
+  },
+  "training_performed": false
+}

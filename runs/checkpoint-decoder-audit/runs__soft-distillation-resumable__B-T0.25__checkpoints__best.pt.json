@@ -1,0 +1,6312 @@
+{
+  "decoder_disagreement": {
+    "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+    "disagreements": 456,
+    "rate": 0.9806451612903225,
+    "states": 465,
+    "visitation_weighted_rates": {
+      "constrained": 0.9695550351288056,
+      "word-argmax": 0.9739776951672863
+    }
+  },
+  "family": "soft-B",
+  "games": {
+    "constrained": {
+      "average_attempts": 5.930555555555555,
+      "average_guesses": 3.5,
+      "checkpoint": "runs/soft-distillation-resumable/B-T0.25/checkpoints/best.pt",
+      "decode": "constrained",
+      "games": 72,
+      "invalid_guesses": 0,
+      "results": [
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "pitch",
+            "music",
+            "music",
+            "music"
+          ],
+          "invalid_guesses": 0,
+          "secret": "adopt",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00010<G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "pitch",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00100<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00100<G>pitch<F>10100<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00100<G>pitch<F>10100<G>music<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00100<G>pitch<F>10100<G>music<F>00000<G>music<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crack",
+            "given",
+            "funny",
+            "funny",
+            "nurse"
+          ],
+          "invalid_guesses": 0,
+          "secret": "agree",
+          "turns": [
+            {
+              "feedback": "10002",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "crack",
+              "prompt": "<P><G>elite<F>10002<G>"
+            },
+            {
+              "feedback": "10020",
+              "guess": "given",
+              "prompt": "<P><G>elite<F>10002<G>crack<F>01100<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10002<G>crack<F>01100<G>given<F>10020<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10002<G>crack<F>01100<G>given<F>10020<G>funny<F>00000<G>"
+            },
+            {
+              "feedback": "00202",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>10002<G>crack<F>01100<G>given<F>10020<G>funny<F>00000<G>funny<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "might",
+            "valid",
+            "kneel",
+            "kneel",
+            "kneel"
+          ],
+          "invalid_guesses": 0,
+          "secret": "aisle",
+          "turns": [
+            {
+              "feedback": "01102",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "might",
+              "prompt": "<P><G>elite<F>01102<G>"
+            },
+            {
+              "feedback": "01110",
+              "guess": "valid",
+              "prompt": "<P><G>elite<F>01102<G>might<F>02000<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "kneel",
+              "prompt": "<P><G>elite<F>01102<G>might<F>02000<G>valid<F>01110<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "kneel",
+              "prompt": "<P><G>elite<F>01102<G>might<F>02000<G>valid<F>01110<G>kneel<F>00101<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "kneel",
+              "prompt": "<P><G>elite<F>01102<G>might<F>02000<G>valid<F>01110<G>kneel<F>00101<G>kneel<F>00101<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "query",
+            "twice",
+            "guest",
+            "title",
+            "those"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alert",
+          "turns": [
+            {
+              "feedback": "12010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00220",
+              "guess": "query",
+              "prompt": "<P><G>elite<F>12010<G>"
+            },
+            {
+              "feedback": "10001",
+              "guess": "twice",
+              "prompt": "<P><G>elite<F>12010<G>query<F>00220<G>"
+            },
+            {
+              "feedback": "00202",
+              "guess": "guest",
+              "prompt": "<P><G>elite<F>12010<G>query<F>00220<G>twice<F>10001<G>"
+            },
+            {
+              "feedback": "10011",
+              "guess": "title",
+              "prompt": "<P><G>elite<F>12010<G>query<F>00220<G>twice<F>10001<G>guest<F>00202<G>"
+            },
+            {
+              "feedback": "10001",
+              "guess": "those",
+              "prompt": "<P><G>elite<F>12010<G>query<F>00220<G>twice<F>10001<G>guest<F>00202<G>title<F>10011<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "fancy",
+            "grove",
+            "knife",
+            "knock",
+            "knock"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alibi",
+          "turns": [
+            {
+              "feedback": "02200",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "fancy",
+              "prompt": "<P><G>elite<F>02200<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "grove",
+              "prompt": "<P><G>elite<F>02200<G>fancy<F>01000<G>"
+            },
+            {
+              "feedback": "00200",
+              "guess": "knife",
+              "prompt": "<P><G>elite<F>02200<G>fancy<F>01000<G>grove<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "knock",
+              "prompt": "<P><G>elite<F>02200<G>fancy<F>01000<G>grove<F>00000<G>knife<F>00200<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "knock",
+              "prompt": "<P><G>elite<F>02200<G>fancy<F>01000<G>grove<F>00000<G>knife<F>00200<G>knock<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "comet",
+            "delay",
+            "voice",
+            "kneel",
+            "value"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alive",
+          "turns": [
+            {
+              "feedback": "02202",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "comet",
+              "prompt": "<P><G>elite<F>02202<G>"
+            },
+            {
+              "feedback": "01110",
+              "guess": "delay",
+              "prompt": "<P><G>elite<F>02202<G>comet<F>00010<G>"
+            },
+            {
+              "feedback": "10202",
+              "guess": "voice",
+              "prompt": "<P><G>elite<F>02202<G>comet<F>00010<G>delay<F>01110<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "kneel",
+              "prompt": "<P><G>elite<F>02202<G>comet<F>00010<G>delay<F>01110<G>voice<F>10202<G>"
+            },
+            {
+              "feedback": "11102",
+              "guess": "value",
+              "prompt": "<P><G>elite<F>02202<G>comet<F>00010<G>delay<F>01110<G>voice<F>10202<G>kneel<F>00101<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "press",
+            "naive",
+            "angry",
+            "guest",
+            "naive"
+          ],
+          "invalid_guesses": 0,
+          "secret": "amend",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00200",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10000<G>"
+            },
+            {
+              "feedback": "11001",
+              "guess": "naive",
+              "prompt": "<P><G>elite<F>10000<G>press<F>00200<G>"
+            },
+            {
+              "feedback": "21000",
+              "guess": "angry",
+              "prompt": "<P><G>elite<F>10000<G>press<F>00200<G>naive<F>11001<G>"
+            },
+            {
+              "feedback": "00200",
+              "guess": "guest",
+              "prompt": "<P><G>elite<F>10000<G>press<F>00200<G>naive<F>11001<G>angry<F>21000<G>"
+            },
+            {
+              "feedback": "11001",
+              "guess": "naive",
+              "prompt": "<P><G>elite<F>10000<G>press<F>00200<G>naive<F>11001<G>angry<F>21000<G>guest<F>00200<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crane",
+            "guard",
+            "guard",
+            "guard",
+            "guard"
+          ],
+          "invalid_guesses": 0,
+          "secret": "armor",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02100",
+              "guess": "crane",
+              "prompt": "<P><G>elite<F>00000<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "guard",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>02100<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "guard",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>02100<G>guard<F>00110<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "guard",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>02100<G>guard<F>00110<G>guard<F>00110<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "guard",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>02100<G>guard<F>00110<G>guard<F>00110<G>guard<F>00110<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "ratio",
+            "gleam",
+            "grant",
+            "whale",
+            "woman"
+          ],
+          "invalid_guesses": 0,
+          "secret": "asset",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "ratio",
+              "prompt": "<P><G>elite<F>10010<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "gleam",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>01100<G>"
+            },
+            {
+              "feedback": "00102",
+              "guess": "grant",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>01100<G>gleam<F>00110<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "whale",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>01100<G>gleam<F>00110<G>grant<F>00102<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "woman",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>01100<G>gleam<F>00110<G>grant<F>00102<G>whale<F>00101<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crane",
+            "phone",
+            "known",
+            "whale",
+            "rocky"
+          ],
+          "invalid_guesses": 0,
+          "secret": "award",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01200",
+              "guess": "crane",
+              "prompt": "<P><G>elite<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "phone",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01200<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "known",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01200<G>phone<F>00000<G>"
+            },
+            {
+              "feedback": "10200",
+              "guess": "whale",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01200<G>phone<F>00000<G>known<F>00010<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "rocky",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01200<G>phone<F>00000<G>known<F>00010<G>whale<F>10200<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crack",
+            "phone",
+            "gleam",
+            "glory",
+            "never"
+          ],
+          "invalid_guesses": 0,
+          "secret": "aware",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01200",
+              "guess": "crack",
+              "prompt": "<P><G>elite<F>00002<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "phone",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>01200<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "gleam",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>01200<G>phone<F>00002<G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "glory",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>01200<G>phone<F>00002<G>gleam<F>00110<G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "never",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>01200<G>phone<F>00002<G>gleam<F>00110<G>glory<F>00020<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "raise",
+            "birth",
+            "layer",
+            "limit",
+            "limit"
+          ],
+          "invalid_guesses": 0,
+          "secret": "badly",
+          "turns": [
+            {
+              "feedback": "01000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "raise",
+              "prompt": "<P><G>elite<F>01000<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "birth",
+              "prompt": "<P><G>elite<F>01000<G>raise<F>02000<G>"
+            },
+            {
+              "feedback": "12100",
+              "guess": "layer",
+              "prompt": "<P><G>elite<F>01000<G>raise<F>02000<G>birth<F>20000<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "limit",
+              "prompt": "<P><G>elite<F>01000<G>raise<F>02000<G>birth<F>20000<G>layer<F>12100<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "limit",
+              "prompt": "<P><G>elite<F>01000<G>raise<F>02000<G>birth<F>20000<G>layer<F>12100<G>limit<F>10000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "nurse",
+            "nurse",
+            "nurse",
+            "cling"
+          ],
+          "invalid_guesses": 0,
+          "secret": "basin",
+          "turns": [
+            {
+              "feedback": "00100",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00100<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>00110<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>00110<G>nurse<F>10010<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>00110<G>nurse<F>10010<G>nurse<F>10010<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "cling",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>00110<G>nurse<F>10010<G>nurse<F>10010<G>nurse<F>10010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "ratio",
+            "gleam",
+            "grant",
+            "bacon",
+            "gleam"
+          ],
+          "invalid_guesses": 0,
+          "secret": "beast",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "ratio",
+              "prompt": "<P><G>elite<F>10010<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "gleam",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>01100<G>"
+            },
+            {
+              "feedback": "00202",
+              "guess": "grant",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>01100<G>gleam<F>00110<G>"
+            },
+            {
+              "feedback": "21000",
+              "guess": "bacon",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>01100<G>gleam<F>00110<G>grant<F>00202<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "gleam",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>01100<G>gleam<F>00110<G>grant<F>00202<G>bacon<F>21000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "press",
+            "panic",
+            "funny",
+            "funny",
+            "funny"
+          ],
+          "invalid_guesses": 0,
+          "secret": "berry",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "panic",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00000<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00000<G>funny<F>00002<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00000<G>funny<F>00002<G>funny<F>00002<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "chain",
+            "drink",
+            "faith",
+            "fifth",
+            "faith"
+          ],
+          "invalid_guesses": 0,
+          "secret": "bland",
+          "turns": [
+            {
+              "feedback": "02000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00201",
+              "guess": "chain",
+              "prompt": "<P><G>elite<F>02000<G>"
+            },
+            {
+              "feedback": "10020",
+              "guess": "drink",
+              "prompt": "<P><G>elite<F>02000<G>chain<F>00201<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "faith",
+              "prompt": "<P><G>elite<F>02000<G>chain<F>00201<G>drink<F>10020<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "fifth",
+              "prompt": "<P><G>elite<F>02000<G>chain<F>00201<G>drink<F>10020<G>faith<F>01000<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "faith",
+              "prompt": "<P><G>elite<F>02000<G>chain<F>00201<G>drink<F>10020<G>faith<F>01000<G>fifth<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "badge",
+            "music",
+            "haste",
+            "sweep",
+            "haste"
+          ],
+          "invalid_guesses": 0,
+          "secret": "bless",
+          "turns": [
+            {
+              "feedback": "12000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20001",
+              "guess": "badge",
+              "prompt": "<P><G>elite<F>12000<G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>12000<G>badge<F>20001<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "haste",
+              "prompt": "<P><G>elite<F>12000<G>badge<F>20001<G>music<F>00100<G>"
+            },
+            {
+              "feedback": "10200",
+              "guess": "sweep",
+              "prompt": "<P><G>elite<F>12000<G>badge<F>20001<G>music<F>00100<G>haste<F>00101<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "haste",
+              "prompt": "<P><G>elite<F>12000<G>badge<F>20001<G>music<F>00100<G>haste<F>00101<G>sweep<F>10200<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "chain",
+            "buyer",
+            "nurse",
+            "nurse",
+            "nurse"
+          ],
+          "invalid_guesses": 0,
+          "secret": "block",
+          "turns": [
+            {
+              "feedback": "02000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "chain",
+              "prompt": "<P><G>elite<F>02000<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "buyer",
+              "prompt": "<P><G>elite<F>02000<G>chain<F>10000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>02000<G>chain<F>10000<G>buyer<F>20000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>02000<G>chain<F>10000<G>buyer<F>20000<G>nurse<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>02000<G>chain<F>10000<G>buyer<F>20000<G>nurse<F>00000<G>nurse<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "digit",
+            "grove",
+            "drink",
+            "grade"
+          ],
+          "invalid_guesses": 0,
+          "secret": "brain",
+          "turns": [
+            {
+              "feedback": "00100",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00100<G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "digit",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>02200<G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "grove",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>02200<G>digit<F>00020<G>"
+            },
+            {
+              "feedback": "02110",
+              "guess": "drink",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>02200<G>digit<F>00020<G>grove<F>02000<G>"
+            },
+            {
+              "feedback": "02200",
+              "guess": "grade",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>02200<G>digit<F>00020<G>grove<F>02000<G>drink<F>02110<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crack",
+            "zebra",
+            "group",
+            "zebra",
+            "zebra"
+          ],
+          "invalid_guesses": 0,
+          "secret": "canoe",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20100",
+              "guess": "crack",
+              "prompt": "<P><G>elite<F>00002<G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "zebra",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>20100<G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "group",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>20100<G>zebra<F>01001<G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "zebra",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>20100<G>zebra<F>01001<G>group<F>00100<G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "zebra",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>20100<G>zebra<F>01001<G>group<F>00100<G>zebra<F>01001<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crack",
+            "aside",
+            "voice",
+            "hello",
+            "query"
+          ],
+          "invalid_guesses": 0,
+          "secret": "chose",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "crack",
+              "prompt": "<P><G>elite<F>00002<G>"
+            },
+            {
+              "feedback": "01002",
+              "guess": "aside",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>20000<G>"
+            },
+            {
+              "feedback": "01012",
+              "guess": "voice",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>20000<G>aside<F>01002<G>"
+            },
+            {
+              "feedback": "11001",
+              "guess": "hello",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>20000<G>aside<F>01002<G>voice<F>01012<G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "query",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>20000<G>aside<F>01002<G>voice<F>01012<G>hello<F>11001<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crane",
+            "nurse",
+            "humor",
+            "humor",
+            "music"
+          ],
+          "invalid_guesses": 0,
+          "secret": "couch",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "crane",
+              "prompt": "<P><G>elite<F>00000<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>20000<G>"
+            },
+            {
+              "feedback": "11010",
+              "guess": "humor",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>20000<G>nurse<F>01000<G>"
+            },
+            {
+              "feedback": "11010",
+              "guess": "humor",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>20000<G>nurse<F>01000<G>humor<F>11010<G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>20000<G>nurse<F>01000<G>humor<F>11010<G>humor<F>11010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "press",
+            "panic",
+            "funny",
+            "funny",
+            "funny"
+          ],
+          "invalid_guesses": 0,
+          "secret": "cover",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10000<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "panic",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00001<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00001<G>funny<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00001<G>funny<F>00000<G>funny<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "raise",
+            "moral",
+            "rural",
+            "lucky",
+            "music"
+          ],
+          "invalid_guesses": 0,
+          "secret": "crawl",
+          "turns": [
+            {
+              "feedback": "01000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11000",
+              "guess": "raise",
+              "prompt": "<P><G>elite<F>01000<G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "moral",
+              "prompt": "<P><G>elite<F>01000<G>raise<F>11000<G>"
+            },
+            {
+              "feedback": "10012",
+              "guess": "rural",
+              "prompt": "<P><G>elite<F>01000<G>raise<F>11000<G>moral<F>00112<G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "lucky",
+              "prompt": "<P><G>elite<F>01000<G>raise<F>11000<G>moral<F>00112<G>rural<F>10012<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>01000<G>raise<F>11000<G>moral<F>00112<G>rural<F>10012<G>lucky<F>10100<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crack",
+            "lemon",
+            "hello",
+            "harsh",
+            "naive"
+          ],
+          "invalid_guesses": 0,
+          "secret": "dance",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00120",
+              "guess": "crack",
+              "prompt": "<P><G>elite<F>00002<G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "lemon",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00120<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "hello",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00120<G>lemon<F>01001<G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "harsh",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00120<G>lemon<F>01001<G>hello<F>01000<G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "naive",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00120<G>lemon<F>01001<G>hello<F>01000<G>harsh<F>02000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "noise",
+            "night",
+            "nurse",
+            "nurse"
+          ],
+          "invalid_guesses": 0,
+          "secret": "disco",
+          "turns": [
+            {
+              "feedback": "00100",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00100<G>"
+            },
+            {
+              "feedback": "01110",
+              "guess": "noise",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>10010<G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "night",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>10010<G>noise<F>01110<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>10010<G>noise<F>01110<G>night<F>02000<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>10010<G>noise<F>01110<G>night<F>02000<G>nurse<F>00010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "drove",
+            "nurse",
+            "nurse",
+            "nurse"
+          ],
+          "invalid_guesses": 0,
+          "secret": "dizzy",
+          "turns": [
+            {
+              "feedback": "00100",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00100<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "drove",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>00000<G>drove<F>20000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>00000<G>drove<F>20000<G>nurse<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00100<G>crash<F>00000<G>drove<F>20000<G>nurse<F>00000<G>nurse<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "nurse",
+            "panic",
+            "naval",
+            "nurse",
+            "nurse"
+          ],
+          "invalid_guesses": 0,
+          "secret": "elbow",
+          "turns": [
+            {
+              "feedback": "22000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>22000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "panic",
+              "prompt": "<P><G>elite<F>22000<G>nurse<F>00001<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "naval",
+              "prompt": "<P><G>elite<F>22000<G>nurse<F>00001<G>panic<F>00000<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>22000<G>nurse<F>00001<G>panic<F>00000<G>naval<F>00001<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>22000<G>nurse<F>00001<G>panic<F>00000<G>naval<F>00001<G>nurse<F>00001<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "cycle",
+            "rival",
+            "grill",
+            "given",
+            "grove"
+          ],
+          "invalid_guesses": 0,
+          "secret": "equip",
+          "turns": [
+            {
+              "feedback": "20100",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "cycle",
+              "prompt": "<P><G>elite<F>20100<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "rival",
+              "prompt": "<P><G>elite<F>20100<G>cycle<F>00001<G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "grill",
+              "prompt": "<P><G>elite<F>20100<G>cycle<F>00001<G>rival<F>01000<G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "given",
+              "prompt": "<P><G>elite<F>20100<G>cycle<F>00001<G>rival<F>01000<G>grill<F>00100<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "grove",
+              "prompt": "<P><G>elite<F>20100<G>cycle<F>00001<G>rival<F>01000<G>grill<F>00100<G>given<F>01010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "upset",
+            "young",
+            "young",
+            "young",
+            "young"
+          ],
+          "invalid_guesses": 0,
+          "secret": "faith",
+          "turns": [
+            {
+              "feedback": "00220",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "upset",
+              "prompt": "<P><G>elite<F>00220<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>00220<G>upset<F>00001<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>00220<G>upset<F>00001<G>young<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>00220<G>upset<F>00001<G>young<F>00000<G>young<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>00220<G>upset<F>00001<G>young<F>00000<G>young<F>00000<G>young<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "press",
+            "panic",
+            "funny",
+            "wrong",
+            "wrong"
+          ],
+          "invalid_guesses": 0,
+          "secret": "ferry",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "panic",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>"
+            },
+            {
+              "feedback": "20002",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00000<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "wrong",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00000<G>funny<F>20002<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "wrong",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00000<G>funny<F>20002<G>wrong<F>01000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "youth",
+            "young",
+            "young",
+            "young",
+            "young"
+          ],
+          "invalid_guesses": 0,
+          "secret": "fifty",
+          "turns": [
+            {
+              "feedback": "00120",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10020",
+              "guess": "youth",
+              "prompt": "<P><G>elite<F>00120<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>00120<G>youth<F>10020<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>00120<G>youth<F>10020<G>young<F>10000<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>00120<G>youth<F>10020<G>young<F>10000<G>young<F>10000<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>00120<G>youth<F>10020<G>young<F>10000<G>young<F>10000<G>young<F>10000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "built",
+            "build",
+            "built",
+            "built",
+            "built"
+          ],
+          "invalid_guesses": 0,
+          "secret": "float",
+          "turns": [
+            {
+              "feedback": "02010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00012",
+              "guess": "built",
+              "prompt": "<P><G>elite<F>02010<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "build",
+              "prompt": "<P><G>elite<F>02010<G>built<F>00012<G>"
+            },
+            {
+              "feedback": "00012",
+              "guess": "built",
+              "prompt": "<P><G>elite<F>02010<G>built<F>00012<G>build<F>00010<G>"
+            },
+            {
+              "feedback": "00012",
+              "guess": "built",
+              "prompt": "<P><G>elite<F>02010<G>built<F>00012<G>build<F>00010<G>built<F>00012<G>"
+            },
+            {
+              "feedback": "00012",
+              "guess": "built",
+              "prompt": "<P><G>elite<F>02010<G>built<F>00012<G>build<F>00010<G>built<F>00012<G>built<F>00012<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crane",
+            "guide",
+            "guard",
+            "guard",
+            "guard"
+          ],
+          "invalid_guesses": 0,
+          "secret": "grown",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02010",
+              "guess": "crane",
+              "prompt": "<P><G>elite<F>00000<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "guide",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>02010<G>"
+            },
+            {
+              "feedback": "20010",
+              "guess": "guard",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>02010<G>guide<F>20000<G>"
+            },
+            {
+              "feedback": "20010",
+              "guess": "guard",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>02010<G>guide<F>20000<G>guard<F>20010<G>"
+            },
+            {
+              "feedback": "20010",
+              "guess": "guard",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>02010<G>guide<F>20000<G>guard<F>20010<G>guard<F>20010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crack",
+            "humor",
+            "music",
+            "music",
+            "music"
+          ],
+          "invalid_guesses": 0,
+          "secret": "house",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "crack",
+              "prompt": "<P><G>elite<F>00002<G>"
+            },
+            {
+              "feedback": "21010",
+              "guess": "humor",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00000<G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00000<G>humor<F>21010<G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00000<G>humor<F>21010<G>music<F>01100<G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00000<G>humor<F>21010<G>music<F>01100<G>music<F>01100<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "baler",
+            "baker",
+            "baler",
+            "young",
+            "naval"
+          ],
+          "invalid_guesses": 0,
+          "secret": "label",
+          "turns": [
+            {
+              "feedback": "11000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "12120",
+              "guess": "baler",
+              "prompt": "<P><G>elite<F>11000<G>"
+            },
+            {
+              "feedback": "12020",
+              "guess": "baker",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>12120<G>"
+            },
+            {
+              "feedback": "12120",
+              "guess": "baler",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>12120<G>baker<F>12020<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>12120<G>baker<F>12020<G>baler<F>12120<G>"
+            },
+            {
+              "feedback": "02002",
+              "guess": "naval",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>12120<G>baker<F>12020<G>baler<F>12120<G>young<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "baler",
+            "wrong",
+            "wrong",
+            "wrong",
+            "nurse"
+          ],
+          "invalid_guesses": 0,
+          "secret": "lower",
+          "turns": [
+            {
+              "feedback": "11000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "baler",
+              "prompt": "<P><G>elite<F>11000<G>"
+            },
+            {
+              "feedback": "11100",
+              "guess": "wrong",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>00122<G>"
+            },
+            {
+              "feedback": "11100",
+              "guess": "wrong",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>00122<G>wrong<F>11100<G>"
+            },
+            {
+              "feedback": "11100",
+              "guess": "wrong",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>00122<G>wrong<F>11100<G>wrong<F>11100<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>00122<G>wrong<F>11100<G>wrong<F>11100<G>wrong<F>11100<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "baler",
+            "plead",
+            "media",
+            "medal"
+          ],
+          "invalid_guesses": 0,
+          "secret": "medal",
+          "turns": [
+            {
+              "feedback": "11000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01110",
+              "guess": "baler",
+              "prompt": "<P><G>elite<F>11000<G>"
+            },
+            {
+              "feedback": "01121",
+              "guess": "plead",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>01110<G>"
+            },
+            {
+              "feedback": "22201",
+              "guess": "media",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>01110<G>plead<F>01121<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "medal",
+              "prompt": "<P><G>elite<F>11000<G>baler<F>01110<G>plead<F>01121<G>media<F>22201<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "elite",
+            "press",
+            "panic",
+            "funny",
+            "wrong",
+            "nurse"
+          ],
+          "invalid_guesses": 0,
+          "secret": "mercy",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10000<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "panic",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00001<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "wrong",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00001<G>funny<F>00002<G>"
+            },
+            {
+              "feedback": "00201",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>10000<G>press<F>01100<G>panic<F>00001<G>funny<F>00002<G>wrong<F>01000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "comet",
+            "valid",
+            "leave",
+            "loose",
+            "logic"
+          ],
+          "invalid_guesses": 0,
+          "secret": "olive",
+          "turns": [
+            {
+              "feedback": "02202",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "comet",
+              "prompt": "<P><G>elite<F>02202<G>"
+            },
+            {
+              "feedback": "10110",
+              "guess": "valid",
+              "prompt": "<P><G>elite<F>02202<G>comet<F>01010<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "leave",
+              "prompt": "<P><G>elite<F>02202<G>comet<F>01010<G>valid<F>10110<G>"
+            },
+            {
+              "feedback": "11002",
+              "guess": "loose",
+              "prompt": "<P><G>elite<F>02202<G>comet<F>01010<G>valid<F>10110<G>leave<F>10022<G>"
+            },
+            {
+              "feedback": "11010",
+              "guess": "logic",
+              "prompt": "<P><G>elite<F>02202<G>comet<F>01010<G>valid<F>10110<G>leave<F>10022<G>loose<F>11002<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "three",
+            "hotel",
+            "press",
+            "juice",
+            "unity"
+          ],
+          "invalid_guesses": 0,
+          "secret": "orbit",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "three",
+              "prompt": "<P><G>elite<F>00110<G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "hotel",
+              "prompt": "<P><G>elite<F>00110<G>three<F>10100<G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>00110<G>three<F>10100<G>hotel<F>01100<G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "juice",
+              "prompt": "<P><G>elite<F>00110<G>three<F>10100<G>hotel<F>01100<G>press<F>02000<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "unity",
+              "prompt": "<P><G>elite<F>00110<G>three<F>10100<G>hotel<F>01100<G>press<F>02000<G>juice<F>00100<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crane",
+            "music",
+            "music",
+            "music",
+            "music"
+          ],
+          "invalid_guesses": 0,
+          "secret": "parka",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "crane",
+              "prompt": "<P><G>elite<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01100<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01100<G>music<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01100<G>music<F>00000<G>music<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01100<G>music<F>00000<G>music<F>00000<G>music<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "basin",
+            "minor",
+            "night",
+            "night",
+            "pedal"
+          ],
+          "invalid_guesses": 0,
+          "secret": "party",
+          "turns": [
+            {
+              "feedback": "00020",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "basin",
+              "prompt": "<P><G>elite<F>00020<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "minor",
+              "prompt": "<P><G>elite<F>00020<G>basin<F>02000<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "night",
+              "prompt": "<P><G>elite<F>00020<G>basin<F>02000<G>minor<F>00001<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "night",
+              "prompt": "<P><G>elite<F>00020<G>basin<F>02000<G>minor<F>00001<G>night<F>00001<G>"
+            },
+            {
+              "feedback": "20010",
+              "guess": "pedal",
+              "prompt": "<P><G>elite<F>00020<G>basin<F>02000<G>minor<F>00001<G>night<F>00001<G>night<F>00001<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "video",
+            "nurse",
+            "naval",
+            "nurse",
+            "naval"
+          ],
+          "invalid_guesses": 0,
+          "secret": "piece",
+          "turns": [
+            {
+              "feedback": "10102",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02010",
+              "guess": "video",
+              "prompt": "<P><G>elite<F>10102<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>10102<G>video<F>02010<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "naval",
+              "prompt": "<P><G>elite<F>10102<G>video<F>02010<G>nurse<F>00002<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>10102<G>video<F>02010<G>nurse<F>00002<G>naval<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "naval",
+              "prompt": "<P><G>elite<F>10102<G>video<F>02010<G>nurse<F>00002<G>naval<F>00000<G>nurse<F>00002<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "given",
+            "quite",
+            "might",
+            "quilt",
+            "quilt"
+          ],
+          "invalid_guesses": 0,
+          "secret": "pilot",
+          "turns": [
+            {
+              "feedback": "01110",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02000",
+              "guess": "given",
+              "prompt": "<P><G>elite<F>01110<G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "quite",
+              "prompt": "<P><G>elite<F>01110<G>given<F>02000<G>"
+            },
+            {
+              "feedback": "02002",
+              "guess": "might",
+              "prompt": "<P><G>elite<F>01110<G>given<F>02000<G>quite<F>00110<G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "quilt",
+              "prompt": "<P><G>elite<F>01110<G>given<F>02000<G>quite<F>00110<G>might<F>02002<G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "quilt",
+              "prompt": "<P><G>elite<F>01110<G>given<F>02000<G>quite<F>00110<G>might<F>02002<G>quilt<F>00112<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "press",
+            "zebra",
+            "relax",
+            "rural",
+            "decor"
+          ],
+          "invalid_guesses": 0,
+          "secret": "power",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21100",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10000<G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "zebra",
+              "prompt": "<P><G>elite<F>10000<G>press<F>21100<G>"
+            },
+            {
+              "feedback": "11000",
+              "guess": "relax",
+              "prompt": "<P><G>elite<F>10000<G>press<F>21100<G>zebra<F>01010<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "rural",
+              "prompt": "<P><G>elite<F>10000<G>press<F>21100<G>zebra<F>01010<G>relax<F>11000<G>"
+            },
+            {
+              "feedback": "01012",
+              "guess": "decor",
+              "prompt": "<P><G>elite<F>10000<G>press<F>21100<G>zebra<F>01010<G>relax<F>11000<G>rural<F>10000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "press"
+          ],
+          "invalid_guesses": 0,
+          "secret": "press",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "elite",
+            "prone",
+            "media",
+            "music",
+            "music",
+            "music"
+          ],
+          "invalid_guesses": 0,
+          "secret": "prime",
+          "turns": [
+            {
+              "feedback": "00202",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22002",
+              "guess": "prone",
+              "prompt": "<P><G>elite<F>00202<G>"
+            },
+            {
+              "feedback": "11010",
+              "guess": "media",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>22002<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>22002<G>media<F>11010<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>22002<G>media<F>11010<G>music<F>10010<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>22002<G>media<F>11010<G>music<F>10010<G>music<F>10010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "prone",
+            "media",
+            "music",
+            "music",
+            "music"
+          ],
+          "invalid_guesses": 0,
+          "secret": "prize",
+          "turns": [
+            {
+              "feedback": "00202",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22002",
+              "guess": "prone",
+              "prompt": "<P><G>elite<F>00202<G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "media",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>22002<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>22002<G>media<F>01010<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>22002<G>media<F>01010<G>music<F>00010<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>22002<G>media<F>01010<G>music<F>00010<G>music<F>00010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "prone",
+            "crown",
+            "whole",
+            "reply",
+            "decor"
+          ],
+          "invalid_guesses": 0,
+          "secret": "raise",
+          "turns": [
+            {
+              "feedback": "00202",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01002",
+              "guess": "prone",
+              "prompt": "<P><G>elite<F>00202<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "crown",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>01002<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "whole",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>01002<G>crown<F>01000<G>"
+            },
+            {
+              "feedback": "21000",
+              "guess": "reply",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>01002<G>crown<F>01000<G>whole<F>00002<G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "decor",
+              "prompt": "<P><G>elite<F>00202<G>prone<F>01002<G>crown<F>01000<G>whole<F>00002<G>reply<F>21000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crack",
+            "guest",
+            "guest",
+            "guest",
+            "guest"
+          ],
+          "invalid_guesses": 0,
+          "secret": "range",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "crack",
+              "prompt": "<P><G>elite<F>00002<G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "guest",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>01100<G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "guest",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>01100<G>guest<F>10100<G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "guest",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>01100<G>guest<F>10100<G>guest<F>10100<G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "guest",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>01100<G>guest<F>10100<G>guest<F>10100<G>guest<F>10100<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crane",
+            "depth",
+            "weird",
+            "wrong",
+            "wrong"
+          ],
+          "invalid_guesses": 0,
+          "secret": "round",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01020",
+              "guess": "crane",
+              "prompt": "<P><G>elite<F>00000<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "depth",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01020<G>"
+            },
+            {
+              "feedback": "00012",
+              "guess": "weird",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01020<G>depth<F>10000<G>"
+            },
+            {
+              "feedback": "01120",
+              "guess": "wrong",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01020<G>depth<F>10000<G>weird<F>00012<G>"
+            },
+            {
+              "feedback": "01120",
+              "guess": "wrong",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>01020<G>depth<F>10000<G>weird<F>00012<G>wrong<F>01120<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crane",
+            "glory",
+            "knock",
+            "lunch",
+            "lunch"
+          ],
+          "invalid_guesses": 0,
+          "secret": "scarf",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11200",
+              "guess": "crane",
+              "prompt": "<P><G>elite<F>00000<G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "glory",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>11200<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "knock",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>11200<G>glory<F>00020<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "lunch",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>11200<G>glory<F>00020<G>knock<F>00010<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "lunch",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>11200<G>glory<F>00020<G>knock<F>00010<G>lunch<F>00010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "music",
+            "music",
+            "music",
+            "music"
+          ],
+          "invalid_guesses": 0,
+          "secret": "scout",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00010<G>"
+            },
+            {
+              "feedback": "01101",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10010<G>"
+            },
+            {
+              "feedback": "01101",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10010<G>music<F>01101<G>"
+            },
+            {
+              "feedback": "01101",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10010<G>music<F>01101<G>music<F>01101<G>"
+            },
+            {
+              "feedback": "01101",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10010<G>music<F>01101<G>music<F>01101<G>music<F>01101<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "press",
+            "human",
+            "humor",
+            "empty",
+            "empty"
+          ],
+          "invalid_guesses": 0,
+          "secret": "seven",
+          "turns": [
+            {
+              "feedback": "10001",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00110",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10001<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "human",
+              "prompt": "<P><G>elite<F>10001<G>press<F>00110<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "humor",
+              "prompt": "<P><G>elite<F>10001<G>press<F>00110<G>human<F>00002<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "empty",
+              "prompt": "<P><G>elite<F>10001<G>press<F>00110<G>human<F>00002<G>humor<F>00000<G>"
+            },
+            {
+              "feedback": "10000",
+              "guess": "empty",
+              "prompt": "<P><G>elite<F>10001<G>press<F>00110<G>human<F>00002<G>humor<F>00000<G>empty<F>10000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crack",
+            "phone",
+            "phase",
+            "knock",
+            "maker"
+          ],
+          "invalid_guesses": 0,
+          "secret": "shape",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00200",
+              "guess": "crack",
+              "prompt": "<P><G>elite<F>00002<G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "phone",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00200<G>"
+            },
+            {
+              "feedback": "12212",
+              "guess": "phase",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00200<G>phone<F>12002<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "knock",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00200<G>phone<F>12002<G>phase<F>12212<G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "maker",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00200<G>phone<F>12002<G>phase<F>12212<G>knock<F>00000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "press",
+            "while",
+            "watch",
+            "whale",
+            "where"
+          ],
+          "invalid_guesses": 0,
+          "secret": "sheep",
+          "turns": [
+            {
+              "feedback": "10001",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10210",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10001<G>"
+            },
+            {
+              "feedback": "02001",
+              "guess": "while",
+              "prompt": "<P><G>elite<F>10001<G>press<F>10210<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "watch",
+              "prompt": "<P><G>elite<F>10001<G>press<F>10210<G>while<F>02001<G>"
+            },
+            {
+              "feedback": "02001",
+              "guess": "whale",
+              "prompt": "<P><G>elite<F>10001<G>press<F>10210<G>while<F>02001<G>watch<F>00001<G>"
+            },
+            {
+              "feedback": "02201",
+              "guess": "where",
+              "prompt": "<P><G>elite<F>10001<G>press<F>10210<G>while<F>02001<G>watch<F>00001<G>whale<F>02001<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "young",
+            "nurse",
+            "youth",
+            "nurse"
+          ],
+          "invalid_guesses": 0,
+          "secret": "shout",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00011",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00010<G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "young",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00011<G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00011<G>young<F>01100<G>"
+            },
+            {
+              "feedback": "01111",
+              "guess": "youth",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00011<G>young<F>01100<G>nurse<F>01010<G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00011<G>young<F>01100<G>nurse<F>01010<G>youth<F>01111<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crack",
+            "phase",
+            "naval",
+            "music",
+            "nerve"
+          ],
+          "invalid_guesses": 0,
+          "secret": "space",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00220",
+              "guess": "crack",
+              "prompt": "<P><G>elite<F>00002<G>"
+            },
+            {
+              "feedback": "10212",
+              "guess": "phase",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00220<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "naval",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00220<G>phase<F>10212<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00220<G>phase<F>10212<G>naval<F>01000<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "nerve",
+              "prompt": "<P><G>elite<F>00002<G>crack<F>00220<G>phase<F>10212<G>naval<F>01000<G>music<F>00101<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "given",
+            "quiet",
+            "quilt",
+            "quilt",
+            "quilt"
+          ],
+          "invalid_guesses": 0,
+          "secret": "split",
+          "turns": [
+            {
+              "feedback": "01110",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "given",
+              "prompt": "<P><G>elite<F>01110<G>"
+            },
+            {
+              "feedback": "00102",
+              "guess": "quiet",
+              "prompt": "<P><G>elite<F>01110<G>given<F>01000<G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "quilt",
+              "prompt": "<P><G>elite<F>01110<G>given<F>01000<G>quiet<F>00102<G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "quilt",
+              "prompt": "<P><G>elite<F>01110<G>given<F>01000<G>quiet<F>00102<G>quilt<F>00112<G>"
+            },
+            {
+              "feedback": "00112",
+              "guess": "quilt",
+              "prompt": "<P><G>elite<F>01110<G>given<F>01000<G>quiet<F>00102<G>quilt<F>00112<G>quilt<F>00112<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "naive",
+            "noble",
+            "nurse",
+            "nurse"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stack",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10210",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00010<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "naive",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10210<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "noble",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10210<G>naive<F>01000<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10210<G>naive<F>01000<G>noble<F>00000<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "nurse",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10210<G>naive<F>01000<G>noble<F>00000<G>nurse<F>00010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "value",
+            "weary",
+            "value",
+            "value",
+            "value"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stale",
+          "turns": [
+            {
+              "feedback": "01012",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01102",
+              "guess": "value",
+              "prompt": "<P><G>elite<F>01012<G>"
+            },
+            {
+              "feedback": "01200",
+              "guess": "weary",
+              "prompt": "<P><G>elite<F>01012<G>value<F>01102<G>"
+            },
+            {
+              "feedback": "01102",
+              "guess": "value",
+              "prompt": "<P><G>elite<F>01012<G>value<F>01102<G>weary<F>01200<G>"
+            },
+            {
+              "feedback": "01102",
+              "guess": "value",
+              "prompt": "<P><G>elite<F>01012<G>value<F>01102<G>weary<F>01200<G>value<F>01102<G>"
+            },
+            {
+              "feedback": "01102",
+              "guess": "value",
+              "prompt": "<P><G>elite<F>01012<G>value<F>01102<G>weary<F>01200<G>value<F>01102<G>value<F>01102<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "ranch",
+            "twice",
+            "twice",
+            "twice",
+            "twice"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stare",
+          "turns": [
+            {
+              "feedback": "00012",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11000",
+              "guess": "ranch",
+              "prompt": "<P><G>elite<F>00012<G>"
+            },
+            {
+              "feedback": "10002",
+              "guess": "twice",
+              "prompt": "<P><G>elite<F>00012<G>ranch<F>11000<G>"
+            },
+            {
+              "feedback": "10002",
+              "guess": "twice",
+              "prompt": "<P><G>elite<F>00012<G>ranch<F>11000<G>twice<F>10002<G>"
+            },
+            {
+              "feedback": "10002",
+              "guess": "twice",
+              "prompt": "<P><G>elite<F>00012<G>ranch<F>11000<G>twice<F>10002<G>twice<F>10002<G>"
+            },
+            {
+              "feedback": "10002",
+              "guess": "twice",
+              "prompt": "<P><G>elite<F>00012<G>ranch<F>11000<G>twice<F>10002<G>twice<F>10002<G>twice<F>10002<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "honor",
+            "query",
+            "quite",
+            "guide",
+            "quite"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stick",
+          "turns": [
+            {
+              "feedback": "00210",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "honor",
+              "prompt": "<P><G>elite<F>00210<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "query",
+              "prompt": "<P><G>elite<F>00210<G>honor<F>00000<G>"
+            },
+            {
+              "feedback": "00210",
+              "guess": "quite",
+              "prompt": "<P><G>elite<F>00210<G>honor<F>00000<G>query<F>00000<G>"
+            },
+            {
+              "feedback": "00200",
+              "guess": "guide",
+              "prompt": "<P><G>elite<F>00210<G>honor<F>00000<G>query<F>00000<G>quite<F>00210<G>"
+            },
+            {
+              "feedback": "00210",
+              "guess": "quite",
+              "prompt": "<P><G>elite<F>00210<G>honor<F>00000<G>query<F>00000<G>quite<F>00210<G>guide<F>00200<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "white",
+            "white",
+            "white",
+            "white"
+          ],
+          "invalid_guesses": 0,
+          "secret": "straw",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01110",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00010<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "white",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>01110<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "white",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>01110<G>white<F>10010<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "white",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>01110<G>white<F>10010<G>white<F>10010<G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "white",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>01110<G>white<F>10010<G>white<F>10010<G>white<F>10010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "music",
+            "music",
+            "music",
+            "music"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stuck",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10010",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00010<G>"
+            },
+            {
+              "feedback": "01101",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10010<G>"
+            },
+            {
+              "feedback": "01101",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10010<G>music<F>01101<G>"
+            },
+            {
+              "feedback": "01101",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10010<G>music<F>01101<G>music<F>01101<G>"
+            },
+            {
+              "feedback": "01101",
+              "guess": "music",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10010<G>music<F>01101<G>music<F>01101<G>music<F>01101<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crane",
+            "bowel",
+            "funny",
+            "sword",
+            "youth"
+          ],
+          "invalid_guesses": 0,
+          "secret": "sunny",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "crane",
+              "prompt": "<P><G>elite<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "bowel",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>00020<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "funny",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>00020<G>bowel<F>00000<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "sword",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>00020<G>bowel<F>00000<G>funny<F>02222<G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "youth",
+              "prompt": "<P><G>elite<F>00000<G>crane<F>00020<G>bowel<F>00000<G>funny<F>02222<G>sword<F>20000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "press",
+            "zebra",
+            "rural",
+            "rural",
+            "rural"
+          ],
+          "invalid_guesses": 0,
+          "secret": "super",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11110",
+              "guess": "press",
+              "prompt": "<P><G>elite<F>10000<G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "zebra",
+              "prompt": "<P><G>elite<F>10000<G>press<F>11110<G>"
+            },
+            {
+              "feedback": "12000",
+              "guess": "rural",
+              "prompt": "<P><G>elite<F>10000<G>press<F>11110<G>zebra<F>01010<G>"
+            },
+            {
+              "feedback": "12000",
+              "guess": "rural",
+              "prompt": "<P><G>elite<F>10000<G>press<F>11110<G>zebra<F>01010<G>rural<F>12000<G>"
+            },
+            {
+              "feedback": "12000",
+              "guess": "rural",
+              "prompt": "<P><G>elite<F>10000<G>press<F>11110<G>zebra<F>01010<G>rural<F>12000<G>rural<F>12000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "pitch",
+            "pitch",
+            "weary",
+            "twice"
+          ],
+          "invalid_guesses": 0,
+          "secret": "today",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00010<G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "pitch",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00100<G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "pitch",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00100<G>pitch<F>00100<G>"
+            },
+            {
+              "feedback": "00102",
+              "guess": "weary",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00100<G>pitch<F>00100<G>pitch<F>00100<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "twice",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>00100<G>pitch<F>00100<G>pitch<F>00100<G>weary<F>00102<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "ratio",
+            "there",
+            "jelly",
+            "tears",
+            "judge"
+          ],
+          "invalid_guesses": 0,
+          "secret": "tower",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10101",
+              "guess": "ratio",
+              "prompt": "<P><G>elite<F>10010<G>"
+            },
+            {
+              "feedback": "20110",
+              "guess": "there",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>10101<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "jelly",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>10101<G>there<F>20110<G>"
+            },
+            {
+              "feedback": "21010",
+              "guess": "tears",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>10101<G>there<F>20110<G>jelly<F>01000<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "judge",
+              "prompt": "<P><G>elite<F>10010<G>ratio<F>10101<G>there<F>20110<G>jelly<F>01000<G>tears<F>21010<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "given",
+            "quiet",
+            "given",
+            "given",
+            "given"
+          ],
+          "invalid_guesses": 0,
+          "secret": "trail",
+          "turns": [
+            {
+              "feedback": "01110",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "given",
+              "prompt": "<P><G>elite<F>01110<G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "quiet",
+              "prompt": "<P><G>elite<F>01110<G>given<F>01000<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "given",
+              "prompt": "<P><G>elite<F>01110<G>given<F>01000<G>quiet<F>00101<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "given",
+              "prompt": "<P><G>elite<F>01110<G>given<F>01000<G>quiet<F>00101<G>given<F>01000<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "given",
+              "prompt": "<P><G>elite<F>01110<G>given<F>01000<G>quiet<F>00101<G>given<F>01000<G>given<F>01000<G>"
+            }
+          ],
+          "won": false
+        },
+        {
+          "guesses": [
+            "elite",
+            "crash",
+            "minor",
+            "minor",
+            "minor",
+            "minor"
+          ],
+          "invalid_guesses": 0,
+          "secret": "watch",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "elite",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10102",
+              "guess": "crash",
+              "prompt": "<P><G>elite<F>00010<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "minor",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10102<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "minor",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10102<G>minor<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "minor",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10102<G>minor<F>00000<G>minor<F>00000<G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "minor",
+              "prompt": "<P><G>elite<F>00010<G>crash<F>10102<G>minor<F>00000<G>minor<F>00000<G>minor<F>00000<G>"
+            }
+          ],
+          "won": false
+        }
+      ],
+      "win_rate": 0.027777777777777776,
+      "wins": 2
+    },
+    "word-argmax": {
+      "average_attempts": 3.736111111111111,
+      "average_guesses": 3.736111111111111,
+      "checkpoint": "runs/soft-distillation-resumable/B-T0.25/checkpoints/best.pt",
+      "decode": "word-argmax",
+      "games": 72,
+      "invalid_guesses": 0,
+      "results": [
+        {
+          "guesses": [
+            "crate",
+            "saint",
+            "float",
+            "adopt"
+          ],
+          "invalid_guesses": 0,
+          "secret": "adopt",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01002",
+              "guess": "saint",
+              "prompt": "<P><G>crate<F>00110<G>"
+            },
+            {
+              "feedback": "00212",
+              "guess": "float",
+              "prompt": "<P><G>crate<F>00110<G>saint<F>01002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "adopt",
+              "prompt": "<P><G>crate<F>00110<G>saint<F>01002<G>float<F>00212<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "adore",
+            "agree"
+          ],
+          "invalid_guesses": 0,
+          "secret": "agree",
+          "turns": [
+            {
+              "feedback": "01102",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20012",
+              "guess": "adore",
+              "prompt": "<P><G>crate<F>01102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "agree",
+              "prompt": "<P><G>crate<F>01102<G>adore<F>20012<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "align",
+            "aisle"
+          ],
+          "invalid_guesses": 0,
+          "secret": "aisle",
+          "turns": [
+            {
+              "feedback": "00102",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21100",
+              "guess": "align",
+              "prompt": "<P><G>crate<F>00102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "aisle",
+              "prompt": "<P><G>crate<F>00102<G>align<F>21100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "later",
+            "alert"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alert",
+          "turns": [
+            {
+              "feedback": "01111",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11111",
+              "guess": "later",
+              "prompt": "<P><G>crate<F>01111<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "alert",
+              "prompt": "<P><G>crate<F>01111<G>later<F>11111<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blind",
+            "alibi"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alibi",
+          "turns": [
+            {
+              "feedback": "00100",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "12200",
+              "guess": "blind",
+              "prompt": "<P><G>crate<F>00100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "alibi",
+              "prompt": "<P><G>crate<F>00100<G>blind<F>12200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "align",
+            "grove",
+            "alive"
+          ],
+          "invalid_guesses": 0,
+          "secret": "alive",
+          "turns": [
+            {
+              "feedback": "00102",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "align",
+              "prompt": "<P><G>crate<F>00102<G>"
+            },
+            {
+              "feedback": "00022",
+              "guess": "grove",
+              "prompt": "<P><G>crate<F>00102<G>align<F>22200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "alive",
+              "prompt": "<P><G>crate<F>00102<G>align<F>22200<G>grove<F>00022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "pedal",
+            "abbey",
+            "amend"
+          ],
+          "invalid_guesses": 0,
+          "secret": "amend",
+          "turns": [
+            {
+              "feedback": "00101",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01110",
+              "guess": "pedal",
+              "prompt": "<P><G>crate<F>00101<G>"
+            },
+            {
+              "feedback": "20010",
+              "guess": "abbey",
+              "prompt": "<P><G>crate<F>00101<G>pedal<F>01110<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "amend",
+              "prompt": "<P><G>crate<F>00101<G>pedal<F>01110<G>abbey<F>20010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "brown",
+            "organ",
+            "arrow",
+            "armor"
+          ],
+          "invalid_guesses": 0,
+          "secret": "armor",
+          "turns": [
+            {
+              "feedback": "02100",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02100",
+              "guess": "brown",
+              "prompt": "<P><G>crate<F>02100<G>"
+            },
+            {
+              "feedback": "12010",
+              "guess": "organ",
+              "prompt": "<P><G>crate<F>02100<G>brown<F>02100<G>"
+            },
+            {
+              "feedback": "22120",
+              "guess": "arrow",
+              "prompt": "<P><G>crate<F>02100<G>brown<F>02100<G>organ<F>12010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "armor",
+              "prompt": "<P><G>crate<F>02100<G>brown<F>02100<G>organ<F>12010<G>arrow<F>22120<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "steel",
+            "asset"
+          ],
+          "invalid_guesses": 0,
+          "secret": "asset",
+          "turns": [
+            {
+              "feedback": "00111",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11020",
+              "guess": "steel",
+              "prompt": "<P><G>crate<F>00111<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "asset",
+              "prompt": "<P><G>crate<F>00111<G>steel<F>11020<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "would",
+            "award"
+          ],
+          "invalid_guesses": 0,
+          "secret": "award",
+          "turns": [
+            {
+              "feedback": "01200",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10002",
+              "guess": "would",
+              "prompt": "<P><G>crate<F>01200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "award",
+              "prompt": "<P><G>crate<F>01200<G>would<F>10002<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "chirp",
+            "flare",
+            "aware"
+          ],
+          "invalid_guesses": 0,
+          "secret": "aware",
+          "turns": [
+            {
+              "feedback": "01202",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "chirp",
+              "prompt": "<P><G>crate<F>01202<G>"
+            },
+            {
+              "feedback": "00222",
+              "guess": "flare",
+              "prompt": "<P><G>crate<F>01202<G>chirp<F>00020<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "aware",
+              "prompt": "<P><G>crate<F>01202<G>chirp<F>00020<G>flare<F>00222<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blind",
+            "badly"
+          ],
+          "invalid_guesses": 0,
+          "secret": "badly",
+          "turns": [
+            {
+              "feedback": "00100",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "21001",
+              "guess": "blind",
+              "prompt": "<P><G>crate<F>00100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "badly",
+              "prompt": "<P><G>crate<F>00100<G>blind<F>21001<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blind",
+            "basin"
+          ],
+          "invalid_guesses": 0,
+          "secret": "basin",
+          "turns": [
+            {
+              "feedback": "00100",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20110",
+              "guess": "blind",
+              "prompt": "<P><G>crate<F>00100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "basin",
+              "prompt": "<P><G>crate<F>00100<G>blind<F>20110<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blunt",
+            "beast"
+          ],
+          "invalid_guesses": 0,
+          "secret": "beast",
+          "turns": [
+            {
+              "feedback": "00211",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20002",
+              "guess": "blunt",
+              "prompt": "<P><G>crate<F>00211<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "beast",
+              "prompt": "<P><G>crate<F>00211<G>blunt<F>20002<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "video",
+            "funny",
+            "reply",
+            "berry"
+          ],
+          "invalid_guesses": 0,
+          "secret": "berry",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "video",
+              "prompt": "<P><G>crate<F>01001<G>"
+            },
+            {
+              "feedback": "00002",
+              "guess": "funny",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00010<G>"
+            },
+            {
+              "feedback": "12002",
+              "guess": "reply",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00010<G>funny<F>00002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "berry",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00010<G>funny<F>00002<G>reply<F>12002<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blush",
+            "drink",
+            "bland"
+          ],
+          "invalid_guesses": 0,
+          "secret": "bland",
+          "turns": [
+            {
+              "feedback": "00200",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22000",
+              "guess": "blush",
+              "prompt": "<P><G>crate<F>00200<G>"
+            },
+            {
+              "feedback": "10020",
+              "guess": "drink",
+              "prompt": "<P><G>crate<F>00200<G>blush<F>22000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "bland",
+              "prompt": "<P><G>crate<F>00200<G>blush<F>22000<G>drink<F>10020<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "wheel",
+            "blend",
+            "bless"
+          ],
+          "invalid_guesses": 0,
+          "secret": "bless",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00201",
+              "guess": "wheel",
+              "prompt": "<P><G>crate<F>00001<G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "blend",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>00201<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "bless",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>00201<G>blend<F>22200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blush",
+            "block"
+          ],
+          "invalid_guesses": 0,
+          "secret": "block",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22000",
+              "guess": "blush",
+              "prompt": "<P><G>crate<F>10000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "block",
+              "prompt": "<P><G>crate<F>10000<G>blush<F>22000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "being",
+            "brain"
+          ],
+          "invalid_guesses": 0,
+          "secret": "brain",
+          "turns": [
+            {
+              "feedback": "02200",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20110",
+              "guess": "being",
+              "prompt": "<P><G>crate<F>02200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "brain",
+              "prompt": "<P><G>crate<F>02200<G>being<F>20110<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "apron",
+            "canoe"
+          ],
+          "invalid_guesses": 0,
+          "secret": "canoe",
+          "turns": [
+            {
+              "feedback": "20102",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10021",
+              "guess": "apron",
+              "prompt": "<P><G>crate<F>20102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "canoe",
+              "prompt": "<P><G>crate<F>20102<G>apron<F>10021<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "noise",
+            "chose"
+          ],
+          "invalid_guesses": 0,
+          "secret": "chose",
+          "turns": [
+            {
+              "feedback": "20002",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01022",
+              "guess": "noise",
+              "prompt": "<P><G>crate<F>20002<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "chose",
+              "prompt": "<P><G>crate<F>20002<G>noise<F>01022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blind",
+            "couch"
+          ],
+          "invalid_guesses": 0,
+          "secret": "couch",
+          "turns": [
+            {
+              "feedback": "20000",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "blind",
+              "prompt": "<P><G>crate<F>20000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "couch",
+              "prompt": "<P><G>crate<F>20000<G>blind<F>00000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "cheer",
+            "cover"
+          ],
+          "invalid_guesses": 0,
+          "secret": "cover",
+          "turns": [
+            {
+              "feedback": "21001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20022",
+              "guess": "cheer",
+              "prompt": "<P><G>crate<F>21001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "cover",
+              "prompt": "<P><G>crate<F>21001<G>cheer<F>20022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "crack",
+            "champ",
+            "crown",
+            "crawl"
+          ],
+          "invalid_guesses": 0,
+          "secret": "crawl",
+          "turns": [
+            {
+              "feedback": "22200",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22200",
+              "guess": "crack",
+              "prompt": "<P><G>crate<F>22200<G>"
+            },
+            {
+              "feedback": "20200",
+              "guess": "champ",
+              "prompt": "<P><G>crate<F>22200<G>crack<F>22200<G>"
+            },
+            {
+              "feedback": "22020",
+              "guess": "crown",
+              "prompt": "<P><G>crate<F>22200<G>crack<F>22200<G>champ<F>20200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "crawl",
+              "prompt": "<P><G>crate<F>22200<G>crack<F>22200<G>champ<F>20200<G>crown<F>22020<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "lance",
+            "dance"
+          ],
+          "invalid_guesses": 0,
+          "secret": "dance",
+          "turns": [
+            {
+              "feedback": "10102",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "lance",
+              "prompt": "<P><G>crate<F>10102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "dance",
+              "prompt": "<P><G>crate<F>10102<G>lance<F>02222<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blush",
+            "knock",
+            "voice",
+            "disco"
+          ],
+          "invalid_guesses": 0,
+          "secret": "disco",
+          "turns": [
+            {
+              "feedback": "10000",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "blush",
+              "prompt": "<P><G>crate<F>10000<G>"
+            },
+            {
+              "feedback": "00120",
+              "guess": "knock",
+              "prompt": "<P><G>crate<F>10000<G>blush<F>00010<G>"
+            },
+            {
+              "feedback": "01120",
+              "guess": "voice",
+              "prompt": "<P><G>crate<F>10000<G>blush<F>00010<G>knock<F>00120<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "disco",
+              "prompt": "<P><G>crate<F>10000<G>blush<F>00010<G>knock<F>00120<G>voice<F>01120<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blind",
+            "music",
+            "dizzy"
+          ],
+          "invalid_guesses": 0,
+          "secret": "dizzy",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00101",
+              "guess": "blind",
+              "prompt": "<P><G>crate<F>00000<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "music",
+              "prompt": "<P><G>crate<F>00000<G>blind<F>00101<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "dizzy",
+              "prompt": "<P><G>crate<F>00000<G>blind<F>00101<G>music<F>00010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "wheel",
+            "owner",
+            "solve",
+            "elder",
+            "elbow"
+          ],
+          "invalid_guesses": 0,
+          "secret": "elbow",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10101",
+              "guess": "wheel",
+              "prompt": "<P><G>crate<F>00001<G>"
+            },
+            {
+              "feedback": "11010",
+              "guess": "owner",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>10101<G>"
+            },
+            {
+              "feedback": "01101",
+              "guess": "solve",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>10101<G>owner<F>11010<G>"
+            },
+            {
+              "feedback": "22000",
+              "guess": "elder",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>10101<G>owner<F>11010<G>solve<F>01101<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "elbow",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>10101<G>owner<F>11010<G>solve<F>01101<G>elder<F>22000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "wheel",
+            "enjoy",
+            "essay",
+            "enemy",
+            "equip"
+          ],
+          "invalid_guesses": 0,
+          "secret": "equip",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "wheel",
+              "prompt": "<P><G>crate<F>00001<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "enjoy",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>00100<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "essay",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>00100<G>enjoy<F>20000<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "enemy",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>00100<G>enjoy<F>20000<G>essay<F>20000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "equip",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>00100<G>enjoy<F>20000<G>essay<F>20000<G>enemy<F>20000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "nasty",
+            "faith"
+          ],
+          "invalid_guesses": 0,
+          "secret": "faith",
+          "turns": [
+            {
+              "feedback": "00120",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02020",
+              "guess": "nasty",
+              "prompt": "<P><G>crate<F>00120<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "faith",
+              "prompt": "<P><G>crate<F>00120<G>nasty<F>02020<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "video",
+            "funny",
+            "ferry"
+          ],
+          "invalid_guesses": 0,
+          "secret": "ferry",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "video",
+              "prompt": "<P><G>crate<F>01001<G>"
+            },
+            {
+              "feedback": "20002",
+              "guess": "funny",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "ferry",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00010<G>funny<F>20002<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "youth",
+            "fifty"
+          ],
+          "invalid_guesses": 0,
+          "secret": "fifty",
+          "turns": [
+            {
+              "feedback": "00020",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10020",
+              "guess": "youth",
+              "prompt": "<P><G>crate<F>00020<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "fifty",
+              "prompt": "<P><G>crate<F>00020<G>youth<F>10020<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "saint",
+            "float"
+          ],
+          "invalid_guesses": 0,
+          "secret": "float",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01002",
+              "guess": "saint",
+              "prompt": "<P><G>crate<F>00110<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "float",
+              "prompt": "<P><G>crate<F>00110<G>saint<F>01002<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "bound",
+            "grown"
+          ],
+          "invalid_guesses": 0,
+          "secret": "grown",
+          "turns": [
+            {
+              "feedback": "02000",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "bound",
+              "prompt": "<P><G>crate<F>02000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "grown",
+              "prompt": "<P><G>crate<F>02000<G>bound<F>01010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "solid",
+            "month",
+            "house"
+          ],
+          "invalid_guesses": 0,
+          "secret": "house",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "12000",
+              "guess": "solid",
+              "prompt": "<P><G>crate<F>00002<G>"
+            },
+            {
+              "feedback": "02001",
+              "guess": "month",
+              "prompt": "<P><G>crate<F>00002<G>solid<F>12000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "house",
+              "prompt": "<P><G>crate<F>00002<G>solid<F>12000<G>month<F>02001<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "pedal",
+            "angel",
+            "label"
+          ],
+          "invalid_guesses": 0,
+          "secret": "label",
+          "turns": [
+            {
+              "feedback": "00101",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01012",
+              "guess": "pedal",
+              "prompt": "<P><G>crate<F>00101<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "angel",
+              "prompt": "<P><G>crate<F>00101<G>pedal<F>01012<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "label",
+              "prompt": "<P><G>crate<F>00101<G>pedal<F>01012<G>angel<F>10022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "video",
+            "offer",
+            "power",
+            "lower"
+          ],
+          "invalid_guesses": 0,
+          "secret": "lower",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00021",
+              "guess": "video",
+              "prompt": "<P><G>crate<F>01001<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "offer",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00021<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "power",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00021<G>offer<F>10022<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "lower",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00021<G>offer<F>10022<G>power<F>02222<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "pedal",
+            "medal"
+          ],
+          "invalid_guesses": 0,
+          "secret": "medal",
+          "turns": [
+            {
+              "feedback": "00101",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "pedal",
+              "prompt": "<P><G>crate<F>00101<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "medal",
+              "prompt": "<P><G>crate<F>00101<G>pedal<F>02222<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "decor",
+            "bench",
+            "mercy"
+          ],
+          "invalid_guesses": 0,
+          "secret": "mercy",
+          "turns": [
+            {
+              "feedback": "11001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02101",
+              "guess": "decor",
+              "prompt": "<P><G>crate<F>11001<G>"
+            },
+            {
+              "feedback": "02020",
+              "guess": "bench",
+              "prompt": "<P><G>crate<F>11001<G>decor<F>02101<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "mercy",
+              "prompt": "<P><G>crate<F>11001<G>decor<F>02101<G>bench<F>02020<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "solid",
+            "while",
+            "olive"
+          ],
+          "invalid_guesses": 0,
+          "secret": "olive",
+          "turns": [
+            {
+              "feedback": "00002",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01110",
+              "guess": "solid",
+              "prompt": "<P><G>crate<F>00002<G>"
+            },
+            {
+              "feedback": "00212",
+              "guess": "while",
+              "prompt": "<P><G>crate<F>00002<G>solid<F>01110<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "olive",
+              "prompt": "<P><G>crate<F>00002<G>solid<F>01110<G>while<F>00212<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "phone",
+            "orbit"
+          ],
+          "invalid_guesses": 0,
+          "secret": "orbit",
+          "turns": [
+            {
+              "feedback": "02010",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00100",
+              "guess": "phone",
+              "prompt": "<P><G>crate<F>02010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "orbit",
+              "prompt": "<P><G>crate<F>02010<G>phone<F>00100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "mayor",
+            "chirp",
+            "rapid",
+            "naval",
+            "parka"
+          ],
+          "invalid_guesses": 0,
+          "secret": "parka",
+          "turns": [
+            {
+              "feedback": "01100",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02001",
+              "guess": "mayor",
+              "prompt": "<P><G>crate<F>01100<G>"
+            },
+            {
+              "feedback": "00011",
+              "guess": "chirp",
+              "prompt": "<P><G>crate<F>01100<G>mayor<F>02001<G>"
+            },
+            {
+              "feedback": "12100",
+              "guess": "rapid",
+              "prompt": "<P><G>crate<F>01100<G>mayor<F>02001<G>chirp<F>00011<G>"
+            },
+            {
+              "feedback": "02010",
+              "guess": "naval",
+              "prompt": "<P><G>crate<F>01100<G>mayor<F>02001<G>chirp<F>00011<G>rapid<F>12100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "parka",
+              "prompt": "<P><G>crate<F>01100<G>mayor<F>02001<G>chirp<F>00011<G>rapid<F>12100<G>naval<F>02010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "nasty",
+            "party"
+          ],
+          "invalid_guesses": 0,
+          "secret": "party",
+          "turns": [
+            {
+              "feedback": "01120",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "nasty",
+              "prompt": "<P><G>crate<F>01120<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "party",
+              "prompt": "<P><G>crate<F>01120<G>nasty<F>02022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "pound",
+            "spice",
+            "piece"
+          ],
+          "invalid_guesses": 0,
+          "secret": "piece",
+          "turns": [
+            {
+              "feedback": "10002",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "pound",
+              "prompt": "<P><G>crate<F>10002<G>"
+            },
+            {
+              "feedback": "01122",
+              "guess": "spice",
+              "prompt": "<P><G>crate<F>10002<G>pound<F>20000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "piece",
+              "prompt": "<P><G>crate<F>10002<G>pound<F>20000<G>spice<F>01122<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "shout",
+            "money",
+            "pilot"
+          ],
+          "invalid_guesses": 0,
+          "secret": "pilot",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00102",
+              "guess": "shout",
+              "prompt": "<P><G>crate<F>00010<G>"
+            },
+            {
+              "feedback": "01000",
+              "guess": "money",
+              "prompt": "<P><G>crate<F>00010<G>shout<F>00102<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "pilot",
+              "prompt": "<P><G>crate<F>00010<G>shout<F>00102<G>money<F>01000<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "video",
+            "offer",
+            "power"
+          ],
+          "invalid_guesses": 0,
+          "secret": "power",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00021",
+              "guess": "video",
+              "prompt": "<P><G>crate<F>01001<G>"
+            },
+            {
+              "feedback": "10022",
+              "guess": "offer",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00021<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "power",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00021<G>offer<F>10022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "speed",
+            "press"
+          ],
+          "invalid_guesses": 0,
+          "secret": "press",
+          "turns": [
+            {
+              "feedback": "02001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11200",
+              "guess": "speed",
+              "prompt": "<P><G>crate<F>02001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "press",
+              "prompt": "<P><G>crate<F>02001<G>speed<F>11200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "doubt",
+            "champ",
+            "prime"
+          ],
+          "invalid_guesses": 0,
+          "secret": "prime",
+          "turns": [
+            {
+              "feedback": "02002",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "doubt",
+              "prompt": "<P><G>crate<F>02002<G>"
+            },
+            {
+              "feedback": "00021",
+              "guess": "champ",
+              "prompt": "<P><G>crate<F>02002<G>doubt<F>00000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "prime",
+              "prompt": "<P><G>crate<F>02002<G>doubt<F>00000<G>champ<F>00021<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "doubt",
+            "champ",
+            "dizzy",
+            "prize"
+          ],
+          "invalid_guesses": 0,
+          "secret": "prize",
+          "turns": [
+            {
+              "feedback": "02002",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "doubt",
+              "prompt": "<P><G>crate<F>02002<G>"
+            },
+            {
+              "feedback": "00001",
+              "guess": "champ",
+              "prompt": "<P><G>crate<F>02002<G>doubt<F>00000<G>"
+            },
+            {
+              "feedback": "01020",
+              "guess": "dizzy",
+              "prompt": "<P><G>crate<F>02002<G>doubt<F>00000<G>champ<F>00001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "prize",
+              "prompt": "<P><G>crate<F>02002<G>doubt<F>00000<G>champ<F>00001<G>dizzy<F>01020<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "adore",
+            "large",
+            "raise"
+          ],
+          "invalid_guesses": 0,
+          "secret": "raise",
+          "turns": [
+            {
+              "feedback": "01102",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10012",
+              "guess": "adore",
+              "prompt": "<P><G>crate<F>01102<G>"
+            },
+            {
+              "feedback": "02102",
+              "guess": "large",
+              "prompt": "<P><G>crate<F>01102<G>adore<F>10012<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "raise",
+              "prompt": "<P><G>crate<F>01102<G>adore<F>10012<G>large<F>02102<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "adore",
+            "large",
+            "range"
+          ],
+          "invalid_guesses": 0,
+          "secret": "range",
+          "turns": [
+            {
+              "feedback": "01102",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10012",
+              "guess": "adore",
+              "prompt": "<P><G>crate<F>01102<G>"
+            },
+            {
+              "feedback": "02122",
+              "guess": "large",
+              "prompt": "<P><G>crate<F>01102<G>adore<F>10012<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "range",
+              "prompt": "<P><G>crate<F>01102<G>adore<F>10012<G>large<F>02122<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "would",
+            "elbow",
+            "round"
+          ],
+          "invalid_guesses": 0,
+          "secret": "round",
+          "turns": [
+            {
+              "feedback": "01000",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02202",
+              "guess": "would",
+              "prompt": "<P><G>crate<F>01000<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "elbow",
+              "prompt": "<P><G>crate<F>01000<G>would<F>02202<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "round",
+              "prompt": "<P><G>crate<F>01000<G>would<F>02202<G>elbow<F>00010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "aback",
+            "scarf"
+          ],
+          "invalid_guesses": 0,
+          "secret": "scarf",
+          "turns": [
+            {
+              "feedback": "11200",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00210",
+              "guess": "aback",
+              "prompt": "<P><G>crate<F>11200<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "scarf",
+              "prompt": "<P><G>crate<F>11200<G>aback<F>00210<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "pound",
+            "outer",
+            "stock",
+            "scout"
+          ],
+          "invalid_guesses": 0,
+          "secret": "scout",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01100",
+              "guess": "pound",
+              "prompt": "<P><G>crate<F>10010<G>"
+            },
+            {
+              "feedback": "11100",
+              "guess": "outer",
+              "prompt": "<P><G>crate<F>10010<G>pound<F>01100<G>"
+            },
+            {
+              "feedback": "21210",
+              "guess": "stock",
+              "prompt": "<P><G>crate<F>10010<G>pound<F>01100<G>outer<F>11100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "scout",
+              "prompt": "<P><G>crate<F>10010<G>pound<F>01100<G>outer<F>11100<G>stock<F>21210<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "wheel",
+            "seven"
+          ],
+          "invalid_guesses": 0,
+          "secret": "seven",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00120",
+              "guess": "wheel",
+              "prompt": "<P><G>crate<F>00001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "seven",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>00120<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blush",
+            "snake",
+            "shade",
+            "shame",
+            "shape"
+          ],
+          "invalid_guesses": 0,
+          "secret": "shape",
+          "turns": [
+            {
+              "feedback": "00202",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00011",
+              "guess": "blush",
+              "prompt": "<P><G>crate<F>00202<G>"
+            },
+            {
+              "feedback": "20202",
+              "guess": "snake",
+              "prompt": "<P><G>crate<F>00202<G>blush<F>00011<G>"
+            },
+            {
+              "feedback": "22202",
+              "guess": "shade",
+              "prompt": "<P><G>crate<F>00202<G>blush<F>00011<G>snake<F>20202<G>"
+            },
+            {
+              "feedback": "22202",
+              "guess": "shame",
+              "prompt": "<P><G>crate<F>00202<G>blush<F>00011<G>snake<F>20202<G>shade<F>22202<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "shape",
+              "prompt": "<P><G>crate<F>00202<G>blush<F>00011<G>snake<F>20202<G>shade<F>22202<G>shame<F>22202<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "wheel",
+            "sheep"
+          ],
+          "invalid_guesses": 0,
+          "secret": "sheep",
+          "turns": [
+            {
+              "feedback": "00001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02220",
+              "guess": "wheel",
+              "prompt": "<P><G>crate<F>00001<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "sheep",
+              "prompt": "<P><G>crate<F>00001<G>wheel<F>02220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "shout"
+          ],
+          "invalid_guesses": 0,
+          "secret": "shout",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "shout",
+              "prompt": "<P><G>crate<F>00010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "peach",
+            "space"
+          ],
+          "invalid_guesses": 0,
+          "secret": "space",
+          "turns": [
+            {
+              "feedback": "10202",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11220",
+              "guess": "peach",
+              "prompt": "<P><G>crate<F>10202<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "space",
+              "prompt": "<P><G>crate<F>10202<G>peach<F>11220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "shout",
+            "split"
+          ],
+          "invalid_guesses": 0,
+          "secret": "split",
+          "turns": [
+            {
+              "feedback": "00010",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "20002",
+              "guess": "shout",
+              "prompt": "<P><G>crate<F>00010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "split",
+              "prompt": "<P><G>crate<F>00010<G>shout<F>20002<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "imply",
+            "ankle",
+            "stack"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stack",
+          "turns": [
+            {
+              "feedback": "10210",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "imply",
+              "prompt": "<P><G>crate<F>10210<G>"
+            },
+            {
+              "feedback": "10100",
+              "guess": "ankle",
+              "prompt": "<P><G>crate<F>10210<G>imply<F>00000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stack",
+              "prompt": "<P><G>crate<F>10210<G>imply<F>00000<G>ankle<F>10100<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blush",
+            "stale"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stale",
+          "turns": [
+            {
+              "feedback": "00212",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01010",
+              "guess": "blush",
+              "prompt": "<P><G>crate<F>00212<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stale",
+              "prompt": "<P><G>crate<F>00212<G>blush<F>01010<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "stare"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stare",
+          "turns": [
+            {
+              "feedback": "01212",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stare",
+              "prompt": "<P><G>crate<F>01212<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "pound",
+            "shelf",
+            "suite",
+            "stick"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stick",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00000",
+              "guess": "pound",
+              "prompt": "<P><G>crate<F>10010<G>"
+            },
+            {
+              "feedback": "20000",
+              "guess": "shelf",
+              "prompt": "<P><G>crate<F>10010<G>pound<F>00000<G>"
+            },
+            {
+              "feedback": "20210",
+              "guess": "suite",
+              "prompt": "<P><G>crate<F>10010<G>pound<F>00000<G>shelf<F>20000<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stick",
+              "prompt": "<P><G>crate<F>10010<G>pound<F>00000<G>shelf<F>20000<G>suite<F>20210<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "worst",
+            "straw"
+          ],
+          "invalid_guesses": 0,
+          "secret": "straw",
+          "turns": [
+            {
+              "feedback": "01110",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "10211",
+              "guess": "worst",
+              "prompt": "<P><G>crate<F>01110<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "straw",
+              "prompt": "<P><G>crate<F>01110<G>worst<F>10211<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "pound",
+            "stuck"
+          ],
+          "invalid_guesses": 0,
+          "secret": "stuck",
+          "turns": [
+            {
+              "feedback": "10010",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00200",
+              "guess": "pound",
+              "prompt": "<P><G>crate<F>10010<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "stuck",
+              "prompt": "<P><G>crate<F>10010<G>pound<F>00200<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "blind",
+            "young",
+            "funny",
+            "sunny"
+          ],
+          "invalid_guesses": 0,
+          "secret": "sunny",
+          "turns": [
+            {
+              "feedback": "00000",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "blind",
+              "prompt": "<P><G>crate<F>00000<G>"
+            },
+            {
+              "feedback": "10120",
+              "guess": "young",
+              "prompt": "<P><G>crate<F>00000<G>blind<F>00020<G>"
+            },
+            {
+              "feedback": "02222",
+              "guess": "funny",
+              "prompt": "<P><G>crate<F>00000<G>blind<F>00020<G>young<F>10120<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "sunny",
+              "prompt": "<P><G>crate<F>00000<G>blind<F>00020<G>young<F>10120<G>funny<F>02222<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "video",
+            "buyer",
+            "super"
+          ],
+          "invalid_guesses": 0,
+          "secret": "super",
+          "turns": [
+            {
+              "feedback": "01001",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00020",
+              "guess": "video",
+              "prompt": "<P><G>crate<F>01001<G>"
+            },
+            {
+              "feedback": "02022",
+              "guess": "buyer",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00020<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "super",
+              "prompt": "<P><G>crate<F>01001<G>video<F>00020<G>buyer<F>02022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "saint",
+            "today"
+          ],
+          "invalid_guesses": 0,
+          "secret": "today",
+          "turns": [
+            {
+              "feedback": "00110",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "01001",
+              "guess": "saint",
+              "prompt": "<P><G>crate<F>00110<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "today",
+              "prompt": "<P><G>crate<F>00110<G>saint<F>01001<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "meter",
+            "other",
+            "tower"
+          ],
+          "invalid_guesses": 0,
+          "secret": "tower",
+          "turns": [
+            {
+              "feedback": "01011",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "00122",
+              "guess": "meter",
+              "prompt": "<P><G>crate<F>01011<G>"
+            },
+            {
+              "feedback": "11022",
+              "guess": "other",
+              "prompt": "<P><G>crate<F>01011<G>meter<F>00122<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "tower",
+              "prompt": "<P><G>crate<F>01011<G>meter<F>00122<G>other<F>11022<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "grant",
+            "draft",
+            "train",
+            "trail"
+          ],
+          "invalid_guesses": 0,
+          "secret": "trail",
+          "turns": [
+            {
+              "feedback": "02210",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "02201",
+              "guess": "grant",
+              "prompt": "<P><G>crate<F>02210<G>"
+            },
+            {
+              "feedback": "02201",
+              "guess": "draft",
+              "prompt": "<P><G>crate<F>02210<G>grant<F>02201<G>"
+            },
+            {
+              "feedback": "22220",
+              "guess": "train",
+              "prompt": "<P><G>crate<F>02210<G>grant<F>02201<G>draft<F>02201<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "trail",
+              "prompt": "<P><G>crate<F>02210<G>grant<F>02201<G>draft<F>02201<G>train<F>22220<G>"
+            }
+          ],
+          "won": true
+        },
+        {
+          "guesses": [
+            "crate",
+            "champ",
+            "brown",
+            "watch"
+          ],
+          "invalid_guesses": 0,
+          "secret": "watch",
+          "turns": [
+            {
+              "feedback": "10110",
+              "guess": "crate",
+              "prompt": "<P><G>"
+            },
+            {
+              "feedback": "11100",
+              "guess": "champ",
+              "prompt": "<P><G>crate<F>10110<G>"
+            },
+            {
+              "feedback": "00010",
+              "guess": "brown",
+              "prompt": "<P><G>crate<F>10110<G>champ<F>11100<G>"
+            },
+            {
+              "feedback": "22222",
+              "guess": "watch",
+              "prompt": "<P><G>crate<F>10110<G>champ<F>11100<G>brown<F>00010<G>"
+            }
+          ],
+          "won": true
+        }
+      ],
+      "win_rate": 1.0,
+      "wins": 72
+    }
+  },
+  "identity": {
+    "audit_version": 1,
+    "checkpoint": "runs/soft-distillation-resumable/B-T0.25/checkpoints/best.pt",
+    "secrets": [
+      "adopt",
+      "agree",
+      "aisle",
+      "alert",
+      "alibi",
+      "alive",
+      "amend",
+      "armor",
+      "asset",
+      "award",
+      "aware",
+      "badly",
+      "basin",
+      "beast",
+      "berry",
+      "bland",
+      "bless",
+      "block",
+      "brain",
+      "canoe",
+      "chose",
+      "couch",
+      "cover",
+      "crawl",
+      "dance",
+      "disco",
+      "dizzy",
+      "elbow",
+      "equip",
+      "faith",
+      "ferry",
+      "fifty",
+      "float",
+      "grown",
+      "house",
+      "label",
+      "lower",
+      "medal",
+      "mercy",
+      "olive",
+      "orbit",
+      "parka",
+      "party",
+      "piece",
+      "pilot",
+      "power",
+      "press",
+      "prime",
+      "prize",
+      "raise",
+      "range",
+      "round",
+      "scarf",
+      "scout",
+      "seven",
+      "shape",
+      "sheep",
+      "shout",
+      "space",
+      "split",
+      "stack",
+      "stale",
+      "stare",
+      "stick",
+      "straw",
+      "stuck",
+      "sunny",
+      "super",
+      "today",
+      "tower",
+      "trail",
+      "watch"
+    ],
+    "sha256": "f1248c8647cc278fc4072e7c3e63c2e0049e1f4afac033fc9daba2335affefe2",
+    "words": [
+      "aback",
+      "abase",
+      "abate",
+      "abbey",
+      "abyss",
+      "acute",
+      "adapt",
+      "admit",
+      "adobe",
+      "adopt",
+      "adore",
+      "adult",
+      "after",
+      "again",
+      "agent",
+      "agile",
+      "aging",
+      "agree",
+      "ahead",
+      "aisle",
+      "alarm",
+      "album",
+      "alert",
+      "algae",
+      "alias",
+      "alibi",
+      "alien",
+      "align",
+      "alike",
+      "alive",
+      "allow",
+      "alone",
+      "along",
+      "alter",
+      "amber",
+      "amend",
+      "ample",
+      "angel",
+      "anger",
+      "angle",
+      "angry",
+      "ankle",
+      "apple",
+      "apply",
+      "apron",
+      "arena",
+      "argue",
+      "arise",
+      "armor",
+      "aroma",
+      "array",
+      "arrow",
+      "aside",
+      "asset",
+      "atlas",
+      "audio",
+      "audit",
+      "avoid",
+      "awake",
+      "award",
+      "aware",
+      "awful",
+      "bacon",
+      "badge",
+      "badly",
+      "baker",
+      "baler",
+      "basic",
+      "basil",
+      "basin",
+      "basis",
+      "batch",
+      "beach",
+      "beard",
+      "beast",
+      "began",
+      "begin",
+      "being",
+      "belly",
+      "below",
+      "bench",
+      "berry",
+      "birth",
+      "black",
+      "blame",
+      "bland",
+      "blank",
+      "blast",
+      "blaze",
+      "bleed",
+      "blend",
+      "bless",
+      "blind",
+      "blink",
+      "block",
+      "blood",
+      "bloom",
+      "blown",
+      "blues",
+      "blunt",
+      "blush",
+      "board",
+      "boast",
+      "bonus",
+      "boost",
+      "booth",
+      "bound",
+      "bowel",
+      "brain",
+      "brake",
+      "brand",
+      "brass",
+      "brave",
+      "bread",
+      "break",
+      "breed",
+      "brick",
+      "bride",
+      "brief",
+      "bring",
+      "broad",
+      "broke",
+      "brown",
+      "brush",
+      "build",
+      "built",
+      "buyer",
+      "cabin",
+      "cable",
+      "cacao",
+      "cache",
+      "camel",
+      "candy",
+      "canoe",
+      "cargo",
+      "carry",
+      "carve",
+      "catch",
+      "cater",
+      "cause",
+      "chain",
+      "chair",
+      "chalk",
+      "champ",
+      "chant",
+      "chaos",
+      "charm",
+      "chart",
+      "chase",
+      "cheap",
+      "cheat",
+      "check",
+      "cheek",
+      "cheer",
+      "chess",
+      "chest",
+      "chief",
+      "child",
+      "chili",
+      "chill",
+      "china",
+      "chirp",
+      "choir",
+      "chose",
+      "civic",
+      "civil",
+      "claim",
+      "clamp",
+      "clash",
+      "class",
+      "clean",
+      "clear",
+      "clerk",
+      "click",
+      "cliff",
+      "climb",
+      "cling",
+      "clock",
+      "clone",
+      "close",
+      "cloth",
+      "cloud",
+      "clown",
+      "coach",
+      "coast",
+      "colon",
+      "color",
+      "comet",
+      "coral",
+      "couch",
+      "could",
+      "count",
+      "court",
+      "cover",
+      "crack",
+      "craft",
+      "crane",
+      "crash",
+      "crate",
+      "crave",
+      "crawl",
+      "craze",
+      "cream",
+      "creek",
+      "crime",
+      "crisp",
+      "croak",
+      "crown",
+      "crude",
+      "crush",
+      "curly",
+      "curve",
+      "cycle",
+      "daily",
+      "dairy",
+      "daisy",
+      "dance",
+      "datum",
+      "dealt",
+      "death",
+      "decor",
+      "delay",
+      "delta",
+      "depth",
+      "digit",
+      "diner",
+      "dirty",
+      "disco",
+      "ditch",
+      "diver",
+      "dizzy",
+      "dodge",
+      "doing",
+      "donor",
+      "doubt",
+      "dozen",
+      "draft",
+      "drain",
+      "drama",
+      "drank",
+      "dream",
+      "dress",
+      "dried",
+      "drill",
+      "drink",
+      "drive",
+      "drove",
+      "drown",
+      "eager",
+      "early",
+      "earth",
+      "eight",
+      "elbow",
+      "elder",
+      "elect",
+      "elite",
+      "empty",
+      "enact",
+      "enemy",
+      "enjoy",
+      "entry",
+      "equal",
+      "equip",
+      "erase",
+      "error",
+      "essay",
+      "event",
+      "every",
+      "exact",
+      "extra",
+      "faith",
+      "false",
+      "fancy",
+      "fault",
+      "favor",
+      "feast",
+      "ferry",
+      "fewer",
+      "fiber",
+      "field",
+      "fiery",
+      "fifth",
+      "fifty",
+      "fight",
+      "final",
+      "first",
+      "flame",
+      "flank",
+      "flare",
+      "flash",
+      "fleet",
+      "flesh",
+      "flick",
+      "fling",
+      "float",
+      "flock",
+      "flood",
+      "floor",
+      "flour",
+      "fluid",
+      "flute",
+      "focus",
+      "force",
+      "forge",
+      "forth",
+      "forty",
+      "forum",
+      "found",
+      "frame",
+      "fresh",
+      "front",
+      "frost",
+      "fruit",
+      "funny",
+      "giant",
+      "given",
+      "glass",
+      "gleam",
+      "glide",
+      "globe",
+      "glory",
+      "glove",
+      "grace",
+      "grade",
+      "grain",
+      "grand",
+      "grant",
+      "grape",
+      "graph",
+      "grasp",
+      "grass",
+      "grave",
+      "great",
+      "green",
+      "greet",
+      "grief",
+      "grill",
+      "groan",
+      "group",
+      "grove",
+      "grown",
+      "guard",
+      "guess",
+      "guest",
+      "guide",
+      "guilt",
+      "habit",
+      "hairy",
+      "happy",
+      "harsh",
+      "haste",
+      "haunt",
+      "heart",
+      "heavy",
+      "hello",
+      "hence",
+      "honey",
+      "honor",
+      "horse",
+      "hotel",
+      "house",
+      "human",
+      "humor",
+      "ideal",
+      "image",
+      "imply",
+      "index",
+      "inner",
+      "input",
+      "irate",
+      "issue",
+      "ivory",
+      "jelly",
+      "jewel",
+      "joint",
+      "judge",
+      "juice",
+      "kneel",
+      "knife",
+      "knock",
+      "known",
+      "label",
+      "labor",
+      "lance",
+      "large",
+      "laser",
+      "later",
+      "laugh",
+      "layer",
+      "learn",
+      "least",
+      "leave",
+      "lemon",
+      "light",
+      "limit",
+      "linen",
+      "liver",
+      "local",
+      "lodge",
+      "logic",
+      "loose",
+      "lover",
+      "lower",
+      "lucky",
+      "lunch",
+      "magic",
+      "major",
+      "maker",
+      "maple",
+      "march",
+      "marry",
+      "match",
+      "maybe",
+      "mayor",
+      "medal",
+      "media",
+      "mercy",
+      "metal",
+      "meter",
+      "might",
+      "minor",
+      "model",
+      "money",
+      "month",
+      "moral",
+      "motor",
+      "mount",
+      "mouse",
+      "mouth",
+      "movie",
+      "music",
+      "naive",
+      "nasty",
+      "naval",
+      "nerve",
+      "never",
+      "night",
+      "noble",
+      "noise",
+      "north",
+      "novel",
+      "nurse",
+      "ocean",
+      "offer",
+      "often",
+      "olive",
+      "opera",
+      "orbit",
+      "order",
+      "organ",
+      "other",
+      "ought",
+      "ounce",
+      "outer",
+      "owner",
+      "paint",
+      "panel",
+      "panic",
+      "paper",
+      "parka",
+      "party",
+      "paste",
+      "patch",
+      "pause",
+      "peace",
+      "peach",
+      "pearl",
+      "pedal",
+      "phase",
+      "phone",
+      "piano",
+      "piece",
+      "pilot",
+      "pinch",
+      "pitch",
+      "pixel",
+      "place",
+      "plain",
+      "plane",
+      "plant",
+      "plate",
+      "plead",
+      "point",
+      "pound",
+      "power",
+      "press",
+      "price",
+      "pride",
+      "prime",
+      "print",
+      "prize",
+      "probe",
+      "prone",
+      "proof",
+      "proud",
+      "queen",
+      "query",
+      "quick",
+      "quiet",
+      "quilt",
+      "quite",
+      "radio",
+      "raise",
+      "rally",
+      "ranch",
+      "range",
+      "rapid",
+      "ratio",
+      "reach",
+      "react",
+      "ready",
+      "realm",
+      "refer",
+      "reign",
+      "relax",
+      "reply",
+      "rider",
+      "ridge",
+      "rifle",
+      "right",
+      "rigid",
+      "rival",
+      "river",
+      "roast",
+      "robot",
+      "rocky",
+      "rogue",
+      "rough",
+      "round",
+      "route",
+      "royal",
+      "rural",
+      "saint",
+      "salad",
+      "sauce",
+      "scale",
+      "scare",
+      "scarf",
+      "scene",
+      "scent",
+      "scope",
+      "score",
+      "scout",
+      "sense",
+      "serve",
+      "seven",
+      "shade",
+      "shake",
+      "shall",
+      "shame",
+      "shape",
+      "share",
+      "shark",
+      "sharp",
+      "sheep",
+      "sheer",
+      "shelf",
+      "shell",
+      "shift",
+      "shine",
+      "shirt",
+      "shock",
+      "shore",
+      "short",
+      "shout",
+      "sight",
+      "silly",
+      "since",
+      "skill",
+      "skirt",
+      "slate",
+      "sleep",
+      "slice",
+      "slick",
+      "slide",
+      "slope",
+      "small",
+      "smart",
+      "smell",
+      "smile",
+      "smoke",
+      "snack",
+      "snake",
+      "solar",
+      "solid",
+      "solve",
+      "sorry",
+      "sound",
+      "south",
+      "space",
+      "spare",
+      "speak",
+      "spear",
+      "speed",
+      "spice",
+      "spike",
+      "spill",
+      "spine",
+      "spite",
+      "split",
+      "sport",
+      "spray",
+      "stack",
+      "staff",
+      "stage",
+      "stain",
+      "stair",
+      "stake",
+      "stale",
+      "stand",
+      "stare",
+      "start",
+      "state",
+      "steam",
+      "steel",
+      "steep",
+      "stick",
+      "still",
+      "stock",
+      "stone",
+      "stood",
+      "store",
+      "storm",
+      "story",
+      "stove",
+      "strap",
+      "straw",
+      "strip",
+      "stuck",
+      "study",
+      "style",
+      "sugar",
+      "suite",
+      "sunny",
+      "super",
+      "sweet",
+      "sweep",
+      "sword",
+      "table",
+      "taken",
+      "taste",
+      "teach",
+      "tears",
+      "their",
+      "theme",
+      "there",
+      "thick",
+      "thief",
+      "thing",
+      "think",
+      "those",
+      "three",
+      "tiger",
+      "tight",
+      "timer",
+      "tired",
+      "title",
+      "today",
+      "token",
+      "topic",
+      "total",
+      "tower",
+      "trace",
+      "track",
+      "trade",
+      "trail",
+      "train",
+      "treat",
+      "trend",
+      "trial",
+      "tribe",
+      "trick",
+      "truck",
+      "truly",
+      "trust",
+      "truth",
+      "twice",
+      "uncle",
+      "under",
+      "union",
+      "unity",
+      "until",
+      "upper",
+      "upset",
+      "urban",
+      "usage",
+      "usual",
+      "valid",
+      "value",
+      "video",
+      "virus",
+      "visit",
+      "vital",
+      "voice",
+      "waste",
+      "watch",
+      "water",
+      "weary",
+      "weird",
+      "whale",
+      "wheat",
+      "wheel",
+      "where",
+      "which",
+      "while",
+      "white",
+      "whole",
+      "woman",
+      "world",
+      "worry",
+      "worst",
+      "worth",
+      "would",
+      "wound",
+      "write",
+      "wrong",
+      "young",
+      "youth",
+      "zebra"
+    ]
+  },
+  "training_performed": false
+}

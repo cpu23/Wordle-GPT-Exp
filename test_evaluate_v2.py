@@ -29,6 +29,24 @@ class ScriptedModel(nn.Module):
 
 
 class GameplayTests(unittest.TestCase):
+    def test_word_argmax_uses_joint_probability_not_first_letter(self):
+        from evaluate_v2 import evaluate_model
+
+        with torch.random.fork_rng():
+            model = WordleGPT(vocab_size=VOCABULARY_SIZE, embedding_size=8,
+                              num_layers=1, num_heads=2, mlp_size=16).eval()
+        with torch.no_grad():
+            for parameter in model.parameters():
+                parameter.zero_()
+            model.output.bias[encode("a")[0]] = 3
+            model.output.bias[encode("b")[0]] = 2
+        words = ("azzzz", "bbbbb")
+        token = evaluate_model(model, ["bbbbb"], words, decode="constrained")
+        joint = evaluate_model(model, ["bbbbb"], words, decode="word-argmax")
+        self.assertEqual(token.results[0].guesses, ("azzzz",) * 6)
+        self.assertEqual(joint.results[0].guesses, ("bbbbb",))
+        self.assertEqual(joint.wins, 1)
+
     def test_valid_generated_secret_wins_in_one_guess(self):
         result = play_secret(ScriptedModel("crane"), "crane", frozenset({"crane"}))
         self.assertTrue(result.won)

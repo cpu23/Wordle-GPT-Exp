@@ -1,0 +1,92 @@
+{
+  "mode": null,
+  "rows": 1000000,
+  "temperatures": {
+    "0.25": {
+      "all": {
+        "all": {
+          "count": 1000000,
+          "count_mass_ge_0.01": {
+            "mean": 25.329219,
+            "median": 30.0
+          },
+          "effective_candidates": {
+            "mean": 43.618070543551354,
+            "median": 53.145964188900166
+          },
+          "entropy": {
+            "mean": 2.5132593684572377,
+            "median": 3.9730421694276488
+          },
+          "rank1_mass": {
+            "mean": 0.4309587304273601,
+            "median": 0.06461961550590409
+          },
+          "top3_mass": {
+            "mean": 0.46643598193336494,
+            "median": 0.16346976634294372
+          },
+          "top8_mass": {
+            "mean": 0.5375825281109998,
+            "median": 0.34028647730460654
+          }
+        },
+        "non_singleton": {
+          "count": 590530,
+          "count_mass_ge_0.01": {
+            "mean": 42.19895517585898,
+            "median": 37.0
+          },
+          "effective_candidates": {
+            "mean": 73.16918792195376,
+            "median": 68.47021179653234
+          },
+          "entropy": {
+            "mean": 4.255938510248824,
+            "median": 4.226398786403065
+          },
+          "rank1_mass": {
+            "mean": 0.03638888867180342,
+            "median": 0.02797841424425781
+          },
+          "top3_mass": {
+            "mean": 0.09646585598253253,
+            "median": 0.08353229255567508
+          },
+          "top8_mass": {
+            "mean": 0.21694499536179335,
+            "median": 0.2126459488502221
+          }
+        },
+        "singleton": {
+          "count": 409470,
+          "count_mass_ge_0.01": {
+            "mean": 1.0,
+            "median": 1.0
+          },
+          "effective_candidates": {
+            "mean": 1.0,
+            "median": 1.0
+          },
+          "entropy": {
+            "mean": 0.0,
+            "median": 0.0
+          },
+          "rank1_mass": {
+            "mean": 1.0,
+            "median": 1.0
+          },
+          "top3_mass": {
+            "mean": 1.0,
+            "median": 1.0
+          },
+          "top8_mass": {
+            "mean": 1.0,
+            "median": 1.0
+          }
+        }
+      }
+    }
+  },
+  "weighting": "unweighted corpus states"
+}

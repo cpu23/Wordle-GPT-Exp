@@ -133,10 +133,10 @@ mechanics-pretrained initialization at LR `3e-4`; C starts from hard SFT at
 of 128 states, corpus sampling weights, and 95% policy / 5% mechanics replay.
 Defaults evaluate each full weighted epoch, with patience four and a maximum
 of 100 epochs. C additionally evaluates steps 100, 250, and 1,000; losing at
-least five constrained validation wins by step 250 triggers a fresh `3e-6` run
+least five full-word-argmax validation wins by step 250 triggers a fresh `3e-6` run
 for that temperature.
 
-Checkpoint ordering is constrained wins, attempts/game, guesses among wins,
+Checkpoint ordering is full-word-argmax wins, attempts/game, guesses among wins,
 exhaustive action regret, then teacher-to-student KL. Fixed 512-state validation
 panels report regret, exhaustive rank fractions, relative cost, and complete
 matched teacher/student distributions across candidate-count strata. Mechanics
@@ -144,11 +144,32 @@ validation is evaluated on its full existing split. Source-secret splits remain
 strict; full-dictionary hypothetical answers match the original SFT teacher.
 The development run never automatically evaluates fixed test secrets.
 
-`comparison.json` contains the seven-row comparison, any lower-LR C retries,
-and paired development games. Full five-fold/three-seed benchmarking is allowed
-only for improved gameplay ordering, or at least 5% lower mean action regret
-without worse gameplay. Its outputs include paired results for all 719 held-out
-secrets per seed and matched action-regret distributions.
+The fixed benchmark compares hard SFT, soft B, and soft C at **T=0.25** across
+all five folds and seeds 0/1/2. Each model predicts exactly 719 disjoint held-out
+secrets per seed. All validation selection and held-out gameplay use
+`word-argmax`: maximum raw five-letter joint probability over all 719 words,
+without a teacher shortlist or remaining-answer mask. Hard-SFT baselines are
+evaluated first; the 30 B/C training cells then run from their corresponding
+fold/seed initialization, with validation-only early stopping and C retry.
+Per-secret predictions, paired comparisons, and mean/sample-standard-deviation
+across seeds are written under `runs/soft-distillation-cv5-word-argmax`.
+
+```bash
+# Inference only: audit historical development checkpoints under both decoders.
+uv run --with-requirements requirements.txt python audit_checkpoint_decoders.py
+# Evaluate all existing hard-SFT CV checkpoints without training.
+uv run --with-requirements requirements.txt python benchmark_soft_distillation.py --baseline-only --resume
+# Run/resume the fixed full benchmark.
+uv run --with-requirements requirements.txt python benchmark_soft_distillation.py --resume
+```
+
+The audit stores wins, average attempts, per-secret trajectories, and decoder
+disagreement on identical histories in the union visited by both policies.
+It covers 43 saved checkpoints. The development soft B best changes from 2/72
+token-greedy wins to 72/72 full-word wins; hard SFT stays at 59/72.
+No fully trained development C exists; its audited checkpoint is smoke-only.
+The historical token-greedy resume manifests are intentionally incompatible
+with new word-argmax checkpoint selection. They remain untouched.
 
 #### Stopping and resuming distillation
 
@@ -162,11 +183,11 @@ the entire sweep with status 130; it does not start the next model.
 ```bash
 # Start a new resumable sweep without overwriting the cancelled legacy run:
 uv run --with-requirements requirements.txt python train_soft_distillation.py \
-  --output-dir runs/soft-distillation-resumable
+  --output-dir runs/soft-distillation-dev-word-argmax
 
 # Later, repeat the same training arguments and add --resume:
 uv run --with-requirements requirements.txt python train_soft_distillation.py \
-  --output-dir runs/soft-distillation-resumable --resume
+  --output-dir runs/soft-distillation-dev-word-argmax --resume
 ```
 
 Use `--save-every N` to change the periodic save interval.

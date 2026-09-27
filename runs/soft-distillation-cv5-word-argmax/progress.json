@@ -1,0 +1,8 @@
+{
+  "complete": false,
+  "completed_model_seeds": [
+    "hard-sft/seed-0",
+    "hard-sft/seed-1",
+    "hard-sft/seed-2"
+  ]
+}

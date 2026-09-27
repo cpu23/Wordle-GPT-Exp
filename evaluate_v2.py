@@ -17,7 +17,7 @@ from wordle import DEFAULT_WORDS, load_words, score_guess
 DEFAULT_SPLITS_PATH = Path("data/wordle-100k/secret-splits.json")
 DEFAULT_MAX_GUESSES = 6
 LETTER_TOKEN_LIMIT = 26
-DECODE_MODES = ("raw", "constrained")
+DECODE_MODES = ("raw", "constrained", "word-argmax")
 
 
 @dataclass(frozen=True)
@@ -58,6 +58,33 @@ def load_v2_model(checkpoint_path: str | Path, device: str) -> WordleGPT:
     return model
 
 
+class WordArgmaxPolicy:
+    """Full-dictionary joint-word MAP; cache only while model weights are fixed."""
+
+    def __init__(self, model, words):
+        self.model = model
+        self.words = tuple(words)
+        self.tokens = torch.tensor(
+            [encode(word) for word in self.words],
+            device=next(model.parameters()).device,
+        )
+        self.cache = {}
+
+    @torch.inference_mode()
+    def __call__(self, prefix):
+        from soft_policy import candidate_sequence_logps
+
+        key = tuple(prefix)
+        if key not in self.cache:
+            prompts = torch.tensor([prefix], device=self.tokens.device)
+            lengths = torch.tensor([len(prefix)], device=self.tokens.device)
+            scores = candidate_sequence_logps(
+                self.model, prompts, lengths, self.tokens.unsqueeze(0)
+            )
+            self.cache[key] = encode(self.words[int(scores[0].argmax())])
+        return self.cache[key]
+
+
 def play_secret(
     model: WordleGPT,
     secret: str,
@@ -65,6 +92,7 @@ def play_secret(
     *,
     max_guesses: int = DEFAULT_MAX_GUESSES,
     constrained: bool = False,
+    policy=None,
 ) -> GameResult:
     """Play one game greedily; an invalid generated word ends the game.
 
@@ -74,7 +102,9 @@ def play_secret(
     prefix = encode(POLICY_TOKEN + GUESS_TOKEN)
     guesses: list[str] = []
     for _ in range(max_guesses):
-        if constrained:
+        if policy is not None:
+            generated = prefix + policy(prefix)
+        elif constrained:
             generated = prefix + generate_constrained_guess(
                 model, prefix, allowed_words
             )
@@ -108,8 +138,9 @@ def evaluate_model(
         raise ValueError(f"unknown decode mode: {decode!r}")
     constrained = decode == "constrained"
     allowed = frozenset(allowed_words)
+    policy = WordArgmaxPolicy(model, allowed_words) if decode == "word-argmax" else None
     results = tuple(
-        play_secret(model, secret, allowed, constrained=constrained)
+        play_secret(model, secret, allowed, constrained=constrained, policy=policy)
         for secret in secrets
     )
     wins = sum(result.won for result in results)
@@ -161,7 +192,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "--decode",
         choices=DECODE_MODES,
         default="raw",
-        help="raw greedy decoding or token-masked constrained decoding.",
+        help="Raw tokens, legal-prefix token greedy, or full-dictionary joint-word argmax.",
     )
     parser.add_argument("--device", choices=("cpu", "cuda"), default=None)
     parser.add_argument("--details", action="store_true")

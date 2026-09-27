@@ -13,4 +13,5 @@ data/wordle-v2-diverse-1m/examples.jsonl.gz
 data/wordle-v2-diverse-1m-cv/examples.jsonl.gz
 # Generated soft-teacher arrays and resumable optimizer state stay local.
 data/soft-teacher-1m/*.npy
+data/soft-teacher-cv1m/*.npy
 runs/**/resume.pt

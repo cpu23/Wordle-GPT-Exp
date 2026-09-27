@@ -1,0 +1,1674 @@
+{
+  "checkpoints": [
+    {
+      "checkpoint": "runs/scaling-dev-1m/seed-0/fold-1/7.2m/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/scaling-dev-1m/seed-0/fold-1/7.2m/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/scaling-dev-1m/seed-0/fold-1/7.2m/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "hard-sft",
+      "report": "runs/checkpoint-decoder-audit/runs__scaling-dev-1m__seed-0__fold-1__7.2m__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/dpo-rescue-anchor/lambda-0.0-lr-3e-06/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-0.0-lr-3e-06/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-0.0-lr-3e-06/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "anchored-dpo",
+      "report": "runs/checkpoint-decoder-audit/runs__dpo-rescue-anchor__lambda-0.0-lr-3e-06__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/dpo-rescue-anchor/lambda-0.1-lr-3e-06/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-0.1-lr-3e-06/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-0.1-lr-3e-06/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "anchored-dpo",
+      "report": "runs/checkpoint-decoder-audit/runs__dpo-rescue-anchor__lambda-0.1-lr-3e-06__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/dpo-rescue-anchor/lambda-0.5-lr-3e-06/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-0.5-lr-3e-06/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-0.5-lr-3e-06/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "anchored-dpo",
+      "report": "runs/checkpoint-decoder-audit/runs__dpo-rescue-anchor__lambda-0.5-lr-3e-06__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/dpo-rescue-anchor/lambda-1.0-lr-1e-06/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 15,
+        "rate": 0.07281553398058252,
+        "states": 206,
+        "visitation_weighted_rates": {
+          "constrained": 0.05653710247349823,
+          "word-argmax": 0.07042253521126761
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.5166666666666666,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-1.0-lr-1e-06/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8333333333333334,
+          "wins": 60
+        },
+        "word-argmax": {
+          "average_attempts": 3.9444444444444446,
+          "average_guesses": 3.357142857142857,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-1.0-lr-1e-06/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7777777777777778,
+          "wins": 56
+        }
+      },
+      "family": "anchored-dpo",
+      "report": "runs/checkpoint-decoder-audit/runs__dpo-rescue-anchor__lambda-1.0-lr-1e-06__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/dpo-rescue-anchor/lambda-1.0-lr-3e-06/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 16,
+        "rate": 0.08080808080808081,
+        "states": 198,
+        "visitation_weighted_rates": {
+          "constrained": 0.05190311418685121,
+          "word-argmax": 0.053763440860215055
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.013888888888889,
+          "average_guesses": 3.6166666666666667,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-1.0-lr-3e-06/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8333333333333334,
+          "wins": 60
+        },
+        "word-argmax": {
+          "average_attempts": 3.875,
+          "average_guesses": 3.5714285714285716,
+          "checkpoint": "runs/dpo-rescue-anchor/lambda-1.0-lr-3e-06/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.875,
+          "wins": 63
+        }
+      },
+      "family": "anchored-dpo",
+      "report": "runs/checkpoint-decoder-audit/runs__dpo-rescue-anchor__lambda-1.0-lr-3e-06__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-one-step/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-dev-one-step/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-dev-one-step/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "one-step-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-one-step__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-one-step/checkpoints/update-0.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-dev-one-step/checkpoints/update-0.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-dev-one-step/checkpoints/update-0.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "one-step-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-one-step__checkpoints__update-0.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-one-step/checkpoints/update-1.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-dev-one-step/checkpoints/update-1.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-dev-one-step/checkpoints/update-1.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "one-step-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-one-step__checkpoints__update-1.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-games-dev/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "full-game-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-games-dev__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-games-dev/checkpoints/update-0.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-0.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-0.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "full-game-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-games-dev__checkpoints__update-0.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-games-dev/checkpoints/update-100.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 10,
+        "rate": 0.050761421319796954,
+        "states": 197,
+        "visitation_weighted_rates": {
+          "constrained": 0.0313588850174216,
+          "word-argmax": 0.03806228373702422
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.986111111111111,
+          "average_guesses": 3.542372881355932,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-100.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 4.013888888888889,
+          "average_guesses": 3.491228070175439,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-100.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        }
+      },
+      "family": "full-game-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-games-dev__checkpoints__update-100.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-games-dev/checkpoints/update-1000.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 11,
+        "rate": 0.05527638190954774,
+        "states": 199,
+        "visitation_weighted_rates": {
+          "constrained": 0.02666666666666667,
+          "word-argmax": 0.03367003367003367
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.166666666666667,
+          "average_guesses": 3.5555555555555554,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-1000.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.75,
+          "wins": 54
+        },
+        "word-argmax": {
+          "average_attempts": 4.125,
+          "average_guesses": 3.5454545454545454,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-1000.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7638888888888888,
+          "wins": 55
+        }
+      },
+      "family": "full-game-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-games-dev__checkpoints__update-1000.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-games-dev/checkpoints/update-10000.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.04128440366972477,
+        "states": 218,
+        "visitation_weighted_rates": {
+          "constrained": 0.018867924528301886,
+          "word-argmax": 0.02875399361022364
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.416666666666667,
+          "average_guesses": 3.673469387755102,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-10000.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.6805555555555556,
+          "wins": 49
+        },
+        "word-argmax": {
+          "average_attempts": 4.347222222222222,
+          "average_guesses": 3.6666666666666665,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-10000.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7083333333333334,
+          "wins": 51
+        }
+      },
+      "family": "full-game-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-games-dev__checkpoints__update-10000.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-games-dev/checkpoints/update-250.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.04639175257731959,
+        "states": 194,
+        "visitation_weighted_rates": {
+          "constrained": 0.027303754266211604,
+          "word-argmax": 0.03103448275862069
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.069444444444445,
+          "average_guesses": 3.56140350877193,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-250.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        },
+        "word-argmax": {
+          "average_attempts": 4.027777777777778,
+          "average_guesses": 3.508771929824561,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-250.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        }
+      },
+      "family": "full-game-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-games-dev__checkpoints__update-250.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-games-dev/checkpoints/update-2500.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 8,
+        "rate": 0.03902439024390244,
+        "states": 205,
+        "visitation_weighted_rates": {
+          "constrained": 0.01948051948051948,
+          "word-argmax": 0.026402640264026403
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.277777777777778,
+          "average_guesses": 3.6153846153846154,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-2500.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7222222222222222,
+          "wins": 52
+        },
+        "word-argmax": {
+          "average_attempts": 4.208333333333333,
+          "average_guesses": 3.5660377358490565,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-2500.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7361111111111112,
+          "wins": 53
+        }
+      },
+      "family": "full-game-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-games-dev__checkpoints__update-2500.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-games-dev/checkpoints/update-500.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 10,
+        "rate": 0.052083333333333336,
+        "states": 192,
+        "visitation_weighted_rates": {
+          "constrained": 0.023890784982935155,
+          "word-argmax": 0.03103448275862069
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.069444444444445,
+          "average_guesses": 3.517857142857143,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-500.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7777777777777778,
+          "wins": 56
+        },
+        "word-argmax": {
+          "average_attempts": 4.027777777777778,
+          "average_guesses": 3.508771929824561,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-500.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        }
+      },
+      "family": "full-game-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-games-dev__checkpoints__update-500.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-games-dev/checkpoints/update-5000.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 10,
+        "rate": 0.04739336492890995,
+        "states": 211,
+        "visitation_weighted_rates": {
+          "constrained": 0.02280130293159609,
+          "word-argmax": 0.0392156862745098
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.263888888888889,
+          "average_guesses": 3.5961538461538463,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-5000.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7222222222222222,
+          "wins": 52
+        },
+        "word-argmax": {
+          "average_attempts": 4.25,
+          "average_guesses": 3.6666666666666665,
+          "checkpoint": "runs/grpo-games-dev/checkpoints/update-5000.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.75,
+          "wins": 54
+        }
+      },
+      "family": "full-game-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-games-dev__checkpoints__update-5000.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-continuations-beta-002/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-continuations-beta-002/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-continuations-beta-002/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "continuation-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-continuations-beta-002__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-continuations-beta-005/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-continuations-beta-005/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-continuations-beta-005/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "continuation-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-continuations-beta-005__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-continuations-beta-010/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-continuations-beta-010/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-continuations-beta-010/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "continuation-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-continuations-beta-010__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-token-lr-1e5/checkpoints/best-continuation.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-token-lr-1e5/checkpoints/best-continuation.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-token-lr-1e5/checkpoints/best-continuation.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "continuation-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-token-lr-1e5__checkpoints__best-continuation.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-token-lr-1e5/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-token-lr-1e5/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-token-lr-1e5/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "continuation-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-token-lr-1e5__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-token-lr-1e6/checkpoints/best-continuation.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 8,
+        "rate": 0.042328042328042326,
+        "states": 189,
+        "visitation_weighted_rates": {
+          "constrained": 0.028268551236749116,
+          "word-argmax": 0.028268551236749116
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-token-lr-1e6/checkpoints/best-continuation.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-token-lr-1e6/checkpoints/best-continuation.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "continuation-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-token-lr-1e6__checkpoints__best-continuation.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-token-lr-1e6/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-token-lr-1e6/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-token-lr-1e6/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "continuation-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-token-lr-1e6__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-token-lr-3e6/checkpoints/best-continuation.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.04639175257731959,
+        "states": 194,
+        "visitation_weighted_rates": {
+          "constrained": 0.038869257950530034,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-token-lr-3e6/checkpoints/best-continuation.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-token-lr-3e6/checkpoints/best-continuation.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "continuation-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-token-lr-3e6__checkpoints__best-continuation.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-token-lr-3e6/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-token-lr-3e6/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-token-lr-3e6/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "continuation-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-token-lr-3e6__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 10,
+        "rate": 0.05291005291005291,
+        "states": 189,
+        "visitation_weighted_rates": {
+          "constrained": 0.031914893617021274,
+          "word-argmax": 0.0353356890459364
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-dense__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-0.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.046632124352331605,
+        "states": 193,
+        "visitation_weighted_rates": {
+          "constrained": 0.03900709219858156,
+          "word-argmax": 0.038869257950530034
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-0.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-0.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-dense__checkpoints__update-0.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-100.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 9,
+        "rate": 0.047619047619047616,
+        "states": 189,
+        "visitation_weighted_rates": {
+          "constrained": 0.031914893617021274,
+          "word-argmax": 0.03180212014134275
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-100.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-100.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-dense__checkpoints__update-100.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-1000.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 13,
+        "rate": 0.06532663316582915,
+        "states": 199,
+        "visitation_weighted_rates": {
+          "constrained": 0.041811846689895474,
+          "word-argmax": 0.04498269896193772
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.986111111111111,
+          "average_guesses": 3.5,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-1000.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8055555555555556,
+          "wins": 58
+        },
+        "word-argmax": {
+          "average_attempts": 4.013888888888889,
+          "average_guesses": 3.491228070175439,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-1000.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-dense__checkpoints__update-1000.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-10000.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 16,
+        "rate": 0.08205128205128205,
+        "states": 195,
+        "visitation_weighted_rates": {
+          "constrained": 0.051194539249146756,
+          "word-argmax": 0.05226480836236934
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.069444444444445,
+          "average_guesses": 3.56140350877193,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-10000.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        },
+        "word-argmax": {
+          "average_attempts": 3.986111111111111,
+          "average_guesses": 3.542372881355932,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-10000.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-dense__checkpoints__update-10000.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-250.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 10,
+        "rate": 0.05291005291005291,
+        "states": 189,
+        "visitation_weighted_rates": {
+          "constrained": 0.031914893617021274,
+          "word-argmax": 0.0353356890459364
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.457627118644068,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-250.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-250.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-dense__checkpoints__update-250.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-2500.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 12,
+        "rate": 0.061224489795918366,
+        "states": 196,
+        "visitation_weighted_rates": {
+          "constrained": 0.034013605442176874,
+          "word-argmax": 0.041237113402061855
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.083333333333333,
+          "average_guesses": 3.5357142857142856,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-2500.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7777777777777778,
+          "wins": 56
+        },
+        "word-argmax": {
+          "average_attempts": 4.041666666666667,
+          "average_guesses": 3.526315789473684,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-2500.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-dense__checkpoints__update-2500.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-500.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 14,
+        "rate": 0.06930693069306931,
+        "states": 202,
+        "visitation_weighted_rates": {
+          "constrained": 0.04946996466431095,
+          "word-argmax": 0.05190311418685121
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9305555555555554,
+          "average_guesses": 3.4745762711864407,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-500.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        },
+        "word-argmax": {
+          "average_attempts": 4.013888888888889,
+          "average_guesses": 3.491228070175439,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-500.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-dense__checkpoints__update-500.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-dev-dense/checkpoints/update-5000.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 14,
+        "rate": 0.07179487179487179,
+        "states": 195,
+        "visitation_weighted_rates": {
+          "constrained": 0.037800687285223365,
+          "word-argmax": 0.04844290657439446
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.041666666666667,
+          "average_guesses": 3.5689655172413794,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-5000.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8055555555555556,
+          "wins": 58
+        },
+        "word-argmax": {
+          "average_attempts": 4.013888888888889,
+          "average_guesses": 3.5344827586206895,
+          "checkpoint": "runs/grpo-dev-dense/checkpoints/update-5000.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8055555555555556,
+          "wins": 58
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-dev-dense__checkpoints__update-5000.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-information-dev/checkpoints/best-gameplay.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 19,
+        "rate": 0.09178743961352658,
+        "states": 207,
+        "visitation_weighted_rates": {
+          "constrained": 0.06810035842293907,
+          "word-argmax": 0.0657439446366782
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.875,
+          "average_guesses": 3.45,
+          "checkpoint": "runs/grpo-information-dev/checkpoints/best-gameplay.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8333333333333334,
+          "wins": 60
+        },
+        "word-argmax": {
+          "average_attempts": 4.013888888888889,
+          "average_guesses": 3.491228070175439,
+          "checkpoint": "runs/grpo-information-dev/checkpoints/best-gameplay.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-information-dev__checkpoints__best-gameplay.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-information-dev/checkpoints/best-information.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 18,
+        "rate": 0.08955223880597014,
+        "states": 201,
+        "visitation_weighted_rates": {
+          "constrained": 0.05423728813559322,
+          "word-argmax": 0.054982817869415807
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.097222222222222,
+          "average_guesses": 3.5964912280701755,
+          "checkpoint": "runs/grpo-information-dev/checkpoints/best-information.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        },
+        "word-argmax": {
+          "average_attempts": 4.041666666666667,
+          "average_guesses": 3.526315789473684,
+          "checkpoint": "runs/grpo-information-dev/checkpoints/best-information.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7916666666666666,
+          "wins": 57
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-information-dev__checkpoints__best-information.pt.json"
+    },
+    {
+      "checkpoint": "runs/grpo-information-dev/checkpoints/update-1000.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 21,
+        "rate": 0.10294117647058823,
+        "states": 204,
+        "visitation_weighted_rates": {
+          "constrained": 0.05442176870748299,
+          "word-argmax": 0.061016949152542375
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 4.083333333333333,
+          "average_guesses": 3.4444444444444446,
+          "checkpoint": "runs/grpo-information-dev/checkpoints/update-1000.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.75,
+          "wins": 54
+        },
+        "word-argmax": {
+          "average_attempts": 4.097222222222222,
+          "average_guesses": 3.4150943396226414,
+          "checkpoint": "runs/grpo-information-dev/checkpoints/update-1000.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.7361111111111112,
+          "wins": 53
+        }
+      },
+      "family": "state-conditioned-grpo",
+      "report": "runs/checkpoint-decoder-audit/runs__grpo-information-dev__checkpoints__update-1000.pt.json"
+    },
+    {
+      "checkpoint": "runs/soft-distillation-resumable/B-T0.25/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 456,
+        "rate": 0.9806451612903225,
+        "states": 465,
+        "visitation_weighted_rates": {
+          "constrained": 0.9695550351288056,
+          "word-argmax": 0.9739776951672863
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 5.930555555555555,
+          "average_guesses": 3.5,
+          "checkpoint": "runs/soft-distillation-resumable/B-T0.25/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.027777777777777776,
+          "wins": 2
+        },
+        "word-argmax": {
+          "average_attempts": 3.736111111111111,
+          "average_guesses": 3.736111111111111,
+          "checkpoint": "runs/soft-distillation-resumable/B-T0.25/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 1.0,
+          "wins": 72
+        }
+      },
+      "family": "soft-B",
+      "report": "runs/checkpoint-decoder-audit/runs__soft-distillation-resumable__B-T0.25__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/soft-distillation-resumable/B-T0.25/resume.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 459,
+        "rate": 0.9786780383795309,
+        "states": 469,
+        "visitation_weighted_rates": {
+          "constrained": 0.9928909952606635,
+          "word-argmax": 0.9664179104477612
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 5.861111111111111,
+          "average_guesses": 2.6666666666666665,
+          "checkpoint": "runs/soft-distillation-resumable/B-T0.25/resume.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.041666666666666664,
+          "wins": 3
+        },
+        "word-argmax": {
+          "average_attempts": 3.7222222222222223,
+          "average_guesses": 3.588235294117647,
+          "checkpoint": "runs/soft-distillation-resumable/B-T0.25/resume.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.9444444444444444,
+          "wins": 68
+        }
+      },
+      "family": "soft-B",
+      "report": "runs/checkpoint-decoder-audit/runs__soft-distillation-resumable__B-T0.25__resume.pt.json"
+    },
+    {
+      "checkpoint": "runs/soft-distillation-dev/B-T0.25/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 558,
+        "rate": 1.0,
+        "states": 558,
+        "visitation_weighted_rates": {
+          "constrained": 1.0,
+          "word-argmax": 1.0
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 5.944444444444445,
+          "average_guesses": 2.0,
+          "checkpoint": "runs/soft-distillation-dev/B-T0.25/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.013888888888888888,
+          "wins": 1
+        },
+        "word-argmax": {
+          "average_attempts": 6.0,
+          "average_guesses": 0.0,
+          "checkpoint": "runs/soft-distillation-dev/B-T0.25/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.0,
+          "wins": 0
+        }
+      },
+      "family": "soft-B",
+      "report": "runs/checkpoint-decoder-audit/runs__soft-distillation-dev__B-T0.25__checkpoints__best.pt.json"
+    },
+    {
+      "checkpoint": "runs/soft-distillation-smoke/C-T0.50/checkpoints/best.pt",
+      "decoder_disagreement": {
+        "definition": "Both decoders evaluated on each identical history in the unique union of visited histories",
+        "disagreements": 10,
+        "rate": 0.052083333333333336,
+        "states": 192,
+        "visitation_weighted_rates": {
+          "constrained": 0.0425531914893617,
+          "word-argmax": 0.042704626334519574
+        }
+      },
+      "decoders": {
+        "constrained": {
+          "average_attempts": 3.9166666666666665,
+          "average_guesses": 3.5,
+          "checkpoint": "runs/soft-distillation-smoke/C-T0.50/checkpoints/best.pt",
+          "decode": "constrained",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8333333333333334,
+          "wins": 60
+        },
+        "word-argmax": {
+          "average_attempts": 3.9027777777777777,
+          "average_guesses": 3.440677966101695,
+          "checkpoint": "runs/soft-distillation-smoke/C-T0.50/checkpoints/best.pt",
+          "decode": "word-argmax",
+          "games": 72,
+          "invalid_guesses": 0,
+          "win_rate": 0.8194444444444444,
+          "wins": 59
+        }
+      },
+      "family": "soft-C-smoke-only",
+      "report": "runs/checkpoint-decoder-audit/runs__soft-distillation-smoke__C-T0.50__checkpoints__best.pt.json"
+    }
+  ],
+  "complete": true,
+  "secrets": [
+    "adopt",
+    "agree",
+    "aisle",
+    "alert",
+    "alibi",
+    "alive",
+    "amend",
+    "armor",
+    "asset",
+    "award",
+    "aware",
+    "badly",
+    "basin",
+    "beast",
+    "berry",
+    "bland",
+    "bless",
+    "block",
+    "brain",
+    "canoe",
+    "chose",
+    "couch",
+    "cover",
+    "crawl",
+    "dance",
+    "disco",
+    "dizzy",
+    "elbow",
+    "equip",
+    "faith",
+    "ferry",
+    "fifty",
+    "float",
+    "grown",
+    "house",
+    "label",
+    "lower",
+    "medal",
+    "mercy",
+    "olive",
+    "orbit",
+    "parka",
+    "party",
+    "piece",
+    "pilot",
+    "power",
+    "press",
+    "prime",
+    "prize",
+    "raise",
+    "range",
+    "round",
+    "scarf",
+    "scout",
+    "seven",
+    "shape",
+    "sheep",
+    "shout",
+    "space",
+    "split",
+    "stack",
+    "stale",
+    "stare",
+    "stick",
+    "straw",
+    "stuck",
+    "sunny",
+    "super",
+    "today",
+    "tower",
+    "trail",
+    "watch"
+  ],
+  "soft_C_caveat": "Only a smoke-run C checkpoint exists; no fully trained development C checkpoint.",
+  "split": "development validation",
+  "training_performed": false,
+  "words": 719
+}

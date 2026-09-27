@@ -10,11 +10,10 @@ from itertools import zip_longest
 
 import torch
 
-from evaluate_v2 import evaluate_model
+from evaluate_v2 import WordArgmaxPolicy, evaluate_model
 from experiments_v2 import evaluate_objective_loss
 from tokenizer import FEEDBACK_TO_SYMBOL, GUESS_TOKEN
 from tokenizer_v2 import POLICY_TOKEN, decode, encode
-from train import generate_constrained_guess
 from wordle import filter_answers, top_informative_guesses
 
 _SYMBOL_TO_FEEDBACK = {symbol: mark for mark, symbol in FEEDBACK_TO_SYMBOL.items()}
@@ -121,8 +120,8 @@ def evaluate_soft_model(
     """Evaluate the complete caller-selected panel and supplied validation games.
 
     Candidate probabilities condition raw-vocabulary five-letter sequence
-    probabilities on the cached candidate set. Action quality instead evaluates
-    full-dictionary constrained token-greedy actions, never candidate argmaxes.
+    probabilities on the cached candidate set. Action quality and gameplay use
+    full-dictionary joint-word argmax, never candidate-set argmaxes.
     Neither teacher targets nor action scoring inspect source-secret metadata.
     """
     # Keep the evaluator importable independently of cache/training construction.
@@ -144,7 +143,7 @@ def evaluate_soft_model(
     if words != tuple(dataset.words):
         raise ValueError("evaluation words must match the full teacher dictionary in order")
 
-    allowed = frozenset(words)
+    policy = WordArgmaxPolicy(model, words)
     word_tokens = torch.tensor([encode(word) for word in words], dtype=torch.long, device=device)
     metric_totals: dict[str, float] = {}
     actions: list[dict[str, object]] = []
@@ -187,7 +186,7 @@ def evaluate_soft_model(
                 for row, index in enumerate(batch_indices):
                     prefix = prompt_rows[row][: length_rows[row]]
                     prompt = decode(prefix)
-                    guess = decode(generate_constrained_guess(model, prefix, allowed))
+                    guess = decode(policy(prefix))
                     action = _score_action(prompt, guess, words)
                     action.update({"dataset_index": index, "state_id": int(dataset.state_ids[index]), "prompt": prompt})
                     actions.append(action)
@@ -212,13 +211,14 @@ def evaluate_soft_model(
                                 )
                             ],
                         })
-            gameplay = asdict(evaluate_model(model, secrets, words, decode="constrained"))
+            gameplay = asdict(evaluate_model(model, secrets, words, decode="word-argmax"))
             mechanics_loss = evaluate_objective_loss(model, mechanics_validation)
     finally:
         model.train(was_training)
 
     return {
         "temperature": float(temperature),
+        "decode_mode": "word-argmax",
         "panel_indices": panel,
         "gameplay": gameplay,
         "mechanics_validation_loss": mechanics_loss,
