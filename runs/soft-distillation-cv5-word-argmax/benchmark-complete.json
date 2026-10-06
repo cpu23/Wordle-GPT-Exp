@@ -1,0 +1,152 @@
+{
+  "decode": "word-argmax",
+  "results": {
+    "B": {
+      "average_attempts": {
+        "mean": 3.9485396383866482,
+        "standard_deviation": 0.0804755279081473,
+        "values": [
+          3.890125173852573,
+          4.040333796940195,
+          3.9151599443671765
+        ]
+      },
+      "average_guesses": {
+        "mean": 3.854666635498859,
+        "standard_deviation": 0.09652799213051566,
+        "values": [
+          3.7723935389133625,
+          3.9609261939218525,
+          3.8306801736613605
+        ]
+      },
+      "invalid_guesses": {
+        "mean": 0.0,
+        "standard_deviation": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "seeds": 3,
+      "win_rate": {
+        "mean": 0.9564209550301345,
+        "standard_deviation": 0.008029906386503848,
+        "values": [
+          0.9471488178025035,
+          0.96105702364395,
+          0.96105702364395
+        ]
+      },
+      "wins": {
+        "mean": 687.6666666666666,
+        "standard_deviation": 5.773502691896257,
+        "values": [
+          681.0,
+          691.0,
+          691.0
+        ]
+      }
+    },
+    "C": {
+      "average_attempts": {
+        "mean": 3.983310152990265,
+        "standard_deviation": 0.07833172651086936,
+        "values": [
+          3.952712100139082,
+          4.072322670375522,
+          3.924895688456189
+        ]
+      },
+      "average_guesses": {
+        "mean": 3.531484754750332,
+        "standard_deviation": 0.08419897981886158,
+        "values": [
+          3.500848896434635,
+          3.6267123287671232,
+          3.466893039049236
+        ]
+      },
+      "invalid_guesses": {
+        "mean": 0.0,
+        "standard_deviation": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "seeds": 3,
+      "win_rate": {
+        "mean": 0.8168752897542885,
+        "standard_deviation": 0.004014953193251956,
+        "values": [
+          0.8191933240611962,
+          0.8122392211404729,
+          0.8191933240611962
+        ]
+      },
+      "wins": {
+        "mean": 587.3333333333334,
+        "standard_deviation": 2.8867513459481287,
+        "values": [
+          589.0,
+          584.0,
+          589.0
+        ]
+      }
+    },
+    "hard-sft": {
+      "average_attempts": {
+        "mean": 3.897079276773296,
+        "standard_deviation": 0.028127605585753248,
+        "values": [
+          3.8650904033379696,
+          3.9082058414464536,
+          3.917941585535466
+        ]
+      },
+      "average_guesses": {
+        "mean": 3.4329390119836027,
+        "standard_deviation": 0.0338578544382223,
+        "values": [
+          3.3938879456706283,
+          3.450847457627119,
+          3.454081632653061
+        ]
+      },
+      "invalid_guesses": {
+        "mean": 0.0,
+        "standard_deviation": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "seeds": 3,
+      "win_rate": {
+        "mean": 0.819193324061196,
+        "standard_deviation": 0.001390820584144692,
+        "values": [
+          0.8191933240611962,
+          0.8205841446453408,
+          0.8178025034770514
+        ]
+      },
+      "wins": {
+        "mean": 589.0,
+        "standard_deviation": 1.0,
+        "values": [
+          589.0,
+          590.0,
+          588.0
+        ]
+      }
+    }
+  },
+  "secrets_per_seed": 719,
+  "temperature": 0.25,
+  "test_gameplay_evaluated": true
+}

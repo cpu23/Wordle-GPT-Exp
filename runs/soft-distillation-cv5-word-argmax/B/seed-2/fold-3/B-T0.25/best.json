@@ -1,0 +1,55 @@
+{
+  "action_quality": {
+    "actions": 512,
+    "mean_action_regret": 0.17628806810937608,
+    "mean_relative_quality": 1.1513042975246879,
+    "median_action_regret": 0.0,
+    "median_relative_quality": 1.0,
+    "rank_1_fraction": 0.353515625,
+    "top_3_fraction": 0.484375,
+    "top_8_fraction": 0.55859375
+  },
+  "elapsed_seconds": 6651.384277880999,
+  "epoch": 5,
+  "gameplay": {
+    "average_attempts": 3.8055555555555554,
+    "average_guesses": 3.742857142857143,
+    "checkpoint": "in-memory",
+    "decode": "word-argmax",
+    "games": 72,
+    "invalid_guesses": 0,
+    "win_rate": 0.9722222222222222,
+    "wins": 70
+  },
+  "improved": true,
+  "key": [
+    70,
+    -3.8055555555555554,
+    -3.742857142857143,
+    -0.17628806810937608,
+    -0.787493858486414
+  ],
+  "mechanics_validation_loss": 0.01092639028478326,
+  "policy": {
+    "cross_entropy": 3.2423458993434906,
+    "rank1_probability": 0.23348997108405456,
+    "student_entropy": 3.597351051867008,
+    "teacher_entropy": 2.4548520408570766,
+    "teacher_student_kl": 0.787493858486414,
+    "top3_probability": 0.27462668460793793,
+    "top8_probability": 0.3302035448141396
+  },
+  "report_file": "evaluation-5.json",
+  "step": 29265,
+  "training": {
+    "cross_entropy": 2.8815886678455547,
+    "last_gradient_norm": 1.0327025651931763,
+    "mechanics_cross_entropy": 0.0050738094244017215,
+    "rank1_probability": 0.3786010152358803,
+    "student_entropy": 2.878721850038432,
+    "teacher_entropy": 2.544816464850371,
+    "teacher_student_kl": 0.3367722029951837,
+    "top3_probability": 0.4271913864254523,
+    "top8_probability": 0.47682069737276583
+  }
+}

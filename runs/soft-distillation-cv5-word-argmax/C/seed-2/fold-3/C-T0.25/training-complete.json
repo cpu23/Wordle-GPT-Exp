@@ -1,0 +1,52 @@
+{
+  "best": {
+    "action_quality": {
+      "actions": 512,
+      "mean_action_regret": 0.0819557206295422,
+      "mean_relative_quality": 1.0698277027919063,
+      "median_action_regret": 0.0,
+      "median_relative_quality": 1.0,
+      "rank_1_fraction": 0.48046875,
+      "top_3_fraction": 0.56640625,
+      "top_8_fraction": 0.640625
+    },
+    "elapsed_seconds": 29.442853950000426,
+    "epoch": 0.0170863309352518,
+    "gameplay": {
+      "average_attempts": 3.861111111111111,
+      "average_guesses": 3.433333333333333,
+      "checkpoint": "in-memory",
+      "decode": "word-argmax",
+      "games": 72,
+      "invalid_guesses": 0,
+      "win_rate": 0.8333333333333334,
+      "wins": 60
+    },
+    "improved": true,
+    "key": [
+      60,
+      -3.861111111111111,
+      -3.433333333333333,
+      -0.0819557206295422,
+      -3.9135588258504868
+    ],
+    "mechanics_validation_loss": 0.0018313439521987678,
+    "policy": {
+      "cross_entropy": 6.368410877883434,
+      "rank1_probability": 0.4963219705969095,
+      "student_entropy": 1.1488757580518723,
+      "teacher_entropy": 2.4548520408570766,
+      "teacher_student_kl": 3.9135588258504868,
+      "top3_probability": 0.5945645701140165,
+      "top8_probability": 0.6918048895895481
+    },
+    "report_file": "evaluation-step-100.json",
+    "step": 100,
+    "training": {}
+  },
+  "checkpoint": "runs/soft-distillation-cv5-word-argmax/C/seed-2/fold-3/C-T0.25/checkpoints/best.pt",
+  "elapsed_seconds": 5216.775179055003,
+  "epochs": 4,
+  "name": "C-T0.25",
+  "rapid_destructive_drift": false
+}

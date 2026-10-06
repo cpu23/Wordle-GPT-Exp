@@ -1,8 +1,14 @@
 {
-  "complete": false,
+  "complete": true,
   "completed_model_seeds": [
     "hard-sft/seed-0",
     "hard-sft/seed-1",
-    "hard-sft/seed-2"
+    "hard-sft/seed-2",
+    "B/seed-0",
+    "B/seed-1",
+    "B/seed-2",
+    "C/seed-0",
+    "C/seed-1",
+    "C/seed-2"
   ]
 }

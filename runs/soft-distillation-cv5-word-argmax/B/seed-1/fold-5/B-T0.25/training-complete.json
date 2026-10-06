@@ -1,0 +1,62 @@
+{
+  "best": {
+    "action_quality": {
+      "actions": 512,
+      "mean_action_regret": 0.15336023443679017,
+      "mean_relative_quality": 1.1379318196448518,
+      "median_action_regret": 0.0,
+      "median_relative_quality": 1.0,
+      "rank_1_fraction": 0.447265625,
+      "top_3_fraction": 0.560546875,
+      "top_8_fraction": 0.61328125
+    },
+    "elapsed_seconds": 6457.764144391999,
+    "epoch": 5,
+    "gameplay": {
+      "average_attempts": 3.986111111111111,
+      "average_guesses": 3.9577464788732395,
+      "checkpoint": "in-memory",
+      "decode": "word-argmax",
+      "games": 72,
+      "invalid_guesses": 0,
+      "win_rate": 0.9861111111111112,
+      "wins": 71
+    },
+    "improved": true,
+    "key": [
+      71,
+      -3.986111111111111,
+      -3.9577464788732395,
+      -0.15336023443679017,
+      -0.7699016071856022
+    ],
+    "mechanics_validation_loss": 0.0036457476731649873,
+    "policy": {
+      "cross_entropy": 3.024527482688427,
+      "rank1_probability": 0.3083264580927789,
+      "student_entropy": 3.1860151141881943,
+      "teacher_entropy": 2.254625875502825,
+      "teacher_student_kl": 0.7699016071856022,
+      "top3_probability": 0.35680642211809754,
+      "top8_probability": 0.40561495488509536
+    },
+    "report_file": "evaluation-5.json",
+    "step": 29260,
+    "training": {
+      "cross_entropy": 2.867263485875398,
+      "last_gradient_norm": 0.9734311699867249,
+      "mechanics_cross_entropy": 0.003194226751341596,
+      "rank1_probability": 0.3804485176531268,
+      "student_entropy": 2.8646365429647838,
+      "teacher_entropy": 2.542760017064433,
+      "teacher_student_kl": 0.32450346881096515,
+      "top3_probability": 0.42936017419884887,
+      "top8_probability": 0.4798053435969211
+    }
+  },
+  "checkpoint": "runs/soft-distillation-cv5-word-argmax/B/seed-1/fold-5/B-T0.25/checkpoints/best.pt",
+  "elapsed_seconds": 11632.778419341998,
+  "epochs": 9,
+  "name": "B-T0.25",
+  "rapid_destructive_drift": false
+}

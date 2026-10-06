@@ -1,0 +1,62 @@
+{
+  "best": {
+    "action_quality": {
+      "actions": 512,
+      "mean_action_regret": 0.16262852451573265,
+      "mean_relative_quality": 1.1486565413286856,
+      "median_action_regret": 0.0,
+      "median_relative_quality": 1.0,
+      "rank_1_fraction": 0.369140625,
+      "top_3_fraction": 0.5078125,
+      "top_8_fraction": 0.5859375
+    },
+    "elapsed_seconds": 6660.060402644997,
+    "epoch": 5,
+    "gameplay": {
+      "average_attempts": 3.8055555555555554,
+      "average_guesses": 3.7746478873239435,
+      "checkpoint": "in-memory",
+      "decode": "word-argmax",
+      "games": 72,
+      "invalid_guesses": 0,
+      "win_rate": 0.9861111111111112,
+      "wins": 71
+    },
+    "improved": true,
+    "key": [
+      71,
+      -3.8055555555555554,
+      -3.7746478873239435,
+      -0.16262852451573265,
+      -0.7246594838798046
+    ],
+    "mechanics_validation_loss": 0.0034325435454017677,
+    "policy": {
+      "cross_entropy": 3.2986476346850395,
+      "rank1_probability": 0.24348011566326022,
+      "student_entropy": 3.479767397046089,
+      "teacher_entropy": 2.573988150805235,
+      "teacher_student_kl": 0.7246594838798046,
+      "top3_probability": 0.29391686292365193,
+      "top8_probability": 0.34837083984166384
+    },
+    "report_file": "evaluation-5.json",
+    "step": 29265,
+    "training": {
+      "cross_entropy": 2.8669758754239667,
+      "last_gradient_norm": 0.731852114200592,
+      "mechanics_cross_entropy": 0.004650137905919854,
+      "rank1_probability": 0.38011411209222223,
+      "student_entropy": 2.8648344457578316,
+      "teacher_entropy": 2.5501275812121604,
+      "teacher_student_kl": 0.31684829421180616,
+      "top3_probability": 0.4283431072672494,
+      "top8_probability": 0.47931154635634354
+    }
+  },
+  "checkpoint": "runs/soft-distillation-cv5-word-argmax/B/seed-1/fold-3/B-T0.25/checkpoints/best.pt",
+  "elapsed_seconds": 11916.439069619995,
+  "epochs": 9,
+  "name": "B-T0.25",
+  "rapid_destructive_drift": false
+}
