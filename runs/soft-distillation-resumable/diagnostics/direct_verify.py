@@ -1,15 +1,13 @@
 import os
 from pathlib import Path
-import sys
-sys.path.insert(0, str(Path.cwd()))
 os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
 import json
 import numpy as np
 import torch
-from model import WordleGPT
-from tokenizer_v2 import encode
-from tokenizer import FEEDBACK_TO_SYMBOL
-from wordle import score_guess
+from wordle_gpt.core.model import WordleGPT
+from wordle_gpt.core.tokenizer_v2 import encode
+from wordle_gpt.core.tokenizer import FEEDBACK_TO_SYMBOL
+from wordle_gpt.core.wordle import score_guess
 
 ROOT = Path('runs/soft-distillation-resumable/diagnostics')
 reference = json.loads((ROOT / 'comparison.json').read_text())

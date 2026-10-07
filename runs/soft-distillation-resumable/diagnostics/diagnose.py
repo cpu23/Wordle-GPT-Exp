@@ -4,21 +4,19 @@ import hashlib
 import json
 import os
 from pathlib import Path
-import sys
 from dataclasses import asdict
 
-sys.path.insert(0, str(Path.cwd()))
 os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
 import numpy as np
 import torch
 
-from evaluate_v2 import evaluate_model
-from model import WordleGPT
-from soft_policy import candidate_sequence_logps
-from soft_teacher import TeacherDataset, teacher_probabilities, exhaustive_scores, feedback_matrix
-from tokenizer_v2 import encode, decode
-from tokenizer import serialize_trajectory, END_TOKEN, GUESS_TOKEN
-from train import generate_constrained_guess
+from wordle_gpt.evaluation.evaluate_v2 import evaluate_model
+from wordle_gpt.core.model import WordleGPT
+from wordle_gpt.distillation.soft_policy import candidate_sequence_logps
+from wordle_gpt.distillation.soft_teacher import TeacherDataset, teacher_probabilities, exhaustive_scores, feedback_matrix
+from wordle_gpt.core.tokenizer_v2 import encode, decode
+from wordle_gpt.core.tokenizer import serialize_trajectory, END_TOKEN, GUESS_TOKEN
+from wordle_gpt.training.train import generate_constrained_guess
 
 ROOT = Path('runs/soft-distillation-resumable')
 OUT = ROOT / 'diagnostics'
@@ -182,7 +180,7 @@ def sequence_games(model, mode, cache):
             if word == secret:
                 won[i] = True
             else:
-                from wordle import score_guess
+                from wordle_gpt.core.wordle import score_guess
                 histories[i].append({'guess': word, 'feedback': score_guess(secret, word)})
     wins = sum(won)
     return annotate({'decode': mode, 'games': len(histories), 'wins': wins,
