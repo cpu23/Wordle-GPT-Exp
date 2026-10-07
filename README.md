@@ -18,20 +18,34 @@ Rather than relying on an external game engine or search algorithm at runtime, W
 
 The model is a standard pre-norm decoder-only Transformer with causal multi-head self-attention, GELU feed-forward blocks, and learned positional embeddings.
 
-| Parameter | Base Model | Scaled Model |
-| :--- | :--- | :--- |
-| **Parameters** | ~815,000 | ~3,202,000 |
-| **Embedding Size** | 128 | 256 |
-| **Layers** | 4 | 4 |
-| **Attention Heads** | 4 | 8 |
-| **MLP Hidden Dim** | 512 | 1024 |
-| **Context Length** | 96 tokens | 96 tokens |
-| **Vocabulary** | 35 tokens | 35 tokens |
+Current distillation and GRPO experiments use the **7.2M-parameter model**. The smaller models below are earlier baselines.
+
+| Parameter | Original Baseline | Earlier Scaled Model | Current Model |
+| :--- | :--- | :--- | :--- |
+| **Parameters** | ~815,000 | 3,202,083 | **7,162,403** |
+| **Embedding Size** | 128 | 256 | 384 |
+| **Layers** | 4 | 4 | 4 |
+| **Attention Heads** | 4 | 8 | 12 |
+| **MLP Hidden Dim** | 512 | 1024 | 1536 |
+| **Context Length** | 96 tokens | 96 tokens | 96 tokens |
+| **Vocabulary** | 35 tokens | 35 tokens | 35 tokens |
 
 The 35-token vocabulary consists of:
 - 26 lowercase English letters (`a`–`z`)
 - 3 feedback digits: `0` (gray / miss), `1` (yellow / wrong position), `2` (green / exact hit)
 - 6 structural control tokens: `<G>` (guess), `<F>` (feedback), `<E>` (end of game), `<M>` (mechanics task), `<S>` (secret word), `<P>` (policy task)
+
+### Checkpoint training tokens
+
+Counts at the selected **SFT `best.pt`**, including its mechanics initialization. SFT includes mechanics replay; counts are supervised, non-padding target tokens processed, including repeats—not unique data or input/context tokens. Later distillation/GRPO training is excluded.
+
+| Checkpoint | Mechanics pretraining | SFT + replay | Total |
+| :--- | ---: | ---: | ---: |
+| [815K replay baseline](runs/v2-replay/e2-expert95-mechanics5/best.json) | [3,606,240](runs/v2-experiment-b-mechanics/best.json) | Not recorded | Not recorded |
+| [3.2M scaling baseline](runs/scaling-dev-1m/seed-0/fold-1/3.2m/best.json) | [1,200,000](runs/scaling-dev-1m/seed-0/fold-1/3.2m/mechanics/best.json) | 33,091,200 | **34,291,200** |
+| [7.2M current SFT](runs/scaling-dev-1m/seed-0/fold-1/7.2m/best.json) | [3,998,720](runs/scaling-dev-1m/seed-0/fold-1/7.2m/mechanics/best.json) | 37,818,880 | **41,817,600** |
+
+Scaling counts are for development seed 0, fold 1; other folds/checkpoints have different training lengths. The 815K checkpoint predates the SFT token counter.
 
 ---
 
@@ -80,7 +94,7 @@ python -m unittest discover -s tests
 
 ### Training
 
-Train a model on nested state datasets:
+Train the original small baseline on nested state datasets (not the current 7.2M model):
 
 ```bash
 uv run --with-requirements requirements.txt \
