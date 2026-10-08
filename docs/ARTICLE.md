@@ -1,266 +1,216 @@
-# Teaching a Transformer to Play Wordle: From Catastrophic Forgetting to Anchored Preferences
+# Teaching a Small Transformer to Play Wordle
 
-*What happened when I trained small language models on 1,000,000 game states, why DPO collapsed into gibberish, and how I rescued it.*
+*From learning the rules to a 95.64% win rate.*
 
 **Author:** Harris Oldroyd  
-**Published on:** [harrisoldroyd.com](https://harrisoldroyd.com)  
+**Website:** [harrisoldroyd.com](https://harrisoldroyd.com)
 
----
+Can a small Transformer learn Wordle rules and strategy from recorded games?
 
-Can a small, decoder-only Transformer learn to play Wordle well purely from text sequences?
+I trained models from 814,627 to 12.7 million parameters on up to one million game states. The work went through supervised training, preference training and reinforcement learning. The best result came from teaching a 7.2M model the solver's probabilities over several possible guesses, then scoring complete words during play.
 
-I don't mean giving an LLM an external Python solver, a board simulator, or a scratchpad to write code. I mean treating Wordle strictly as an autoregressive next-token prediction problem:
+That model reached a **95.64% win rate** across five test groups and three training seeds. The benchmark covers **719 known dictionary words**. Each word is tested once per seed, with six guesses per game.
 
-$$\mathcal{P}(w_t \mid w_1, w_2, \dots, w_{t-1})$$
+The path to that result mattered as much as the final score. Training on strategy caused the model to forget the rules. Preference scores rose while gameplay collapsed. Reinforcement learning raised training rewards without a reliable gain on held-out games. Then a decoder change turned two wins into 72 with the same weights.
 
-The model sees prior guesses and ternary color feedback as text, tracks the remaining candidate words in its hidden activations, and outputs the next 5-letter guess token-by-token.
+## 1. A small language for the game
 
-Over the past few weeks, I built this system from scratch, scaling it from an 814,000-parameter prototype to 12.7 million parameters, and from 1,000 toy trajectories to 1,000,000 unique off-policy logical states. 
+I stored guesses and feedback as text, using 35 tokens:
 
-Along the way, the model encountered nearly every classic pathology in modern post-training:
-1. **Catastrophic forgetting:** Learning game strategy completely erased the model's understanding of the basic rules (a >20,000-fold error spike), which I solved with multi-task experience replay.
-2. **The SFT capacity ceiling:** Supervised behavioural cloning on 1M states hit a hard plateau at ~80.4% win rate regardless of whether I used 7.2M or 12.7M parameters.
-3. **The DPO illusion:** Direct Preference Optimization drove preference accuracy to 90.7% while crashing actual gameplay to **0% wins**, requiring an anchored loss formulation to rescue.
+- 26 letters: `a` to `z`.
+- Three feedback digits: `0` for gray, `1` for yellow and `2` for green.
+- Six control tokens: `<G>`, `<F>`, `<E>`, `<M>`, `<S>` and `<P>`.
 
-Here is the experiment story, the empirical telemetry, what broke, and what I'm building next.
-
----
-
-## 1. The Setup: A 35-Token Language for Wordle
-
-Wordle has 719 valid five-letter words in my dictionary. To keep the model focused entirely on core logic, I encoded the entire game into a minimal **35-token vocabulary**:
-- **26 letters:** `a`–`z`
-- **3 feedback digits:** `0` (gray / miss), `1` (yellow / wrong position), `2` (green / exact hit)
-- **6 control tokens:** `<G>` (guess), `<F>` (feedback), `<E>` (end), `<M>` (mechanics), `<S>` (secret), `<P>` (policy)
-
-A game is simply serialized as an alternating string of guesses and feedback:
+The control tokens mark guesses, feedback, the end of a record, rules, secrets and policy prompts. A policy prompt asks for the next guess.
 
 ```text
-Policy prompt & rollout:
+Game record:
 <P><G>could<F>22010<G>colon<F>22222<E>
 
-Mechanics rule prompt:
+Rule-training record:
 <M><S>colon<G>could<F>22010<E>
 ```
 
-I used standard pre-norm decoder-only Transformers with causal self-attention, GELU feed-forwards, and learned 1D positional embeddings.
+Rule training gives the model both the secret and the guess. During play, it receives only previous guesses and feedback. The game engine supplies feedback after each move.
 
-| Model Size | Parameters | Layers | Width ($d_{\text{model}}$) | Heads | MLP Dim | Context |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Base** | 814,627 | 4 | 128 | 4 | 512 | 96 |
-| **3.2M** | 3,202,083 | 4 | 256 | 8 | 1024 | 96 |
-| **7.2M** | 7,162,403 | 4 | 384 | 12 | 1536 | 96 |
-| **12.7M** | 12,695,587 | 4 | 512 | 16 | 2048 | 96 |
+All models use four decoder-only Transformer layers and a 96-token context. I changed the layer width and number of attention heads to test model size.
 
----
+| Parameters | Layer width | Attention heads |
+| ---: | ---: | ---: |
+| 814,627 | 128 | 4 |
+| 3,202,083 | 256 | 8 |
+| 7,162,403 | 384 | 12 |
+| 12,695,587 | 512 | 16 |
 
-## 2. Memorization, Overfitting, and The 20,000x Forgetting Spike
+## 2. Learning the rules, then forgetting them
 
-My first sanity check was simple: memorizing 32 trajectories. At 1,000 steps, greedy autoregressive decoding reproduced 19-token continuations with 100% exact match. 
+I first checked that the model could memorize 32 game records. After 1,000 training steps, it reproduced a 19-token continuation exactly.
 
-Next, I trained the base model on mixed game trajectories (combining optimal moves, simple consistent moves, and random legal guesses). Validation loss dropped quickly for syntax (`<G>`, `<F>` fell to 0.12) and feedback digits (0.66), but hit a hard floor on guess letters (1.07). 
+The next dataset mixed expert, simple and random moves. Training loss kept falling, but validation loss reached its lowest value at epoch four: **0.7759**. By epoch 20, it had risen to **1.2170**. The model was overfitting.
 
-When I pushed training through 20 full epochs, the model hit its best validation checkpoint at **Epoch 4 (0.7759)** and then overfitted severely:
+I then separated two tasks: predict feedback from a secret and guess, and predict an expert's next move from the visible board.
 
-| Target Type | Epoch 4 Loss | Epoch 20 Loss | Status |
-| :--- | :---: | :---: | :---: |
-| **Train Loss (overall)** | 0.7048 | 0.4285 | Continues dropping |
-| **Validation Loss (overall)** | **0.7759** | 1.2170 | Heavy overfitting |
-| **Clever next-guess letters** | 0.2278 | 0.1049 | Over-memorized |
-| **Random next-guess letters** | 1.4643 | 2.5255 | Severe blow-up |
+Training on rules worked well. Validation loss fell to **0.000515**. But further training on expert moves raised rule loss to **10.392833**, about 20,000 times higher. The same failure appeared across three seeds.
 
-Because the model was not conditioned on player intent, forcing it to predict random moves caused it to hallucinate. This prompted me to split the architecture into explicit roles: `<M>` for mechanics and `<P>` for policy.
+I kept rule examples in the training stream. With 95% expert batches and 5% rule batches, rule loss stayed at **0.007317**. This model also won **72/72** games on the small test split.
 
-### The Catastrophic Forgetting Crisis
+That gave me a practical training recipe: keep a small share of rule examples while teaching strategy.
 
-I tested a classic two-stage curriculum:
-- **Stage 1 (Mechanics Pretraining):** Train on `<M><S>secret<G>guess<F>feedback<E>`.
-- **Stage 2 (Expert SFT):** Fine-tune that checkpoint on expert moves (`<P>...`).
+[Rule retention and replay results](EXPERIMENTS.md#2026-08-14--experiment-e-multi-task-replay)
 
-Mechanics pretraining worked brilliantly. Validation loss dropped to **0.000515** by epoch 9. The Transformer had learned the exact simulator internally.
+## 3. More states improved play
 
-Then I ran Stage 2 fine-tuning on expert moves, and evaluated the resulting policy checkpoint on the mechanics test set:
+A 72-word test was useful for development. I expanded the benchmark to five groups covering all 719 words, repeated across three training seeds.
 
-```text
-Mechanics validation loss (after Stage 1):        0.000515
-Mechanics validation loss (after Stage 2 SFT):   10.392833  (>20,000x explosion)
+For each group, I removed training records whose source secret belonged to the test group. The dictionary stayed fixed. Checkpoint selection used a separate validation split.
+
+I generated histories with several policies, including random and deliberately poor moves. A classical solver then assigned an expert guess to each state. It scored guesses by the expected number of answers left after feedback; lower was better.
+
+For the larger datasets, I also selected states by their remaining-answer sets. This added more distinct decision problems instead of mostly adding similar histories.
+
+<img src="figures/fig2-state-scaling.svg" alt="Win rate rises from 34.59% with 100K training states to 73.76% with 1M states." width="100%">
+
+These runs used the **3.2M model**, choosing one letter at a time.
+
+| Training states | Distinct remaining-answer sets | Win rate |
+| ---: | ---: | ---: |
+| 100,000 | 37,992 | 34.59% |
+| 200,000 | 65,779 | 52.48% |
+| 500,000 | 167,621 | 66.25% |
+| 1,000,000 | 303,212 | 73.76% |
+
+More states improved play at each step. The gain became smaller as the dataset grew.
+
+[State-scaling results](EXPERIMENTS.md#2026-08-21--1m-logical-state-scaling-with-solver-top-actions)
+
+## 4. Legal words helped, but losses remained
+
+The model sometimes produced a five-letter string outside the dictionary. I added a decoder that allowed only prefixes of legal words. It still chose the most likely next letter at each step.
+
+With one million training states, this raised the win rate from **73.76% to 77.05%** and removed invalid guesses.
+
+Legal spelling helped. The model still lost games while choosing valid words. I next tested whether a larger model could make better choices.
+
+## 5. A larger model reached about 80%
+
+I held the one-million-state dataset fixed and compared model sizes. These results use the legal-prefix decoder.
+
+| Model | Win rate |
+| ---: | ---: |
+| 3.2M | 76.59% |
+| 7.2M | 80.44% |
+| 12.7M | 80.39% |
+
+The 7.2M model improved on 3.2M. Increasing it to 12.7M gave almost the same win rate. I kept the 7.2M model and changed the training method.
+
+## 6. Better preference scores, worse gameplay
+
+Hard supervised fine-tuning, or **SFT**, trains on one chosen guess per state. I wanted to teach the model the difference between stronger and weaker guesses.
+
+I built **439,483 preference pairs** from the solver's scores and tried Direct Preference Optimization, or **DPO**. This method trains the model to prefer one guess over another.
+
+In the run with a learning rate of `0.00001` and `β = 0.05`, validation preference accuracy rose from **75.56% to 86.97%**. Gameplay collapsed.
+
+| Training passes | Unrestricted wins | Legal-prefix wins |
+| ---: | ---: | ---: |
+| 0 — SFT | 57/72 | 59/72 |
+| 1 | 0/72 | 25/72 |
+| 3 | 0/72 | 12/72 |
+
+After one pass, all 72 unrestricted games ended with an invalid guess.
+
+The probability records showed why the preference score was misleading. The model reduced the probability of both preferred and rejected words. Rejected words fell faster, so the preference margin improved even as valid guesses became less likely.
+
+I added the supervised loss for the preferred word and reduced the learning rate. This kept a direct training signal for valid expert guesses.
+
+Across five groups and three seeds, this anchored DPO method reached **81.46%**, compared with **80.44%** for SFT. It was a small improvement, about seven extra wins per seed.
+
+[DPO failure records](../runs/dpo-dev/beta-0.05/metrics.jsonl) · [Anchored DPO benchmark](../runs/dpo-cv5-7.2m/aggregate.json)
+
+## 7. GRPO did not give a reliable gain
+
+At this point, I planned to train on game outcomes with Group Relative Policy Optimization, or **GRPO**. It samples several actions or games from one starting state, compares their rewards and updates the model toward the better outcomes.
+
+I ran that plan from the original 7.2M SFT model.
+
+First, I rewarded single guesses for reducing the answer set and solving the game. After 10,000 updates, legal-prefix validation wins fell from **59/72 to 57/72**.
+
+Next, I sampled complete games and rewarded wins and fewer turns. Training wins were already above **99.97%**. Training reward rose, but validation wins fell from **59/72 to 49/72** after 10,000 updates.
+
+I then started rollouts from recorded states, including later turns, to give the model harder training problems. I corrected the objective to clip probability ratios per generated token and give each rollout equal weight. I tested three learning rates for 1,000 updates each.
+
+All three increased training reward. All three ended with lower held-out continuation reward. The selected gameplay checkpoint remained the original SFT model.
+
+A final single-guess run used exact expected information gain. Its best gameplay checkpoint won **60/72**, one more game than SFT. By update 1,000, it had fallen to **54/72**.
+
+The GRPO runs did not justify a larger benchmark. I stopped and returned to the solver's training targets.
+
+[GRPO runs and objective correction](EXPERIMENTS.md#2026-09-23--dense-10000-update-grpo-run)
+
+## 8. Teach probabilities over several guesses
+
+The solver can give several guesses similar scores. Hard SFT selects one and trains the model to reproduce it. I changed the target to a probability distribution over **128 legal guesses per state**.
+
+This method is **soft distillation**. Better solver scores receive more probability. A temperature controls how strongly the distribution favors the best scores. The final runs used **0.25** and kept 5% rule replay.
+
+I tested two starting points:
+
+- **B:** a model trained on rules, with a learning rate of `0.0003`.
+- **C:** a model already trained with hard SFT, with a learning rate of `0.00001`.
+
+The next problem appeared when I tried to play games with the soft-trained model.
+
+## 9. The decoder changed the result
+
+On one development checkpoint, legal-prefix decoding won only **2/72** games. Scoring each complete legal word with the same model won **72/72**.
+
+<img src="figures/fig3-decoder.svg" alt="The same checkpoint wins 2 of 72 games with token-greedy decoding and 72 of 72 with full-word scoring." width="100%">
+
+The weights stayed the same. The decoder changed.
+
+Choosing the most likely next letter commits to a prefix before the later letters are scored. The most likely first letter can lead to a lower-probability complete word.
+
+I instead scored all 719 words by adding the model's log-probability for each of their five letters. The decoder selected the complete word with the highest score. Each letter probability depends on the board history and the earlier letters in that word.
+
+An independent direct-forward check reproduced all 72 game trajectories and found zero word-choice disagreements on the checked panel.
+
+I made full-word scoring the decoder for checkpoint selection, the final benchmark and the demo.
+
+[Same-checkpoint comparison](../runs/soft-distillation-resumable/diagnostics/soft_best.json) · [Independent check](../runs/soft-distillation-resumable/diagnostics/independent-verification.json)
+
+## 10. The final benchmark
+
+I evaluated hard SFT and both soft-distillation variants with the same full-word decoder, five test groups and three seeds. Each method played **2,157 held-out games**.
+
+<img src="figures/fig1-sft-vs-distillation.svg" alt="Final win rates: hard SFT 81.92%, soft distillation B 95.64%, soft distillation C 81.69%." width="100%">
+
+| Training method | Win rate | Standard deviation across seeds |
+| :--- | ---: | ---: |
+| Hard SFT | 81.92% | 0.14 points |
+| **Soft distillation B** | **95.64%** | **0.80 points** |
+| Soft distillation C | 81.69% | 0.40 points |
+
+All three produced zero invalid guesses. B improved on hard SFT by **13.72 percentage points**, about **99 extra wins per seed**. C stayed close to the baseline. B and C used different starting weights and learning rates.
+
+The final result combines three choices: varied training states, soft targets from the solver and complete-word scoring. More parameters gave a smaller gain. The reinforcement-learning runs gave no reliable improvement over SFT.
+
+The decoder finding also changed how I read the earlier failures. A gameplay score depends on both the trained weights and the rule used to select an action. Here, changing that rule had a larger effect than any training change on the same checkpoint.
+
+[Full benchmark data](../runs/soft-distillation-cv5-word-argmax/benchmark-complete.json)
+
+## Run the finished model
+
+The project is complete and released as [v1.0.0](https://github.com/cpu23/wordle-gpt-family/releases/tag/v1.0.0). The release contains one 7.2M B checkpoint, its tokenizer and the 719-word list. That checkpoint won **135/144 games (93.75%)** on its own test group.
+
+From the repository root, with Python 3.11:
+
+```bash
+python -m pip install -r requirements-inference.txt --extra-index-url https://download.pytorch.org/whl/cpu
+python -m wordle_gpt.demo --secret colon
 ```
 
-Policy training had completely overwritten the attention heads and MLP layers that computed letter-matching and duplicate-letter counts. Across three different random seeds, mechanics loss consistently exploded to 10.39, 12.53, and 15.10.
+The first run downloads the model. The demo prints each guess, feedback and remaining turns. Use `--interactive` to enter feedback from your own board.
 
-Lowering the fine-tuning learning rate by an order of magnitude (from $3\times 10^{-4}$ down to $3\times 10^{-5}$) did not fix it; mechanics loss still stalled above 9.49.
+The model card records the checkpoint and file hashes. The training guide, logs and failed runs remain in the repository.
 
-### The Fix: Multi-Task Experience Replay
-
-Instead of sequential stages, I introduced an interleaved **multi-task experience replay buffer**. During policy training, mechanics batches were drawn from a separate stream and mixed evenly into optimizer steps:
-
-| Run Configuration | Expert / Mechanics Replay Ratio | Expert Val Loss | Mechanics Val Loss | Held-Out Wins (72 Secrets) |
-| :--- | :---: | :---: | :---: | :---: |
-| **No Replay (Sequential)** | 100% / 0% | 0.4112 | 10.3928 | 71 / 72 |
-| **5% Replay** | 95% / 5% | 0.4131 | **0.0073** | **72 / 72 (100%)** |
-| **10% Replay** | 90% / 10% | **0.4096** | **0.0030** | 71 / 72 |
-
-A tiny **5% mechanics replay stream** reduced mechanics error by three orders of magnitude, preserved rule comprehension, and achieved a perfect 72/72 score on the test set.
-
----
-
-## 3. Scaling State Coverage: 100K to 1M States
-
-A 72-secret test set is noisy: one lucky guess shifts the win rate by 1.39%. To get clean ground-truth numbers, I built a **5-fold cross-validation benchmark** covering all **719 secrets** across three random seeds (2,157 held-out games per benchmark). Any state originating from a held-out test secret was purged prior to training.
-
-I then generated off-policy training trajectories using diverse policies (random moves, greedy consistent moves, deliberately bad moves), but relabeled every single state with the optimal action from an information-theoretic minimax solver.
-
-For the 500K and 1M pools, I added **logical novelty sampling**: deduplicating states based on their remaining-answer candidate sets:
-
-| Dataset Size | Unique Remaining-Answer Sets | Raw Win Rate (719 Secrets) | Raw Invalid Guesses | Avg Attempts / Game |
-| :--- | :---: | :---: | :---: | :---: |
-| **100K States** | 37,992 | 34.59% ± 1.46% | 198.7 ± 21.5 | 4.5642 |
-| **200K States** | 65,779 | 52.48% ± 2.71% | 147.3 ± 8.5 | 4.2684 |
-| **500K States** | 167,621 | 66.25% ± 2.69% | 95.0 ± 15.7 | 4.0505 |
-| **1M States** | 303,212 | **73.76% ± 2.66%** | **67.0 ± 11.8** | **3.8948** |
-
-Data scaling followed a clear logarithmic curve:
-- $100\text{K} \to 200\text{K}$: **+17.89%** win rate
-- $200\text{K} \to 500\text{K}$: **+13.77%** win rate
-- $500\text{K} \to 1\text{M}$: **+7.51%** win rate
-
----
-
-## 4. Lexical vs. Strategic Failures: Constrained Decoding
-
-When the model lost a game, why did it lose? Did it hallucinate an illegal 5-letter string, or did it pick valid words that failed to narrow down the answer in 6 turns?
-
-To isolate these errors, I built **prefix-trie constrained decoding**: dynamically masking the model's logits at generation time so it could only output letters that formed valid words in `resources/words.txt`.
-
-| Dataset Size | Raw Win Rate | Constrained Win Rate | Trie Gap | Raw Invalid Words | Constrained Invalid |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **200K States** | 52.48% | 57.77% | **+5.29%** | 147.3 | **0.0** |
-| **500K States** | 66.25% | 71.02% | **+4.77%** | 95.0 | **0.0** |
-| **1M States** | 73.76% | **77.05%** | **+3.29%** | 67.0 | **0.0** |
-
-Two critical lessons emerged:
-1. **The model was learning the English lexicon:** Raw invalid guesses dropped from 147.3 down to 67.0, and the gap between raw and constrained play shrank from 5.29% to 3.29%.
-2. **Most remaining errors were strategic:** At 1M states, even with zero invalid guesses, the model still lost ~165 games per seed. More than **85% of remaining losses were purely strategic deductions running out of turns**.
-
----
-
-## 5. Model Scaling & The 80% SFT Ceiling
-
-With data returns slowing down, I held the 1,000,000-state corpus fixed and scaled the Transformer's parameters across the 5-fold benchmark:
-
-| Model Architecture | Parameters | Raw Win Rate | Constrained Win Rate | Raw Invalid Words |
-| :--- | :---: | :---: | :---: | :---: |
-| **3.2M Model** | 3,202,083 | 72.55% ± 1.46% | 76.59% ± 2.23% | 88.3 |
-| **7.2M Model** | 7,162,403 | 75.75% ± 1.39% | **80.44% ± 0.63%** | 81.7 |
-| **12.7M Model** | 12,695,587 | **76.59% ± 1.26%** | **80.39% ± 1.50%** | **61.7** |
-
-Scaling from 3.2M to 7.2M parameters produced a reliable leap: **+3.85% constrained win rate**, crossing the 80% milestone ($578.3$ wins / 719) with very tight variance across seeds ($\text{SD} = 0.63\%$).
-
-However, scaling further to 12.7M parameters hit a ceiling:
-- Constrained win rate remained flat at $80.39\%$.
-- In head-to-head games, 12.7M won 34 games that 7.2M lost, but lost 34.3 games that 7.2M won ($\Delta = -0.3$ net wins).
-- While 12.7M cleaned up raw spelling errors (down to 61.7), its strategic decision-making hit an asymptote.
-
-Supervised imitation had hit its limit.
-
----
-
-## 6. The DPO Trap & The Anchored SFT Rescue
-
-In supervised fine-tuning, the solver's top-1 guess is ground truth ($P=1$) and all other words are treated as equally wrong ($P=0$). But Wordle isn't binary: a 2nd-best move might partition 90% of words, while a 10th-best move partitions 10%.
-
-I extracted $439,483$ preference pairs using the minimax solver's expected survivor scores:
-- **Clear pairs:** Rank 1/2 vs. Rank 5–8 (expected survivor ratio $\ge 1.25$)
-- **Hard pairs:** Rank 1 vs. Rank 2
-
-### The Standard DPO Disaster
-
-I applied standard DPO to the 7.2M SFT model ($\text{lr} = 1\times 10^{-5}$, $\beta = 0.20$).
-
-On paper, the training metrics looked incredible: DPO validation loss dropped from 0.69 to 0.32, and preference accuracy jumped from 75.6% to 87.0%.
-
-Then I tested the checkpoint on Wordle gameplay:
-
-```text
-Pass 0 (SFT Baseline): Constrained Wins = 59/72 | Raw Wins = 57/72 | Invalid =  5
-Pass 1 (DPO):          Constrained Wins = 25/72 | Raw Wins =  0/72 | Invalid = 72 (CRASH)
-Pass 3 (DPO):          Constrained Wins = 12/72 | Raw Wins =  0/72 | Invalid = 72 (COLLAPSE)
-```
-
-Actual gameplay had collapsed completely. Raw win rate was **0%**. Every single guess generated by the model was an invalid string of gibberish.
-
-### The Autopsy: The Negative Log-Probability Sinkhole
-
-Why did standard DPO destroy the model? 
-
-DPO optimizes the relative margin between chosen ($y_w$) and rejected ($y_l$) sequences:
-
-$$\log \sigma \left( \beta \left[ \left(\log \frac{\pi_\theta(y_w)}{\pi_{\text{ref}}(y_w)}\right) - \left(\log \frac{\pi_\theta(y_l)}{\pi_{\text{ref}}(y_l)}\right) \right] \right)$$
-
-The optimizer can maximize this margin without increasing the probability of $y_w$. It can simply drive $\log \pi_\theta(y_l)$ toward $-\infty$ while **simultaneously driving down $\log \pi_\theta(y_w)$**, as long as $y_l$ falls faster.
-
-Tracking the log probabilities exposed this exact failure:
-
-| Metric | Pass 0 (SFT) | Pass 1 | Pass 2 | Pass 3 |
-| :--- | :---: | :---: | :---: | :---: |
-| **Policy Chosen $\log \pi(y_w)$** | **-3.71** | -18.91 | -24.20 | **-28.89** |
-| **Policy Rejected $\log \pi(y_l)$** | -7.51 | -43.99 | -58.88 | -70.97 |
-| **Reference Deviation** | 0.00 | -25.84 | -35.93 | **-44.32** |
-| **Raw Invalid Guesses** | 5 | **72** | **72** | **72** |
-
-The model pushed probability mass completely off the English language manifold into garbage tokens.
-
-### The Rescue: Anchored SFT-DPO
-
-To anchor the policy to valid language, I added an **SFT auxiliary loss on the chosen tokens** and lowered the learning rate to $1\times 10^{-6}$:
-
-$$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{DPO}}(\pi_\theta; \pi_{\text{ref}}) + \lambda_{\text{SFT}} \cdot \mathcal{L}_{\text{NLL}}(y_w)$$
-
-With $\lambda_{\text{SFT}} = 1.0$, `Chosen Δlogp` stayed positive ($+0.7530$), preference accuracy rose to 80.3%, and the policy remained stable.
-
-Benchmarking this Anchored DPO model against the 7.2M SFT baseline across the full 5-fold CV suite broke through the ceiling:
-
-| Metric | 7.2M SFT Baseline | 7.2M Anchored DPO | Delta |
-| :--- | :---: | :---: | :---: |
-| **Constrained Win Rate** | 80.44% ± 0.63% | **81.46% ± 1.49%** | **+1.02%** |
-| **Constrained Wins / 719** | 578.3 | **585.7** | **+7.4 net wins / seed** |
-| **Raw Win Rate** | 75.75% ± 1.39% | **77.33% ± 1.84%** | **+1.58%** |
-| **Raw Invalid Guesses** | 81.7 | **69.7** | **-12.0 errors** |
-| **Mean Action Regret** | 0.02918 | **0.02633** | **-9.8% regret** |
-| **Rank 1 Action Match** | 65.46% | **65.90%** | **+0.44%** |
-
-In paired head-to-head games, Anchored DPO won $17.7$ games per seed that SFT lost, while losing only $10.3$ games that SFT won ($+7.4$ net wins). On Seed 0, it reached **83.17% constrained win rate** (598 / 719).
-
----
-
-## 7. What the Model Learned (and What It Couldn't)
-
-### What Worked
-- **Opening theory:** The model consistently opens with `irate`—an information-theoretic powerhouse covering high-value vowels and common consonants.
-- **Consonant elimination:** On turn 2, the model frequently plays sacrifice words (`clump`, `bendy`) to partition consonants when the initial hint is ambiguous.
-- **Lexical memory:** Over 96% of generated guesses in raw mode are real words from the 719-word vocabulary without using any external dictionary.
-
-### The Remaining Blindspot: The Anagram Trap
-The model's most persistent failure is what I call the **rhyming trap**. When faced with a four-green pattern like `_ight`, the model often plays "hard mode": guessing `light`, then `might`, then `night`, then `tight`. When five candidates remain and only two turns are left, this guarantees a loss.
-
-A human player (or an optimal solver) intentionally burns a turn on an unrelated word containing those consonants (`lemon`, `melon`, `clump`) to identify the exact letter in a single move. Because SFT and DPO evaluate actions against expected survivor proxies rather than full trajectory outcomes, the model struggles to realize that burning a turn now saves the game later.
-
----
-
-## 8. What's Next: GRPO on the 7.2M Checkpoint
-
-The limitation of both SFT and DPO here is that they rely on a proxy: the classical solver's expected survivor count. But Wordle is won or lost on **actual game outcomes**.
-
-My next step is to apply **Group Relative Policy Optimization (GRPO)** directly to the 7.2M SFT checkpoint:
-
-1. For a given board state $s_t$, sample a group of $G$ candidate guesses $\{g_1, g_2, \dots, g_G\}$ from the model.
-2. Roll each branch forward to terminal game states using the internal mechanics model or environment.
-3. Compute trajectory rewards:
-   - $+1.0$ for winning in $\le 6$ guesses
-   - Turn-budget bonus: $(6 - \text{attempts}) \times 0.1$
-   - Penalty for invalid guesses or timeouts
-4. Compute relative advantages within the group ($A_i = \frac{R_i - \mu}{\sigma}$) and update the policy via clipped PPO objectives without requiring a separate critic network.
-
-By rolling the game forward to actual wins and losses, GRPO allows the model to discover that sacrificing a turn to break an anagram trap produces a higher expected win rate than greedily hoping for a 1-in-5 lucky hit.
-
-I'll be logging the GRPO training runs and comparative benchmarks in the next post.
+[Inference guide](INFERENCE.md) · [Model card](MODEL_CARD.md) · [Training guide](TRAINING.md) · [Experiment log](EXPERIMENTS.md)
