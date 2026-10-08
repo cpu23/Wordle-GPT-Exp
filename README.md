@@ -2,6 +2,8 @@
 
 **Can a small Transformer learn Wordle rules and strategy from recorded games?**
 
+This was my first Transformer project, inspired by Andrej Karpathy's videos. I used it to learn model design, training from scratch and reinforcement learning. Wordle gave me cheap synthetic data and deterministic rules, so feedback and game outcomes were easy to check.
+
 This project trains a model on guesses and feedback stored as text. The best model scores complete legal words and selects the word with the highest probability.
 
 **Completed · [v1.0.0](https://github.com/cpu23/wordle-gpt-family/releases/tag/v1.0.0) · [MIT licence](LICENSE)**
@@ -65,7 +67,6 @@ The released model wins **135/144 games (93.75%)** on its test group. [Inference
 
 - [Training guide](docs/TRAINING.md) — commands and model settings.
 - [Experiment log](docs/EXPERIMENTS.md) — runs, results and failures.
-- [Article](docs/ARTICLE.md) — the research process.
 - [Model card](docs/MODEL_CARD.md) — training source, scores and file hashes.
 - [Release notes](docs/RELEASE.md) — the completed version.
 

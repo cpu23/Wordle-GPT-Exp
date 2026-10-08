@@ -29,7 +29,7 @@ mechanics  <M><S>colon<G>could<F>22010<E>
 1. **Mechanics pretraining** — learn exact feedback on synthetic (secret, guess) pairs; loss reaches ~5×10⁻⁴.
 2. **Expert SFT with replay** — imitate the classical minimum-expected-survivors solver, with 5% mechanics replay to prevent catastrophic forgetting.
 3. **Soft policy distillation** (arms B and C) — match the solver's full action distribution at temperature `T`; this produced the released model.
-4. **Anchored DPO** — a research detour: standard DPO collapses gameplay, and an added SFT anchor term rescues it (see [ARTICLE.md](ARTICLE.md) §6).
+4. **Anchored DPO** — a research detour: standard DPO collapses gameplay, and an added SFT anchor term rescues it (see the [benchmark results](../runs/dpo-cv5-7.2m/aggregate.json)).
 5. **GRPO variants** — four reward designs for on-rollout improvement; all are development history, not part of the released policy.
 
 Selection and evaluation discipline, applied by every trainer:
@@ -174,7 +174,7 @@ The final artifact in `runs/soft-distillation-cv5-word-argmax/` is produced by `
 
 ## Anchored DPO (research history)
 
-Standard DPO raised measured preference accuracy while crashing gameplay to 0% raw wins with 72/72 invalid guesses (see [ARTICLE.md](ARTICLE.md) §6); adding an SFT anchor to the chosen sequence rescued it. The rescue experiment lives in `wordle_gpt.dpo`:
+Standard DPO raised measured preference accuracy while crashing gameplay to 0% raw wins with 72/72 invalid guesses (see the [failure records](../runs/dpo-dev/beta-0.05/metrics.jsonl)); adding an SFT anchor to the chosen sequence rescued it. The rescue experiment lives in `wordle_gpt.dpo`:
 
 ```bash
 python -m wordle_gpt.dpo.run_dpo_development   # standard DPO run on the development split
@@ -182,7 +182,7 @@ python -m wordle_gpt.dpo.run_dpo_rescue        # anchored sweep: λ ∈ {0, 0.1,
 python -m wordle_gpt.dpo.benchmark_dpo_cv      # benchmark sweep of the rescue
 ```
 
-The rescue starts from `runs/scaling-dev-1m/seed-0/fold-1/7.2m/checkpoints/best.pt` and writes to `runs/dpo-rescue-anchor/`. Lower-level pieces are `wordle_gpt.dpo.build_preferences` (builds chosen/rejected pairs from rollouts) and `wordle_gpt.dpo.train_dpo` (single run; takes explicit `--train-preferences`, `--validation-preferences`, `--mechanics-data`, `--base-checkpoint`, `--beta`). Results and analysis: [ARTICLE.md](ARTICLE.md) §6 · [EXPERIMENTS.md](EXPERIMENTS.md).
+The rescue starts from `runs/scaling-dev-1m/seed-0/fold-1/7.2m/checkpoints/best.pt` and writes to `runs/dpo-rescue-anchor/`. Lower-level pieces are `wordle_gpt.dpo.build_preferences` (builds chosen/rejected pairs from rollouts) and `wordle_gpt.dpo.train_dpo` (single run; takes explicit `--train-preferences`, `--validation-preferences`, `--mechanics-data`, `--base-checkpoint`, `--beta`). Results: [development summary](../runs/dpo-rescue-anchor/development-summary.md) · [benchmark](../runs/dpo-cv5-7.2m/aggregate.json).
 
 ## GRPO variants (research history)
 

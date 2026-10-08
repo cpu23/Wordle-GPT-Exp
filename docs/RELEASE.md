@@ -38,7 +38,7 @@ five-fold benchmark to this one checkpoint.
 
 ## Preserved research record
 
-`docs/EXPERIMENTS.md`, `docs/ARTICLE.md`, datasets, historical run reports,
+`docs/EXPERIMENTS.md`, datasets, historical run reports,
 failed experiments and original training/evaluation code are retained. Earlier
 results use different decoders, models or panels and are labeled separately
 in the landing-page figures rather than being substituted for the final result.
