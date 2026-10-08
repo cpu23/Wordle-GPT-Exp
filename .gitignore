@@ -15,3 +15,5 @@ data/wordle-v2-diverse-1m-cv/examples.jsonl.gz
 data/soft-teacher-1m/*.npy
 data/soft-teacher-cv1m/*.npy
 runs/**/resume.pt
+# Published inference bundles are GitHub Release assets, not source files.
+dist/

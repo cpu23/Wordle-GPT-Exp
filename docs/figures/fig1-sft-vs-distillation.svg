@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" role="img" aria-labelledby="fig1-title fig1-desc">
+  <title id="fig1-title">Hard behavioral cloning vs soft policy distillation on the final 719-secret benchmark</title>
+  <desc id="fig1-desc">Bar chart of held-out win rate across three arms of the v1.0.0 benchmark. Hard expert SFT wins 81.92 percent (standard deviation 0.14 percentage points); soft distillation initialized from the hard-SFT checkpoint wins 81.69 percent (0.40); soft distillation initialized from a mechanics-only model wins 95.64 percent (0.80). B and C share the same soft objective but differ in initialization and learning rate (3e-4 versus 1e-5). All arms use 719 known secrets, five folds, three seeds, and word-argmax decoding at teacher temperature 0.25, with zero invalid guesses.</desc>
+  <style>
+    .bg{fill:#0d1117}
+    .h1{fill:#e6edf3;font-size:25px;font-weight:700}
+    .sub{fill:#8b949e;font-size:13.5px}
+    .tag{fill:#3fb950;font-size:12px;font-weight:600;letter-spacing:.4px}
+    .axis{fill:#8b949e;font-size:12px}
+    .grid{stroke:#21262d;stroke-width:1}
+    .val{fill:#e6edf3;font-size:23px;font-weight:700}
+    .pm{fill:#8b949e;font-size:12px}
+    .cap1{fill:#e6edf3;font-size:13px;font-weight:600}
+    .cap2{fill:#8b949e;font-size:11.5px}
+    .note{fill:#8b949e;font-size:12.5px}
+    .src{fill:#6e7681;font-size:11.5px}
+    .base{stroke:#58a6ff;stroke-width:1.5;stroke-dasharray:6 5;opacity:.45}
+    .whisk{stroke:#e6edf3;stroke-width:1.5;opacity:.75}
+    text{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  </style>
+
+  <rect class="bg" width="960" height="620"/>
+  <text class="h1" x="48" y="52">Hard cloning vs soft distillation</text>
+  <text class="sub" x="48" y="77">B and C differ in initialization and learning rate (3e-4 vs 1e-5) · 719 known secrets, 5 folds × 3 seeds</text>
+  <text class="tag" x="912" y="52" text-anchor="end">v1.0.0 FINAL BENCHMARK</text>
+
+  <!-- axes -->
+  <line x1="150" y1="460" x2="900" y2="460" stroke="#30363d" stroke-width="1.5"/>
+  <g class="grid">
+    <line x1="150" y1="398" x2="900" y2="398"/>
+    <line x1="150" y1="336" x2="900" y2="336"/>
+    <line x1="150" y1="274" x2="900" y2="274"/>
+    <line x1="150" y1="212" x2="900" y2="212"/>
+    <line x1="150" y1="150" x2="900" y2="150"/>
+  </g>
+  <g class="axis" text-anchor="end">
+    <text x="138" y="464">0%</text>
+    <text x="138" y="402">20%</text>
+    <text x="138" y="340">40%</text>
+    <text x="138" y="278">60%</text>
+    <text x="138" y="216">80%</text>
+    <text x="138" y="154">100%</text>
+  </g>
+
+  <!-- SFT baseline reference -->
+  <line class="base" x1="168" y1="206.1" x2="900" y2="206.1"/>
+  <text class="cap2" x="156" y="199">SFT baseline 81.92%</text>
+
+  <!-- bars: hard SFT 0.819193 -> top 206.1 ; C 0.816875 -> top 206.8 ; B 0.956421 -> top 163.5 -->
+  <rect x="229" y="206.1" width="132" height="253.9" rx="3" fill="#1f6feb"/>
+  <rect x="454" y="206.8" width="132" height="253.2" rx="3" fill="#9e6a03"/>
+  <rect x="679" y="163.5" width="132" height="296.5" rx="3" fill="#2ea043"/>
+
+  <!-- whiskers (true scale: 0.14 / 0.40 / 0.80 pp; drawn with caps) -->
+  <g class="whisk">
+    <line x1="285" y1="205.7" x2="285" y2="206.5"/><line x1="305" y1="205.7" x2="305" y2="206.5"/><line x1="285" y1="206.1" x2="305" y2="206.1"/>
+    <line x1="510" y1="205.5" x2="510" y2="208.0"/><line x1="530" y1="205.5" x2="530" y2="208.0"/><line x1="510" y1="206.8" x2="530" y2="206.8"/>
+    <line x1="735" y1="161.0" x2="735" y2="166.0"/><line x1="755" y1="161.0" x2="755" y2="166.0"/><line x1="735" y1="163.5" x2="755" y2="163.5"/>
+  </g>
+
+  <!-- value labels -->
+  <text class="val" x="295" y="178" text-anchor="middle">81.92%</text>
+  <text class="pm"  x="295" y="195" text-anchor="middle">± 0.14 pp</text>
+  <text class="val" x="520" y="178" text-anchor="middle">81.69%</text>
+  <text class="pm"  x="520" y="195" text-anchor="middle">± 0.40 pp</text>
+  <text class="val" x="745" y="133" text-anchor="middle">95.64%</text>
+  <text class="pm"  x="745" y="150" text-anchor="middle">± 0.80 pp</text>
+
+  <!-- arm captions -->
+  <text class="cap1" x="295" y="488" text-anchor="middle">hard expert SFT</text>
+  <text class="cap2" x="295" y="506" text-anchor="middle">7.2M · 1M states · SFT baseline</text>
+  <text class="cap1" x="520" y="488" text-anchor="middle">soft distillation</text>
+  <text class="cap2" x="520" y="506" text-anchor="middle">init: hard SFT · LR 1e-5</text>
+  <text class="cap1" x="745" y="488" text-anchor="middle">soft distillation</text>
+  <text class="cap2" x="745" y="506" text-anchor="middle">init: mechanics-only · LR 3e-4</text>
+
+  <!-- notes -->
+  <line x1="48" y1="530" x2="912" y2="530" stroke="#21262d" stroke-width="1"/>
+  <text class="note" x="48" y="554">Paired per seed vs the SFT baseline: B converts 121–127 of 719 games that the baseline loses and concedes 24–29 (net ≈ +99/seed); C is within 0.3 pp.</text>
+  <text class="note" x="48" y="574">All arms: 0 invalid guesses — the decoder only emits dictionary words. Wins per 719, mean of three seeds: B 687.7 · SFT 589.0 · C 587.3.</text>
+  <text class="src"  x="48" y="602">Source: runs/soft-distillation-cv5-word-argmax/benchmark-complete.json · B/paired.json · C/paired.json · arm manifests (temperature 0.25, word-argmax)</text>
+</svg>

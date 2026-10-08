@@ -1,196 +1,128 @@
 # Wordle GPT
 
-A compact decoder-only Transformer exploring whether a neural network can learn both the rules and an effective strategy for Wordle purely from game trajectories as text.
+**Can a 7.2M-parameter decoder-only Transformer learn to play Wordle — the rules *and* the strategy — from nothing but game trajectories serialized as text?**
 
-Rather than relying on an external game engine or search algorithm at runtime, Wordle GPT treats the game as a sequence-prediction problem: tracking board state, respecting feedback constraints, and generating informative guesses through autoregressive token generation.
+No solver and no search select its guesses: the neural policy reads observed guesses and feedback and scores complete legal words to choose each next move. (The demo wraps it in a small game loop whose engine only supplies real feedback.) This repository is the completed, frozen research artifact for **v1.0.0** — original training code, dated experiment logs (including the failures), cross-validation artifacts, a released CPU checkpoint bundle, and a runnable demo. See [RELEASE.md](docs/RELEASE.md) for the version record and [Scope and limitations](#scope-and-limitations) for exactly what these numbers do and do not claim.
 
----
+## The final result
 
-## Core Questions
+The released model is arm **B**: soft policy distillation from a classical solver into a mechanics-pretrained 7.2M Transformer.
 
-1. **Rule learning:** Can a small transformer learn valid 5-letter dictionary words and exact Wordle feedback mechanics without hardcoded rules?
-2. **Strategy acquisition:** Can the model learn to narrow down possible candidate words and pick high-information guesses purely by imitating expert play?
-3. **Catastrophic forgetting:** Does learning strategic play erase the model's understanding of basic game rules, and can multi-task experience replay prevent that regression?
+| Arm | Initialization | Win rate (mean ± SD) | Wins / 719 | Avg guesses on wins |
+| :--- | :--- | ---: | ---: | ---: |
+| **B — soft distillation** | mechanics-only 7.2M model | **95.64% ± 0.80 pp** | **687.7** | 3.85 |
+| hard SFT | mechanics-only 7.2M model, expert imitation | 81.92% ± 0.14 pp | 589.0 | 3.43 |
+| C — soft distillation | hard-SFT 7.2M model | 81.69% ± 0.40 pp | 587.3 | 3.53 |
 
----
+**719 secrets · five folds × three seeds** (every secret held out exactly once per seed) · greedy **word-argmax** decoding · distillation targets at teacher temperature 0.25 · **0 invalid guesses** in every arm. Source: [`benchmark-complete.json`](runs/soft-distillation-cv5-word-argmax/benchmark-complete.json).
 
-## Model Architecture
+**Bounded dictionary — read this before quoting the number.** Every secret is one of the 719 words in `resources/words.txt`, and every guess is selected from that same closed list: held-out means held-out *secrets*, not unseen vocabulary. The model is never asked to spell or discover a word it has not seen, so this is **not** an open-vocabulary score and is not comparable to official Wordle leaderboards or general-language benchmarks. The training signal is a classical expected-survivor solver, so the policy inherits that teacher's judgement and its biases.
 
-The model is a standard pre-norm decoder-only Transformer with causal multi-head self-attention, GELU feed-forward blocks, and learned positional embeddings.
+**Released checkpoint ≠ aggregate.** The downloadable demo checkpoint is B, seed 0 / fold 1; on its own held-out fold it wins **135/144 games (93.75%)**. The 95.64% headline is the 15-cell five-fold × three-seed aggregate — both numbers are real, and neither should be substituted for the other. See [MODEL_CARD.md](docs/MODEL_CARD.md).
 
-Current distillation and GRPO experiments use the **7.2M-parameter model**. The smaller models below are earlier baselines.
+## Architecture at a glance
 
-| Parameter | Original Baseline | Earlier Scaled Model | Current Model |
-| :--- | :--- | :--- | :--- |
-| **Parameters** | ~815,000 | 3,202,083 | **7,162,403** |
-| **Embedding Size** | 128 | 256 | 384 |
-| **Layers** | 4 | 4 | 4 |
-| **Attention Heads** | 4 | 8 | 12 |
-| **MLP Hidden Dim** | 512 | 1024 | 1536 |
-| **Context Length** | 96 tokens | 96 tokens | 96 tokens |
-| **Vocabulary** | 35 tokens | 35 tokens | 35 tokens |
+The released model is a **7.2M-parameter (7,162,403) decoder-only Transformer: 4 layers · 384-dim embeddings · 12 attention heads · 96-token context · 35-token vocabulary** (26 letters + 3 feedback digits + 6 control tokens). The size ladder trained along the way (814K → 3.2M → 12.7M) and the sequence format are tabulated under [Architecture](#architecture).
 
-The 35-token vocabulary consists of:
-- 26 lowercase English letters (`a`–`z`)
-- 3 feedback digits: `0` (gray / miss), `1` (yellow / wrong position), `2` (green / exact hit)
-- 6 structural control tokens: `<G>` (guess), `<F>` (feedback), `<E>` (end of game), `<M>` (mechanics task), `<S>` (secret word), `<P>` (policy task)
+## Three findings
 
-### Checkpoint training tokens
+### 1 · The soft-distilled mechanics initialization scores 95.64% — 13.7 pp above hard SFT
 
-Counts at the selected **SFT `best.pt`**, including its mechanics initialization. SFT includes mechanics replay; counts are supervised, non-padding target tokens processed, including repeats—not unique data or input/context tokens. Later distillation/GRPO training is excluded.
+<a href="runs/soft-distillation-cv5-word-argmax/benchmark-complete.json"><img src="docs/figures/fig1-sft-vs-distillation.svg" alt="Bar chart: hard expert SFT wins 81.92 percent of held-out games, soft distillation initialized from that SFT checkpoint wins 81.69 percent, and soft distillation initialized from a mechanics-only model wins 95.64 percent. Whiskers show standard deviation across three seeds." width="100%"></a>
 
-| Checkpoint | Mechanics pretraining | SFT + replay | Total |
-| :--- | ---: | ---: | ---: |
-| [815K replay baseline](runs/v2-replay/e2-expert95-mechanics5/best.json) | [3,606,240](runs/v2-experiment-b-mechanics/best.json) | Not recorded | Not recorded |
-| [3.2M scaling baseline](runs/scaling-dev-1m/seed-0/fold-1/3.2m/best.json) | [1,200,000](runs/scaling-dev-1m/seed-0/fold-1/3.2m/mechanics/best.json) | 33,091,200 | **34,291,200** |
-| [7.2M current SFT](runs/scaling-dev-1m/seed-0/fold-1/7.2m/best.json) | [3,998,720](runs/scaling-dev-1m/seed-0/fold-1/7.2m/mechanics/best.json) | 37,818,880 | **41,817,600** |
+All three arms share the architecture and the whole-word decoder; they differ in training recipe. **B** — soft distillation initialized from mechanics-only pretraining — reaches 95.64%, 13.7 points above the SFT baseline, and converts 121–127 of 719 games per seed that the baseline loses while conceding only 24–29 (net ≈ **+99 games/seed**). **C** runs the same soft objective from the hard-SFT checkpoint but at a lower learning rate (1e-5 vs B's 3e-4) and lands within a fraction of a point of the baseline (81.69% vs 81.92%, net ≈ −2 games/seed); its selected checkpoints sit at or near their initialization (training step 0–1000). B and C therefore differ in two ways at once — initialization *and* learning rate — so the gap between them is a recipe difference, not an isolated test of pretraining, and no significance test was run. B wins deeper games too: its average winning game is 3.85 guesses versus 3.43 for hard SFT.
 
-Scaling counts are for development seed 0, fold 1; other folds/checkpoints have different training lengths. The 815K checkpoint predates the SFT token counter.
+### 2 · More states helped earlier SFT — with sharply diminishing returns
 
----
+<a href="docs/EXPERIMENTS.md"><img src="docs/figures/fig2-state-scaling.svg" alt="Line chart: raw token-greedy win rate rises from 34.59 percent at 100K unique states to 52.48 at 200K, 66.25 at 500K and 73.76 percent at 1M, with gains shrinking from plus 17.9 to plus 7.5 percentage points per step. A caption notes this is an earlier development experiment, not the final benchmark." width="100%"></a>
 
-## Sequence Representation
+Earlier in the project (August 2026), a mechanics-initialized **3.2M-parameter** SFT model was scaled from 100K to 1M unique observable states under raw token-greedy decoding: **34.59% → 52.48% → 66.25% → 73.76%** as coverage grew. Every step helped, fewer each time (+17.9 pp, +13.8 pp, +7.5 pp) — the project's clearest evidence that state coverage was a first-order driver in the SFT pipeline. This is a **development experiment with a different model and decoder**; the v1.0.0 numbers above are *not* a continuation of this curve, and the two must not be quoted as one series.
 
-Games are serialized as token sequences alternating between guesses and feedback:
+### 3 · The decoder was the difference between 2/72 and 72/72
+
+<a href="runs/soft-distillation-resumable/diagnostics/soft_best.json"><img src="docs/figures/fig3-decoder.svg" alt="Bar chart on one soft-distilled checkpoint: prefix-masked token-greedy decoding wins 2 of 72 games, conditional token-greedy wins 69 of 72, and full-word argmax wins 72 of 72. A side table shows the same audit on a resume checkpoint (3, 67, 68) and on a hard-SFT checkpoint (59 under all three decoders)." width="100%"></a>
+
+On one soft-distilled checkpoint, generating letters greedily through a legal-prefix mask wins **2 of 72** games; scoring whole candidate words and taking the argmax wins **all 72**. Independent direct-forward verification recomputed 8,628 full-dictionary sequence scores with zero disagreements (max log-probability error 1.5×10⁻⁵). Every final number and the released demo use whole-word scoring — argmax joint five-letter log-probability over all 719 legal words — so the decoder is part of the system, not a cosmetic filter. The same audit shows a hard-SFT checkpoint is indifferent to the decoder (59/72 under all three), so this is a property of the distillation-trained policy, not a universal free win.
+
+## Architecture
+
+A standard pre-norm decoder-only Transformer: causal multi-head self-attention, GELU feed-forward blocks, learned positional embeddings, a 35-token vocabulary, and a 96-token context.
+
+| | Base | Scaled | **Released** | Capacity probe |
+| :--- | ---: | ---: | ---: | ---: |
+| Parameters | 814,627 | 3,202,083 | **7,162,403** | 12,695,587 |
+| Layers | 4 | 4 | **4** | 4 |
+| Embedding size | 128 | 256 | **384** | 512 |
+| Attention heads | 4 | 8 | **12** | 16 |
+| MLP hidden dim | 512 | 1024 | **1536** | 2048 |
+| Context length | 96 | 96 | **96** | 96 |
+
+The 35-token vocabulary is 26 lowercase letters, 3 feedback digits (`0` gray, `1` yellow, `2` green), and 6 control tokens: `<G>` guess, `<F>` feedback, `<E>` end, `<M>` mechanics, `<S>` secret, `<P>` policy.
 
 ```text
-<G>could<F>22010<G>colon<F>22222<E>
+policy   <P> <G>could<F>22010<G>colon<E>
+mechanics <M><S>colon<G>could<F>22010<E>
 ```
 
-### Multi-Task Objectives
+- **Mechanics task** (`<M>`): given a secret and a guess, predict the exact 5-digit feedback.
+- **Policy task** (`<P>`): given the observed history, select the next strategic guess.
 
-- **Mechanics (`<M>`):** Given a secret word and a guess, predict the 5-digit feedback pattern:
-  `<M><S>colon<G>could<F>22010<E>`
-- **Policy (`<P>`):** Given the observed game history, predict the next strategic guess:
-  `<P><G>could<F>22010<G>colon<E>`
+## How the pieces fit
 
-Training with multi-task experience replay (blending mechanics examples during policy fine-tuning) prevents catastrophic forgetting of game rules while policy performance improves.
+- **Mechanics pretraining** teaches the exact feedback rules on synthetic (secret, guess) pairs — loss falls to ~5×10⁻⁴ within a few epochs.
+- **Expert SFT with replay** imitates the classical solver's top move. A 5% mechanics replay stream is interleaved during fine-tuning because pure expert SFT catastrophically forgets the rules (mechanics loss explodes from 0.0005 to 10.39, ≈20,000×); the 95/5 recipe holds it at ~0.007 and is the mix the released pipeline uses.
+- **Soft policy distillation** replaces the single hard label with the solver's full distribution over 128 candidate actions, `softmax(−log(cost / min cost) / T)` at `T = 0.25`; the student minimises cross-entropy against candidate-normalized whole-word log-probabilities. Arm **B** initializes from the mechanics checkpoints (LR 3e-4), arm **C** from the SFT checkpoints (LR 1e-5).
+- **Whole-word decoding** turns the trained policy into play: each turn scores every legal word's joint five-letter log-probability and plays the argmax, then advances on real feedback.
 
----
-
-## Key Findings
-
-- **Mechanics are learned rapidly:** The model achieves near-perfect prediction of Wordle feedback patterns within the first few training epochs.
-- **Replay stabilizes strategy:** Fine-tuning exclusively on expert moves causes the model to forget game rules. A 5%–10% mechanics replay ratio maintains rule fidelity without degrading gameplay quality.
-- **State scaling drives performance:** Scaling training from 10,000 to 1,000,000 unique game states improves held-out 5-fold cross-validation win rates from ~70% to **>98%**.
-- **Constrained decoding:** Filtering output logits at generation time to valid 5-letter dictionary words eliminates rare spelling failures and yields consistent wins.
-
-*For full daily training logs, loss curves, gradient norms, and ablation studies, see [EXPERIMENTS.md](docs/EXPERIMENTS.md).*
-
----
-
-## Quickstart
-
-### Setup
-
-Requires Python 3.11+. Install dependencies using `uv` or standard `pip`. Run all commands below from the repository root:
+## Try the released policy
 
 ```bash
-uv run --with-requirements requirements.txt python -m unittest discover -s tests
-# or with standard pip:
-pip install -r requirements.txt
-python -m unittest discover -s tests
+python -m pip install -r requirements-inference.txt --extra-index-url https://download.pytorch.org/whl/cpu
+python -m wordle_gpt.demo --secret colon
 ```
 
-### Training
-
-Train the original small baseline on nested state datasets (not the current 7.2M model):
+The first run downloads and checksum-verifies the `v1.0.0` release bundle (`wordle-gpt-7.2m-soft-v1.0.0.zip`) from [GitHub Releases](https://github.com/cpu23/wordle-gpt-family/releases/tag/v1.0.0) into the platform cache; every later run is offline. To run from an extracted bundle instead:
 
 ```bash
-uv run --with-requirements requirements.txt \
-  python -m wordle_gpt.training.train_nested \
-  --sizes 100000 \
-  --steps 10000 \
-  --checkpoints 0 100 500 1000 5000 10000
+python -m wordle_gpt.demo --bundle dist/wordle-gpt-7.2m-soft-v1.0.0 --secret colon
 ```
 
-### Soft classical-policy distillation
+The bundle contains `model.pt` (weights + config only), `tokenizer.json`, `words.txt`, and `manifest.json` with provenance and SHA-256 checksums. Reference environment: Python 3.11, torch 2.6.0+cpu, numpy 2.2.6 — all pinned in `requirements-inference.txt`. Add `--interactive` to play against your own board. Details: [INFERENCE.md](docs/INFERENCE.md) · [MODEL_CARD.md](docs/MODEL_CARD.md).
 
-Train against a classical solver's probability distribution over 128 legal guesses, rather than a single expert move.
+## Training and reproduction
 
-```bash
-uv run --with-requirements requirements.txt python -m wordle_gpt.distillation.soft_teacher \
-  --output-dir data/soft-teacher-1m --workers 8 \
-  --mode data/wordle-development.json
-uv run --with-requirements requirements.txt python -m wordle_gpt.distillation.train_soft_distillation
-uv run --with-requirements requirements.txt python -m wordle_gpt.distillation.compare_soft_distillation
-uv run --with-requirements requirements.txt python -m wordle_gpt.distillation.benchmark_soft_distillation
-```
+All training is scripted and logged under `runs/`. The full command catalogue — dataset builders, mechanics pretraining, expert SFT with replay, soft-policy distillation, the anchored-DPO rescue, four GRPO objectives, evaluation runners, checkpoint-selection semantics, and token-count context — lives in **[docs/TRAINING.md](docs/TRAINING.md)**.
 
-- **Training:** Compare mechanics-pretrained (B) and hard-SFT-initialized (C) models at temperatures `0.25`, `0.50`, and `1.00`, with 5% mechanics replay.
-- **Evaluation:** Select guesses by full-word probability over all 719 words, not token-greedy decoding. The fixed benchmark uses `T=0.25`, five folds, and three seeds, subject to a development gate.
-- **Resume:** Repeat training with `--resume`. Runs save every 100 updates and on graceful stop; legacy token-greedy runs are incompatible.
+## Documentation and repository map
 
-Skip teacher construction if the verified dataset exists. Use `python -m wordle_gpt.distillation.benchmark_soft_distillation --baseline-only --resume` to evaluate existing hard-SFT checkpoints without training.
+| Document | What it contains |
+| :--- | :--- |
+| [RELEASE.md](docs/RELEASE.md) | v1.0.0 version record: final result, changes, asset hash |
+| [TRAINING.md](docs/TRAINING.md) | Training guide and full command catalogue |
+| [INFERENCE.md](docs/INFERENCE.md) | CPU environment, demo details, observed game trace |
+| [MODEL_CARD.md](docs/MODEL_CARD.md) | Released bundle: provenance, checksums, measured performance |
+| [EXPERIMENTS.md](docs/EXPERIMENTS.md) | Dated lab notebook: every run, ablation, and failure |
+| [ARTICLE.md](docs/ARTICLE.md) | Long-form narrative: forgetting, the DPO trap, and the rescue |
 
-### One-guess expected-information GRPO
+- `wordle_gpt/` — package: `core/`, `datasets/`, `training/`, `distillation/`, `dpo/`, `grpo/`, `evaluation/`, `experiments/`, and `demo.py`.
+- `runs/` — committed run artifacts, including the final benchmark in [`runs/soft-distillation-cv5-word-argmax/`](runs/soft-distillation-cv5-word-argmax/).
+- `resources/words.txt` — the 719-word dictionary; `resources/sample-trajectories.jsonl.gz` — sample game trajectories.
+- `docs/figures/` — the three source-backed figures in this README.
+- `tests/` — unittest suite covering datasets, training, decoding, and benchmark contracts.
 
-Optimize expected candidate reduction across all consistent dictionary answers, with a small solve bonus:
+## Correcting the record
 
-```bash
-uv run --with-requirements requirements.txt python -m wordle_gpt.grpo.grpo_information_states
-uv run --with-requirements requirements.txt python -m wordle_gpt.grpo.train_information_grpo
-```
+An earlier version of this README headlined a **>98% win rate**. That number came from legacy small-panel evaluations, not a held-out benchmark: on a reused fixed 72-secret split, the 814,627-parameter mechanics→expert run reached 71/72 (98.61%) at seed 0 and 212/216 (98.15%) across three seeds — a comparison `EXPERIMENTS.md` itself flags: *“These 216 games reuse the same 72-secret test split across three trained checkpoints, so they do not establish statistical significance.”* When the project moved to a proper held-out benchmark — all 719 secrets, five disjoint folds, three seeds, word-argmax decoding — the honest numbers were the ones at the top of this page: **95.64%** for soft distillation, **81.92%** for hard SFT. The old headline is superseded and should not be quoted.
 
-Defaults: original 7.2M SFT, 1,000 updates, LR `3e-6`, KL `0.10`. Each state uses 48 policy proposals and 16 random guesses. This mixed-proposal objective is a ranking surrogate, **not unbiased on-policy PPO**. Held-out secrets are excluded as sources, but remain in the reward's answer universe.
+## Scope and limitations
 
-### Token-level continuation GRPO
+- **Closed 719-word universe.** Secrets and guesses come from one dictionary; folds hold out secrets, not vocabulary. No claim about unseen words, the NYT answer list, or open-vocabulary play.
+- **Solver-distilled.** The teacher is the in-repo exhaustive expected-survivor solver; the policy imitates its judgements, including its blind spots.
+- **Decoder included.** Reported results use whole-word argmax scoring. Without it, the soft-distilled checkpoint collapses (2/72 under token-greedy letters).
+- **One recipe, small models.** 4-layer Transformer ≤12.7M parameters, 96-token context, a single final distillation temperature (0.25); checkpoints are selected on fold validation only, and the C arm barely moves from its initialization.
+- **GRPO and DPO are research history.** The preference-optimisation and rollout-policy experiments in this repository document the process; they are not part of the released policy — see [EXPERIMENTS.md](docs/EXPERIMENTS.md).
+- **Frozen at v1.0.0.** This is a completed research, presentation, and inference release; no further training is planned as part of this project ([RELEASE.md](docs/RELEASE.md)).
 
-Train eight continuations per sampled mid-game state. Reward favors solving in fewer total guesses; only newly generated letters receive policy loss.
+## Licence
 
-```bash
-uv run --with-requirements requirements.txt python -m wordle_gpt.grpo.grpo_corpus
-uv run --with-requirements requirements.txt python -m wordle_gpt.grpo.train_grpo_games \
-  --state-corpus data/grpo-continuations/train.jsonl \
-  --validation-corpus data/grpo-continuations/validation.jsonl \
-  --updates 1000 --kl-beta 0.10 --lr 1e-6 \
-  --output-dir runs/grpo-token-lr-1e6
-```
-
-For the learning-rate comparison, repeat with `--lr 3e-6` and `1e-5`, using separate output directories. Skip corpus creation if the verified corpus exists.
-
-The objective uses per-token PPO ratios and equal rollout weighting. Fixed training/validation panels track continuation reward; `best-continuation.pt` is separate from the gameplay-ranked `best.pt`. Earlier whole-trajectory-ratio results are historical, not results of this objective.
-
-### Full-trajectory GRPO
-
-Train eight complete games per sampled secret, starting from the original 7.2M SFT:
-
-```bash
-uv run --with-requirements requirements.txt python -m wordle_gpt.grpo.train_grpo_games \
-  --updates 10000 --output-dir runs/grpo-token-games-dev
-```
-
-- **Reward:** `7 - guesses_used` on a solve, otherwise `0`; no intermediate reward.
-- **Defaults:** LR `1e-6`, frozen-SFT KL `0.10`, token-level clipping, and equal rollout weighting.
-- **Resume:** Use `--resume-checkpoint <path>` with unchanged settings and a larger `--updates` total. Old trajectory-ratio checkpoints are incompatible.
-
-### One-step GRPO
-
-Optimize one guess at a time from the original 7.2M SFT, using actual secret feedback:
-
-```bash
-uv run --with-requirements requirements.txt python -m wordle_gpt.grpo.train_grpo \
-  --updates 10000 --output-dir runs/grpo-dev-dense
-```
-
-Each state receives eight distinct legal guesses. Reward is `ln(candidates_before / candidates_after) + 5 * solved`; defaults are LR `1e-6` and frozen-SFT KL `0.02`. Resume is not supported; use a new output directory per run.
-
-GRPO runs report validation gameplay and policy diagnostics without evaluating test secrets. See [EXPERIMENTS.md](docs/EXPERIMENTS.md) for run histories and results.
-
-### Evaluation
-
-Run the 5-fold cross-validation benchmark across multiple seeds:
-
-```bash
-uv run --with-requirements requirements.txt python -m wordle_gpt.evaluation.benchmark_cv --skip-prepare
-```
-
----
-
-## Repository Structure
-
-- `wordle_gpt/` — production package, grouped into `core/`, `datasets/`, `training/`, `evaluation/`, `experiments/`, `dpo/`, `grpo/`, and `distillation/`.
-- `tests/` — test suite.
-- `resources/words.txt` and `resources/sample-trajectories.jsonl.gz` — runtime inputs.
-- `data/` and `runs/` — generated datasets and run artifacts.
-- `docs/` — [ARTICLE.md](docs/ARTICLE.md) and [EXPERIMENTS.md](docs/EXPERIMENTS.md).
+MIT — code and released weights. See [LICENSE](LICENSE).

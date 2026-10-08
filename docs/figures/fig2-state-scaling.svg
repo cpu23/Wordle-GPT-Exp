@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 576" width="960" height="576" role="img" aria-labelledby="fig2-title fig2-desc">
+  <title id="fig2-title">State coverage scaling from 100K to 1M unique game states (earlier development experiment)</title>
+  <desc id="fig2-desc">Line chart of raw token-greedy win rate for a mechanics-initialized 3.2M-parameter SFT model as the training corpus grows from 100,000 to 1,000,000 unique observable game states. Win rate rises from 34.59 percent to 52.48, 66.25 and 73.76 percent, with error bars of about one to three percentage points; gains shrink at each step. This is an earlier development experiment with a different model and decoder than the final v1.0.0 benchmark and the numbers are not directly comparable.</desc>
+  <style>
+    .bg{fill:#0d1117}
+    .h1{fill:#e6edf3;font-size:25px;font-weight:700}
+    .sub{fill:#8b949e;font-size:13.5px}
+    .axis{fill:#8b949e;font-size:12px}
+    .grid{stroke:#21262d;stroke-width:1}
+    .val{fill:#e6edf3;font-size:20px;font-weight:700}
+    .pm{fill:#8b949e;font-size:11.5px}
+    .delta{fill:#3fb950;font-size:13px;font-weight:600}
+    .xt{fill:#e6edf3;font-size:14px;font-weight:600}
+    .cap{fill:#6e7681;font-size:11.5px}
+    .warn{fill:#d29922;font-size:12.5px}
+    .note{fill:#e6edf3;font-size:12.5px}
+    .src{fill:#6e7681;font-size:11.5px}
+    text{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  </style>
+
+  <rect class="bg" width="960" height="576"/>
+  <text class="h1" x="48" y="52">State coverage: 100K → 1M unique game states</text>
+  <text class="sub" x="48" y="77">Raw token-greedy win rate · 5-fold cross-validation over all 719 known secrets per seed · three seeds</text>
+
+  <!-- axes -->
+  <line x1="150" y1="430" x2="900" y2="430" stroke="#30363d" stroke-width="1.5"/>
+  <g class="grid">
+    <line x1="150" y1="360" x2="900" y2="360"/>
+    <line x1="150" y1="290" x2="900" y2="290"/>
+    <line x1="150" y1="220" x2="900" y2="220"/>
+    <line x1="150" y1="150" x2="900" y2="150"/>
+  </g>
+  <g class="axis" text-anchor="end">
+    <text x="138" y="434">0%</text>
+    <text x="138" y="364">20%</text>
+    <text x="138" y="294">40%</text>
+    <text x="138" y="224">60%</text>
+    <text x="138" y="154">80%</text>
+  </g>
+
+  <!-- series: log-spaced x positions; y(v)=430-350v -->
+  <polyline points="220,308.9 401,246.3 639,198.1 820,171.8" fill="none" stroke="#58a6ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- error whiskers (true SD scale) -->
+  <g stroke="#58a6ff" stroke-width="1.6" opacity=".85">
+    <line x1="220" y1="303.8" x2="220" y2="314.0"/><line x1="210" y1="303.8" x2="230" y2="303.8"/><line x1="210" y1="314.0" x2="230" y2="314.0"/>
+    <line x1="401" y1="236.8" x2="401" y2="255.8"/><line x1="391" y1="236.8" x2="411" y2="236.8"/><line x1="391" y1="255.8" x2="411" y2="255.8"/>
+    <line x1="639" y1="188.7" x2="639" y2="207.5"/><line x1="629" y1="188.7" x2="649" y2="188.7"/><line x1="629" y1="207.5" x2="649" y2="207.5"/>
+    <line x1="820" y1="162.5" x2="820" y2="181.2"/><line x1="810" y1="162.5" x2="830" y2="162.5"/><line x1="810" y1="181.2" x2="830" y2="181.2"/>
+  </g>
+
+  <!-- markers -->
+  <g fill="#0d1117" stroke="#58a6ff" stroke-width="3">
+    <circle cx="220" cy="308.9" r="6"/>
+    <circle cx="401" cy="246.3" r="6"/>
+    <circle cx="639" cy="198.1" r="6"/>
+    <circle cx="820" cy="171.8" r="6"/>
+  </g>
+
+  <!-- value labels -->
+  <text class="val" x="220" y="284" text-anchor="middle">34.59%</text>
+  <text class="pm"  x="220" y="299" text-anchor="middle">± 1.46 pp</text>
+  <text class="val" x="401" y="217" text-anchor="middle">52.48%</text>
+  <text class="pm"  x="401" y="232" text-anchor="middle">± 2.71 pp</text>
+  <text class="val" x="639" y="169" text-anchor="middle">66.25%</text>
+  <text class="pm"  x="639" y="184" text-anchor="middle">± 2.69 pp</text>
+  <text class="val" x="820" y="143" text-anchor="middle">73.76%</text>
+  <text class="pm"  x="820" y="158" text-anchor="middle">± 2.66 pp</text>
+
+  <!-- deltas -->
+  <text class="delta" x="310" y="302" text-anchor="middle">Δ +17.9 pp</text>
+  <text class="delta" x="520" y="248" text-anchor="middle">Δ +13.8 pp</text>
+  <text class="delta" x="730" y="211" text-anchor="middle">Δ +7.5 pp</text>
+
+  <!-- x labels -->
+  <g class="xt" text-anchor="middle">
+    <text x="220" y="452">100K</text>
+    <text x="401" y="452">200K</text>
+    <text x="639" y="452">500K</text>
+    <text x="820" y="452">1M</text>
+  </g>
+  <text class="cap" x="520" y="470" text-anchor="middle">unique observable states · x-axis log-spaced · labels show gains per step (diminishing returns)</text>
+
+  <!-- caveat -->
+  <rect x="48" y="486" width="864" height="52" rx="8" fill="#161b22" stroke="#d29922" stroke-opacity=".65"/>
+  <text class="warn" x="66" y="508">Earlier 3.2M SFT experiment (Aug 2026) · raw token-greedy decoding · not the final benchmark</text>
+  <text class="note" x="66" y="527">The final v1.0.0 result uses a 7.2M model and word-argmax decoding — different model and decoder, so the two are not directly comparable.</text>
+  <text class="src" x="48" y="562">Source: docs/EXPERIMENTS.md · runs/cv5-diverse/aggregate.json · runs/cv5-500k/aggregate.json · runs/cv5-1m/aggregate.json</text>
+</svg>

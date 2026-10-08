@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" role="img" aria-labelledby="fig3-title fig3-desc">
+  <title id="fig3-title">One soft-distilled checkpoint, three decoders: token-greedy collapses, full-word argmax solves every game</title>
+  <desc id="fig3-desc">Bar chart on the same B soft-distillation checkpoint evaluated over the same 72 development validation secrets. Prefix-masked token-greedy decoding wins 2 of 72 games (2.8 percent); conditional token-greedy wins 69 of 72 (95.8 percent); full-word argmax wins 72 of 72 (100 percent). A table shows the same audit on two more checkpoints: the resume checkpoint wins 3, 67 and 68 games, while the hard-SFT checkpoint wins 59 games under all three decoders. Independent direct-forward verification recomputed 8,628 full-dictionary sequence scores with zero disagreements.</desc>
+  <style>
+    .bg{fill:#0d1117}
+    .panel{fill:#161b22;stroke:#30363d}
+    .h1{fill:#e6edf3;font-size:25px;font-weight:700}
+    .sub{fill:#8b949e;font-size:13.5px}
+    .axis{fill:#8b949e;font-size:12px}
+    .grid{stroke:#21262d;stroke-width:1}
+    .val{font-size:21px;font-weight:700}
+    .pm{fill:#8b949e;font-size:12px}
+    .cap1{fill:#e6edf3;font-size:13px;font-weight:600}
+    .cap2{fill:#8b949e;font-size:11px}
+    .ptitle{fill:#e6edf3;font-size:13.5px;font-weight:700}
+    .colhead{fill:#8b949e;font-size:10.5px}
+    .rowname{fill:#e6edf3;font-size:12px}
+    .rowname2{fill:#8b949e;font-size:12px}
+    .num{font-size:12.5px;font-weight:600}
+    .mnote{fill:#6e7681;font-size:11px}
+    .note{fill:#e6edf3;font-size:13px}
+    .note2{fill:#8b949e;font-size:12px}
+    .src{fill:#6e7681;font-size:11.5px}
+    text{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  </style>
+
+  <rect class="bg" width="960" height="640"/>
+  <text class="h1" x="48" y="52">One checkpoint, three decoders</text>
+  <text class="sub" x="48" y="77">B soft-distillation checkpoint · step 59,096 · identical 72 development validation secrets for every decoder</text>
+
+  <!-- left panel: bars -->
+  <rect class="panel" x="48" y="108" width="540" height="360" rx="10"/>
+  <g class="grid">
+    <line x1="110" y1="347" x2="566" y2="347"/>
+    <line x1="110" y1="282" x2="566" y2="282"/>
+    <line x1="110" y1="217" x2="566" y2="217"/>
+    <line x1="110" y1="152" x2="566" y2="152"/>
+  </g>
+  <line x1="110" y1="412" x2="566" y2="412" stroke="#30363d" stroke-width="1.5"/>
+  <g class="axis" text-anchor="end">
+    <text x="100" y="416">0%</text>
+    <text x="100" y="351">25%</text>
+    <text x="100" y="286">50%</text>
+    <text x="100" y="221">75%</text>
+    <text x="100" y="156">100%</text>
+  </g>
+
+  <!-- bars: 2/72 -> top 404.8 ; 69/72 -> 162.8 ; 72/72 -> 152 -->
+  <rect x="112" y="404.8" width="96" height="7.2" rx="2" fill="#f85149"/>
+  <rect x="272" y="162.8" width="96" height="249.2" rx="3" fill="#bc8cff"/>
+  <rect x="432" y="152.0" width="96" height="260.0" rx="3" fill="#2ea043"/>
+
+  <text class="val" x="160" y="386" text-anchor="middle" fill="#f85149">2 / 72</text>
+  <text class="pm"  x="160" y="401" text-anchor="middle">2.8%</text>
+  <text class="val" x="320" y="138" text-anchor="middle" fill="#bc8cff">69 / 72</text>
+  <text class="pm"  x="320" y="156" text-anchor="middle">95.8%</text>
+  <text class="val" x="480" y="127" text-anchor="middle" fill="#3fb950">72 / 72</text>
+  <text class="pm"  x="480" y="145" text-anchor="middle">100%</text>
+
+  <text class="cap1" x="160" y="440" text-anchor="middle">token-greedy</text>
+  <text class="cap2" x="160" y="456" text-anchor="middle">prefix-masked greedy</text>
+  <text class="cap1" x="320" y="440" text-anchor="middle">conditional token-greedy</text>
+  <text class="cap2" x="320" y="456" text-anchor="middle">letters from word probabilities</text>
+  <text class="cap1" x="480" y="440" text-anchor="middle">full-word argmax</text>
+  <text class="cap2" x="480" y="456" text-anchor="middle">final benchmark decoder</text>
+
+  <!-- right panel: matrix -->
+  <rect class="panel" x="612" y="108" width="300" height="360" rx="10"/>
+  <text class="ptitle" x="628" y="140">All audited checkpoints</text>
+  <text class="colhead" x="628" y="166">checkpoint</text>
+  <text class="colhead" x="776" y="166" text-anchor="middle">tok.</text>
+  <text class="colhead" x="830" y="166" text-anchor="middle">cond.</text>
+  <text class="colhead" x="884" y="166" text-anchor="middle">word</text>
+  <rect x="620" y="178" width="284" height="30" rx="6" fill="#2ea043" opacity=".12"/>
+  <text class="rowname" x="628" y="198">B soft best.pt</text>
+  <text class="num" x="776" y="198" text-anchor="middle" fill="#f85149">2</text>
+  <text class="num" x="830" y="198" text-anchor="middle" fill="#bc8cff">69</text>
+  <text class="num" x="884" y="198" text-anchor="middle" fill="#3fb950">72</text>
+  <text class="rowname2" x="628" y="230">B soft resume.pt</text>
+  <text class="num" x="776" y="230" text-anchor="middle" fill="#8b949e">3</text>
+  <text class="num" x="830" y="230" text-anchor="middle" fill="#8b949e">67</text>
+  <text class="num" x="884" y="230" text-anchor="middle" fill="#8b949e">68</text>
+  <text class="rowname2" x="628" y="262">hard SFT best.pt</text>
+  <text class="num" x="776" y="262" text-anchor="middle" fill="#8b949e">59</text>
+  <text class="num" x="830" y="262" text-anchor="middle" fill="#8b949e">59</text>
+  <text class="num" x="884" y="262" text-anchor="middle" fill="#8b949e">59</text>
+  <text class="mnote" x="628" y="300">wins / 72 games per decoder.</text>
+  <text class="mnote" x="628" y="324">The collapse is specific to the</text>
+  <text class="mnote" x="628" y="338">soft-distilled checkpoint: on the</text>
+  <text class="mnote" x="628" y="352">hard-SFT model all three decoders</text>
+  <text class="mnote" x="628" y="366">tie at 59.</text>
+
+  <!-- notes -->
+  <text class="note" x="48" y="506">Why it matters: the released system scores whole legal words — argmax joint five-letter log-probability over all 719 dictionary words.</text>
+  <text class="note" x="48" y="524">Never token-by-token greedy: on this checkpoint, prefix-masked greedy finds 2 wins; word-argmax finds all 72.</text>
+  <text class="note2" x="48" y="554">Independently re-verified by direct forward passes: 8,628 full-dictionary sequence scores recomputed; 0 panel argmax disagreements;</text>
+  <text class="note2" x="48" y="572">0 trajectory disagreements; max log-probability error 1.5e-5.</text>
+  <text class="src" x="48" y="606">Source: runs/soft-distillation-resumable/diagnostics/{soft_best,soft_stopped,hard_sft,independent-verification,comparison}.json · 72 development validation secrets</text>
+</svg>
